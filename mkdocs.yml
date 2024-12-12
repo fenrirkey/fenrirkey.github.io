@@ -1,8 +1,9 @@
 # yaml-language-server: $schema=https://squidfunk.github.io/mkdocs-material/schema.json
 site_name: Community Shaders Documentation
 site_url: https://fenrirkey.github.io/
-repo_url: https://github.com/doodlum/skyrim-community-shaders
-repo_name: doodlum/skyrim-community-shaders
+repo_name: fenrirkey/fenrirkey.github.io
+repo_url: https://github.com/fenrirkey/fenrirkey.github.io
+edit_uri: ""
 theme:
   name: material
   font:
