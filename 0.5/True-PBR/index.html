@@ -962,7 +962,7 @@ For CS PBR fuzz is still considered experimental and replaces specular term with
 <li>fuzz texture goes into slot 7 (right after rmaos). It has fuzz color in rgb (which is specular color of fuzz) and fuzz mask in alpha (0 for usual specular, 1 for fuzz specular)  </li>
 <li>fuzz color parameter is used as a specular color for fuzz if texture is not provided or as multiplier for color from texture. It's stored in first three parameters of MLP  </li>
 <li>fuzz weight parameter is used as fuzz mask if texture is not provided or as multiplier for fuzz mask for texture. It's stored in fourth parameter of MLP  </li>
-<li>nif.xml in <a href="https://drive.google.com/file/d/1EjHnaV3p440eVkUaJaHgPOYFkluT3DTq/view?usp=sharing">Nifskope addon for PBR</a>contains proper naming for parameters  </li>
+<li>nif.xml in <a href="https://drive.google.com/file/d/1EjHnaV3p440eVkUaJaHgPOYFkluT3DTq/view?usp=sharing">Nifskope addon for PBR</a> contains proper naming for parameters  </li>
 </ul>
 <p>Fuzz is incompatible with coat or glint, but compatible with subsurface. </p>
 <details>
@@ -1198,9 +1198,9 @@ For more details I recommend [this article.](https://www.reedbeta.com/blog/under
 </details>
 
 <details>
-<summary><b>Do I use rmaos or rmao textures?</b></summary>
+<summary><b>Do I use RMAOS or RMAO textures?</b></summary>
 
-You use the specular layer for surfaces like glass, gems, perhaps snow. If there is only one type of surface in your texture you can use rmao and set the specular scale in the nif/json configuration. If you have different surfaces with specular properties, only then it makes sense to use rmaos with a specular map in the alpha channel.
+You use the specular layer for surfaces like glass, gems, perhaps snow. If there is only one type of surface in your texture you can use RMAO and set the specular scale in the nif/json configuration. If you have different surfaces with specular properties, only then it makes sense to use rmaos with a specular map in the alpha channel.
 
 </details>
 
