@@ -885,14 +885,14 @@
 To generate a set of True PBR textures you need to do two things:</p>
 <ol>
 <li>Update the meshes where those textures are being used to enable PBR for those meshes: True PBR only cares about meshes marked with a specific flag, everything else is rendered as usual. True PBR mods therefore contain meshes marked for PBR and a set of PBR textures. </li>
-<li>Create True PBR textures: The base textures for True PBR are albedo, normal, roughness, metallic, ambient occlusion and specular. Parallax and emission (if emissive color map is provided) are also supported. Additionally the material can use ~~two-sided foliage or~~ subsurface shading, which require subsurface color map and multilayer Parallax which approximates a semitransparent surface above a hard surface (<a href="https://docs.unrealengine.com/5.3/en-US/shading-models-in-unreal-engine/">also following Unreal</a>).</li>
+<li>Create True PBR textures: The base textures for True PBR are albedo, normal, roughness, metallic, ambient occlusion and specular. Parallax and emission (if emissive color map is provided) are also supported. Additionally the material can use <del>two-sided foliage or</del> subsurface shading, which require subsurface color map and multilayer Parallax which approximates a semitransparent surface above a hard surface (<a href="https://docs.unrealengine.com/5.3/en-US/shading-models-in-unreal-engine/">also following Unreal</a>).</li>
 </ol>
 <h3 id="mesh-changes-in-nif">Mesh changes (in .nif)<a class="headerlink" href="#mesh-changes-in-nif" title="Permanent link">&para;</a></h3>
 <h4 id="flags">Flags<a class="headerlink" href="#flags" title="Permanent link">&para;</a></h4>
 <p>The following flags of BSShaderProperty are used to tag a mesh for PBR rendering:</p>
 <ul>
 <li>Byte 55 (Unused01 in NifSkope) - enables PBR for this BSGeometry</li>
-<li>~~Byte 57 (Soft_Lighting in NifSkope) - enables two-sided foliage shading~~</li>
+<li><del>Byte 57 (Soft_Lighting in NifSkope) - enables two-sided foliage shading</del></li>
 <li>Byte 58 (Rim_Lighting in Nifskope) - enables subsurface shading in NifSkope</li>
 </ul>
 <p>For a mesh to be recognized as PBR, it must have in BSLightingShaderProperty:</p>
@@ -955,13 +955,15 @@ To generate a set of True PBR textures you need to do two things:</p>
 <h4 id="fuzz">Fuzz<a class="headerlink" href="#fuzz" title="Permanent link">&para;</a></h4>
 <p>Fuzz as a rendering technique is used to simulate the appearance of soft, fibrous materials, such as velvet, fur, peach fuzz, or certain types of cloth. This effect is crucial for rendering surfaces that have a fine layer of fibers or tiny hairs that interact with light in a distinctive way, producing a soft, diffuse reflection.
 For CS PBR fuzz is still considered experimental and replaces specular term with another one, better suited to model cloth (especially velvet).</p>
-<p>Parameters:
-* enable soft lighting flag<br />
-<em> to set fuzz parameters use MLP shader type<br />
-</em> fuzz texture goes into slot 7 (right after rmaos). It has fuzz color in rgb (which is specular color of fuzz) and fuzz mask in alpha (0 for usual specular, 1 for fuzz specular)<br />
-<em> fuzz color parameter is used as a specular color for fuzz if texture is not provided or as multiplier for color from texture. It's stored in first three parameters of MLP<br />
-</em> fuzz weight parameter is used as fuzz mask if texture is not provided or as multiplier for fuzz mask for texture. It's stored in fourth parameter of MLP<br />
-* nif.xml in <a href="https://drive.google.com/file/d/1EjHnaV3p440eVkUaJaHgPOYFkluT3DTq/view?usp=sharing">Nifskope addon for PBR</a>contains proper naming for parameters  </p>
+<p>Parameters:</p>
+<ul>
+<li>enable soft lighting flag  </li>
+<li>to set fuzz parameters use MLP shader type  </li>
+<li>fuzz texture goes into slot 7 (right after rmaos). It has fuzz color in rgb (which is specular color of fuzz) and fuzz mask in alpha (0 for usual specular, 1 for fuzz specular)  </li>
+<li>fuzz color parameter is used as a specular color for fuzz if texture is not provided or as multiplier for color from texture. It's stored in first three parameters of MLP  </li>
+<li>fuzz weight parameter is used as fuzz mask if texture is not provided or as multiplier for fuzz mask for texture. It's stored in fourth parameter of MLP  </li>
+<li>nif.xml in <a href="https://drive.google.com/file/d/1EjHnaV3p440eVkUaJaHgPOYFkluT3DTq/view?usp=sharing">Nifskope addon for PBR</a>contains proper naming for parameters  </li>
+</ul>
 <p>Fuzz is incompatible with coat or glint, but compatible with subsurface. </p>
 <details>
   <summary>Sample configuration</summary>
