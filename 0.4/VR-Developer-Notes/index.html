@@ -537,7 +537,7 @@
 <p>VR porting assumes that the flat shader has been reversed already and exists in CS for flat. We typically do not RE or port for VR first due to the added complexity.</p>
 <ol>
 <li>Use <code>Advanced -&gt; Dump Shaders</code> to dump all shaders for Flat/VR on startup. It will end up in <code>data\ShaderDump</code>.</li>
-<li>Use <a href="https://github.com/bo3b/3Dmigoto/tree/master/HLSLDecompiler">3dmigitos decompiler</a> on all the .bin shaders to get hlsl. We have a script <code>Skyrim_Disassemble_Shaders</code> that we haven't posted yet that will crawl all of the bin files. (ask on discord)</li>
+<li>Use <a href="https://github.com/bo3b/3Dmigoto/tree/master/HLSLDecompiler">3dmigito's decompiler</a> on all the .bin shaders to get hlsl. We have a script <code>Skyrim_Disassemble_Shaders</code> that we haven't posted yet that will crawl all of the bin files. (ask on discord)</li>
 <li>
 <p>Check cbuffers vs flat. Same size should be fine. Search this regex (VSCode escaped) in VR will identify eyeIndex based buffers. <code>cb[0-9]+\[([^\]]+\+)+\w+\]</code>. Compare against flat files for same cb (non regex). For example, </p>
 <p><div class="highlight"><pre><span></span><code><span class="c1">//FLAT</span>
