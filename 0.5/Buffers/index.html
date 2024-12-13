@@ -1,0 +1,4289 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://fenrirkey.github.io/0.5/Buffers/">
+      
+      
+        <link rel="prev" href="..">
+      
+      
+        <link rel="next" href="../Developers/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.48">
+    
+    
+      
+        <title>Buffers - Community Shaders Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.6f8fc17f.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i%7CRed+Hat+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Open Sans";--md-code-font:"Red Hat Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <div data-md-color-scheme="default" data-md-component="outdated" hidden>
+        
+      </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Community Shaders Documentation" class="md-header__button md-logo" aria-label="Community Shaders Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Community Shaders Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Buffers
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14.3 16-.7-2h-3.2l-.7 2H7.8L11 7h2l3.2 9zM20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12zm-9.15 3.96h2.3L12 9z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="yellow" data-md-color-accent="amber"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="blue-grey" data-md-color-accent="grey"  aria-label="Switch to system preference"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to system preference" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/fenrirkey/fenrirkey.github.io" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    fenrirkey/fenrirkey.github.io
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Community Shaders Documentation" class="md-nav__button md-logo" aria-label="Community Shaders Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Community Shaders Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/fenrirkey/fenrirkey.github.io" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    fenrirkey/fenrirkey.github.io
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Buffers
+  </span>
+  
+
+      </a>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Developers/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Developers
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Dynamic-Cubemap-Creator/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Dynamic Cubemap Creator
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../FAQ/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    FAQ
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Particle-Lights/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Particle Lights
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Shader-Constant-Buffers/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Shader Constant Buffers
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../True-PBR/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    True PBR
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../VR-Developer-Notes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    VR Developer Notes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  <h1>Buffers</h1>
+
+<table>
+<thead>
+<tr>
+<th>Register</th>
+<th>Feature</th>
+<th>Type</th>
+<th>Name</th>
+<th>File</th>
+<th>Register Type</th>
+<th>Buffer Type</th>
+<th>Number</th>
+<th>PSHADER</th>
+<th>VSHADER</th>
+<th>VR</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>b0</td>
+<td>Dynamic Cubemaps</td>
+<td><code>cbuffer</code></td>
+<td>SpecularMapFilterSettings</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/features/Dynamic%20Cubemaps/Shaders/DynamicCubemaps/SpecularIrradianceCS.hlsl#L14">/features/Dynamic Cubemaps/Shaders/DynamicCubemaps/SpecularIrradianceCS.hlsl:14</a></td>
+<td>CBV</td>
+<td>b</td>
+<td>0</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>b0</td>
+<td>Dynamic Cubemaps</td>
+<td><code>cbuffer</code></td>
+<td>PerFrame</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/features/Dynamic%20Cubemaps/Shaders/DynamicCubemaps/UpdateCubemapCS.hlsl#L50">/features/Dynamic Cubemaps/Shaders/DynamicCubemaps/UpdateCubemapCS.hlsl:50</a></td>
+<td>CBV</td>
+<td>b</td>
+<td>0</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>b0</td>
+<td>Grass Lighting</td>
+<td><code>cbuffer</code></td>
+<td>PerFrame</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/features/Grass%20Lighting/Shaders/RunGrass.hlsl#L228">/features/Grass Lighting/Shaders/RunGrass.hlsl:228</a></td>
+<td>CBV</td>
+<td>b</td>
+<td>0</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>b0</td>
+<td>Light Limit Fix</td>
+<td><code>cbuffer</code></td>
+<td>PerFrame</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/features/Light%20Limit%20Fix/Shaders/LightLimitFix/ClusterBuildingCS.hlsl#L3">/features/Light Limit Fix/Shaders/LightLimitFix/ClusterBuildingCS.hlsl:3</a></td>
+<td>CBV</td>
+<td>b</td>
+<td>0</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>b0</td>
+<td>Light Limit Fix</td>
+<td><code>cbuffer</code></td>
+<td>PerFrame</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/features/Light%20Limit%20Fix/Shaders/LightLimitFix/ClusterCullingCS.hlsl#L3">/features/Light Limit Fix/Shaders/LightLimitFix/ClusterCullingCS.hlsl:3</a></td>
+<td>CBV</td>
+<td>b</td>
+<td>0</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>b0</td>
+<td>Skylighting</td>
+<td><code>cbuffer</code></td>
+<td>PerFrame</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/features/Skylighting/Shaders/Skylighting/SkylightingCS.hlsl#L37">/features/Skylighting/Shaders/Skylighting/SkylightingCS.hlsl:37</a></td>
+<td>CBV</td>
+<td>b</td>
+<td>0</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>b0</td>
+<td>DistantTree</td>
+<td><code>cbuffer</code></td>
+<td>PerTechnique</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/package/Shaders/DistantTree.hlsl#L136">/package/Shaders/DistantTree.hlsl:136</a></td>
+<td>CBV</td>
+<td>b</td>
+<td>0</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>b0</td>
+<td>DistantTree</td>
+<td><code>cbuffer</code></td>
+<td>PerTechnique</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/package/Shaders/DistantTree.hlsl#L42">/package/Shaders/DistantTree.hlsl:42</a></td>
+<td>CBV</td>
+<td>b</td>
+<td>0</td>
+<td>False</td>
+<td>True</td>
+<td>False</td>
+</tr>
+<tr>
+<td>b0</td>
+<td>Effect</td>
+<td><code>cbuffer</code></td>
+<td>PerTechnique</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/package/Shaders/Effect.hlsl#L115">/package/Shaders/Effect.hlsl:115</a></td>
+<td>CBV</td>
+<td>b</td>
+<td>0</td>
+<td>False</td>
+<td>True</td>
+<td>False</td>
+</tr>
+<tr>
+<td>b0</td>
+<td>Effect</td>
+<td><code>cbuffer</code></td>
+<td>PerTechnique</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/package/Shaders/Effect.hlsl#L456">/package/Shaders/Effect.hlsl:456</a></td>
+<td>CBV</td>
+<td>b</td>
+<td>0</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>b0</td>
+<td>Lighting</td>
+<td><code>cbuffer</code></td>
+<td>PerTechnique</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/package/Shaders/Lighting.hlsl#L106">/package/Shaders/Lighting.hlsl:106</a></td>
+<td>CBV</td>
+<td>b</td>
+<td>0</td>
+<td>False</td>
+<td>True</td>
+<td>False</td>
+</tr>
+<tr>
+<td>b0</td>
+<td>Lighting</td>
+<td><code>cbuffer</code></td>
+<td>PerTechnique</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/package/Shaders/Lighting.hlsl#L566">/package/Shaders/Lighting.hlsl:566</a></td>
+<td>CBV</td>
+<td>b</td>
+<td>0</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>b0</td>
+<td>Particle</td>
+<td><code>cbuffer</code></td>
+<td>PerTechnique</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/package/Shaders/Particle.hlsl#L27">/package/Shaders/Particle.hlsl:27</a></td>
+<td>CBV</td>
+<td>b</td>
+<td>0</td>
+<td>False</td>
+<td>True</td>
+<td>False</td>
+</tr>
+<tr>
+<td>b0</td>
+<td>CopyShadowData</td>
+<td><code>cbuffer</code></td>
+<td>PerFrame</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/package/Shaders/ShadowTest/CopyShadowData.hlsl#L23">/package/Shaders/ShadowTest/CopyShadowData.hlsl:23</a></td>
+<td>CBV</td>
+<td>b</td>
+<td>0</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>b0</td>
+<td>Utility</td>
+<td><code>cbuffer</code></td>
+<td>PerTechnique</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/package/Shaders/Utility.hlsl#L307">/package/Shaders/Utility.hlsl:307</a></td>
+<td>CBV</td>
+<td>b</td>
+<td>0</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>b0</td>
+<td>Utility</td>
+<td><code>cbuffer</code></td>
+<td>PerTechnique</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/package/Shaders/Utility.hlsl#L82">/package/Shaders/Utility.hlsl:82</a></td>
+<td>CBV</td>
+<td>b</td>
+<td>0</td>
+<td>False</td>
+<td>True</td>
+<td>False</td>
+</tr>
+<tr>
+<td>b0</td>
+<td>Water</td>
+<td><code>cbuffer</code></td>
+<td>PerTechnique</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/package/Shaders/Water.hlsl#L283">/package/Shaders/Water.hlsl:283</a></td>
+<td>CBV</td>
+<td>b</td>
+<td>0</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>b0</td>
+<td>Water</td>
+<td><code>cbuffer</code></td>
+<td>PerTechnique</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/package/Shaders/Water.hlsl#L82">/package/Shaders/Water.hlsl:82</a></td>
+<td>CBV</td>
+<td>b</td>
+<td>0</td>
+<td>False</td>
+<td>True</td>
+<td>False</td>
+</tr>
+<tr>
+<td>b1</td>
+<td>Dynamic Cubemaps</td>
+<td><code>cbuffer</code></td>
+<td>UpdateData</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/features/Dynamic%20Cubemaps/Shaders/DynamicCubemaps/UpdateCubemapCS.hlsl#L99">/features/Dynamic Cubemaps/Shaders/DynamicCubemaps/UpdateCubemapCS.hlsl:99</a></td>
+<td>CBV</td>
+<td>b</td>
+<td>1</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>b1</td>
+<td>Screen Space GI</td>
+<td><code>cbuffer</code></td>
+<td>SSGICB</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/features/Screen%20Space%20GI/Shaders/ScreenSpaceGI/common.hlsli#L51">/features/Screen Space GI/Shaders/ScreenSpaceGI/common.hlsli:51</a></td>
+<td>CBV</td>
+<td>b</td>
+<td>1</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>b1</td>
+<td>Screen-Space Shadows</td>
+<td><code>cbuffer</code></td>
+<td>PerFrame</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/features/Screen-Space%20Shadows/Shaders/ScreenSpaceShadows/RaymarchCS.hlsl#L10">/features/Screen-Space Shadows/Shaders/ScreenSpaceShadows/RaymarchCS.hlsl:10</a></td>
+<td>CBV</td>
+<td>b</td>
+<td>1</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>b1</td>
+<td>Subsurface Scattering</td>
+<td><code>cbuffer</code></td>
+<td>PerFrameSSS</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/features/Subsurface%20Scattering/Shaders/SubsurfaceScattering/SeparableSSSCS.hlsl#L9">/features/Subsurface Scattering/Shaders/SubsurfaceScattering/SeparableSSSCS.hlsl:9</a></td>
+<td>CBV</td>
+<td>b</td>
+<td>1</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>b1</td>
+<td>Effect</td>
+<td><code>cbuffer</code></td>
+<td>PerMaterial</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/package/Shaders/Effect.hlsl#L122">/package/Shaders/Effect.hlsl:122</a></td>
+<td>CBV</td>
+<td>b</td>
+<td>1</td>
+<td>False</td>
+<td>True</td>
+<td>False</td>
+</tr>
+<tr>
+<td>b1</td>
+<td>Effect</td>
+<td><code>cbuffer</code></td>
+<td>PerMaterial</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/package/Shaders/Effect.hlsl#L463">/package/Shaders/Effect.hlsl:463</a></td>
+<td>CBV</td>
+<td>b</td>
+<td>1</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>b1</td>
+<td>Lighting</td>
+<td><code>cbuffer</code></td>
+<td>PerMaterial</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/package/Shaders/Lighting.hlsl#L573">/package/Shaders/Lighting.hlsl:573</a></td>
+<td>CBV</td>
+<td>b</td>
+<td>1</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>b1</td>
+<td>CopyShadowData</td>
+<td><code>cbuffer</code></td>
+<td>PerFrame2</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/package/Shaders/ShadowTest/CopyShadowData.hlsl#L37">/package/Shaders/ShadowTest/CopyShadowData.hlsl:37</a></td>
+<td>CBV</td>
+<td>b</td>
+<td>1</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>b1</td>
+<td>Utility</td>
+<td><code>cbuffer</code></td>
+<td>PerMaterial</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/package/Shaders/Utility.hlsl#L316">/package/Shaders/Utility.hlsl:316</a></td>
+<td>CBV</td>
+<td>b</td>
+<td>1</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>b1</td>
+<td>Utility</td>
+<td><code>cbuffer</code></td>
+<td>PerMaterial</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/package/Shaders/Utility.hlsl#L93">/package/Shaders/Utility.hlsl:93</a></td>
+<td>CBV</td>
+<td>b</td>
+<td>1</td>
+<td>False</td>
+<td>True</td>
+<td>False</td>
+</tr>
+<tr>
+<td>b1</td>
+<td>Water</td>
+<td><code>cbuffer</code></td>
+<td>PerMaterial</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/package/Shaders/Water.hlsl#L300">/package/Shaders/Water.hlsl:300</a></td>
+<td>CBV</td>
+<td>b</td>
+<td>1</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>b1</td>
+<td>Water</td>
+<td><code>cbuffer</code></td>
+<td>PerMaterial</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/package/Shaders/Water.hlsl#L91">/package/Shaders/Water.hlsl:91</a></td>
+<td>CBV</td>
+<td>b</td>
+<td>1</td>
+<td>False</td>
+<td>True</td>
+<td>False</td>
+</tr>
+<tr>
+<td>b2</td>
+<td>BloodSplatter</td>
+<td><code>cbuffer</code></td>
+<td>PerGeometry</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/package/Shaders/BloodSplatter.hlsl#L18">/package/Shaders/BloodSplatter.hlsl:18</a></td>
+<td>CBV</td>
+<td>b</td>
+<td>2</td>
+<td>False</td>
+<td>True</td>
+<td>False</td>
+</tr>
+<tr>
+<td>b2</td>
+<td>BloodSplatter</td>
+<td><code>cbuffer</code></td>
+<td>PerGeometry</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/package/Shaders/BloodSplatter.hlsl#L63">/package/Shaders/BloodSplatter.hlsl:63</a></td>
+<td>CBV</td>
+<td>b</td>
+<td>2</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>b2</td>
+<td>DistantTree</td>
+<td><code>cbuffer</code></td>
+<td>PerGeometry</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/package/Shaders/DistantTree.hlsl#L47">/package/Shaders/DistantTree.hlsl:47</a></td>
+<td>CBV</td>
+<td>b</td>
+<td>2</td>
+<td>False</td>
+<td>True</td>
+<td>False</td>
+</tr>
+<tr>
+<td>b2</td>
+<td>Effect</td>
+<td><code>cbuffer</code></td>
+<td>PerGeometry</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/package/Shaders/Effect.hlsl#L129">/package/Shaders/Effect.hlsl:129</a></td>
+<td>CBV</td>
+<td>b</td>
+<td>2</td>
+<td>False</td>
+<td>True</td>
+<td>False</td>
+</tr>
+<tr>
+<td>b2</td>
+<td>Effect</td>
+<td><code>cbuffer</code></td>
+<td>PerGeometry</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/package/Shaders/Effect.hlsl#L470">/package/Shaders/Effect.hlsl:470</a></td>
+<td>CBV</td>
+<td>b</td>
+<td>2</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>b2</td>
+<td>Lighting</td>
+<td><code>cbuffer</code></td>
+<td>PerGeometry</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/package/Shaders/Lighting.hlsl#L128">/package/Shaders/Lighting.hlsl:128</a></td>
+<td>CBV</td>
+<td>b</td>
+<td>2</td>
+<td>False</td>
+<td>True</td>
+<td>False</td>
+</tr>
+<tr>
+<td>b2</td>
+<td>Lighting</td>
+<td><code>cbuffer</code></td>
+<td>PerGeometry</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/package/Shaders/Lighting.hlsl#L593">/package/Shaders/Lighting.hlsl:593</a></td>
+<td>CBV</td>
+<td>b</td>
+<td>2</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>b2</td>
+<td>Particle</td>
+<td><code>cbuffer</code></td>
+<td>PerGeometry</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/package/Shaders/Particle.hlsl#L205">/package/Shaders/Particle.hlsl:205</a></td>
+<td>CBV</td>
+<td>b</td>
+<td>2</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>b2</td>
+<td>Particle</td>
+<td><code>cbuffer</code></td>
+<td>PerGeometry</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/package/Shaders/Particle.hlsl#L32">/package/Shaders/Particle.hlsl:32</a></td>
+<td>CBV</td>
+<td>b</td>
+<td>2</td>
+<td>False</td>
+<td>True</td>
+<td>False</td>
+</tr>
+<tr>
+<td>b2</td>
+<td>RunGrass</td>
+<td><code>cbuffer</code></td>
+<td>PerGeometry</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/package/Shaders/RunGrass.hlsl#L30">/package/Shaders/RunGrass.hlsl:30</a></td>
+<td>CBV</td>
+<td>b</td>
+<td>2</td>
+<td>False</td>
+<td>True</td>
+<td>False</td>
+</tr>
+<tr>
+<td>b2</td>
+<td>CopyShadowData</td>
+<td><code>cbuffer</code></td>
+<td>PerFrame3</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/package/Shaders/ShadowTest/CopyShadowData.hlsl#L86">/package/Shaders/ShadowTest/CopyShadowData.hlsl:86</a></td>
+<td>CBV</td>
+<td>b</td>
+<td>2</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>b2</td>
+<td>Sky</td>
+<td><code>cbuffer</code></td>
+<td>PerGeometry</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/package/Shaders/Sky.hlsl#L140">/package/Shaders/Sky.hlsl:140</a></td>
+<td>CBV</td>
+<td>b</td>
+<td>2</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>b2</td>
+<td>Sky</td>
+<td><code>cbuffer</code></td>
+<td>PerGeometry</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/package/Shaders/Sky.hlsl#L43">/package/Shaders/Sky.hlsl:43</a></td>
+<td>CBV</td>
+<td>b</td>
+<td>2</td>
+<td>False</td>
+<td>True</td>
+<td>False</td>
+</tr>
+<tr>
+<td>b2</td>
+<td>Utility</td>
+<td><code>cbuffer</code></td>
+<td>PerGeometry</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/package/Shaders/Utility.hlsl#L322">/package/Shaders/Utility.hlsl:322</a></td>
+<td>CBV</td>
+<td>b</td>
+<td>2</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>b2</td>
+<td>Utility</td>
+<td><code>cbuffer</code></td>
+<td>PerGeometry</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/package/Shaders/Utility.hlsl#L98">/package/Shaders/Utility.hlsl:98</a></td>
+<td>CBV</td>
+<td>b</td>
+<td>2</td>
+<td>False</td>
+<td>True</td>
+<td>False</td>
+</tr>
+<tr>
+<td>b2</td>
+<td>Water</td>
+<td><code>cbuffer</code></td>
+<td>PerGeometry</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/package/Shaders/Water.hlsl#L101">/package/Shaders/Water.hlsl:101</a></td>
+<td>CBV</td>
+<td>b</td>
+<td>2</td>
+<td>False</td>
+<td>True</td>
+<td>False</td>
+</tr>
+<tr>
+<td>b2</td>
+<td>Water</td>
+<td><code>cbuffer</code></td>
+<td>PerGeometry</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/package/Shaders/Water.hlsl#L318">/package/Shaders/Water.hlsl:318</a></td>
+<td>CBV</td>
+<td>b</td>
+<td>2</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>b3</td>
+<td>Grass Lighting</td>
+<td><code>cbuffer</code></td>
+<td>PerGeometry</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/features/Grass%20Lighting/Shaders/RunGrass.hlsl#L54">/features/Grass Lighting/Shaders/RunGrass.hlsl:54</a></td>
+<td>CBV</td>
+<td>b</td>
+<td>3</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>b4</td>
+<td>Permutation</td>
+<td><code>cbuffer</code></td>
+<td>PerShader</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/package/Shaders/Common/Permutation.hlsl#L43">/package/Shaders/Common/Permutation.hlsl:43</a></td>
+<td>CBV</td>
+<td>b</td>
+<td>4</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>b4</td>
+<td>Effect</td>
+<td><code>cbuffer</code></td>
+<td>PerShader</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/package/Shaders/Effect.hlsl#L43">/package/Shaders/Effect.hlsl:43</a></td>
+<td>CBV</td>
+<td>b</td>
+<td>4</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>b4</td>
+<td>Lighting</td>
+<td><code>cbuffer</code></td>
+<td>PerShader</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/package/Shaders/Lighting.hlsl#L43">/package/Shaders/Lighting.hlsl:43</a></td>
+<td>CBV</td>
+<td>b</td>
+<td>4</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>b4</td>
+<td>RunGrass</td>
+<td><code>cbuffer</code></td>
+<td>PerShader</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/package/Shaders/RunGrass.hlsl#L43">/package/Shaders/RunGrass.hlsl:43</a></td>
+<td>CBV</td>
+<td>b</td>
+<td>4</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>b4</td>
+<td>Water</td>
+<td><code>cbuffer</code></td>
+<td>PerShader</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/package/Shaders/Water.hlsl#L43">/package/Shaders/Water.hlsl:43</a></td>
+<td>CBV</td>
+<td>b</td>
+<td>4</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>b5</td>
+<td>Grass Collision</td>
+<td><code>cbuffer</code></td>
+<td>GrassCollisionPerFrame</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/features/Grass%20Collision/Shaders/GrassCollision/GrassCollision.hlsli#L6">/features/Grass Collision/Shaders/GrassCollision/GrassCollision.hlsli:6</a></td>
+<td>CBV</td>
+<td>b</td>
+<td>5</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>b5</td>
+<td>SharedData</td>
+<td><code>cbuffer</code></td>
+<td>SharedData</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/package/Shaders/Common/SharedData.hlsli#L9">/package/Shaders/Common/SharedData.hlsli:9</a></td>
+<td>CBV</td>
+<td>b</td>
+<td>5</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>b5</td>
+<td>DistantTree</td>
+<td><code>cbuffer</code></td>
+<td>SharedData</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/package/Shaders/DistantTree.hlsl#L9">/package/Shaders/DistantTree.hlsl:9</a></td>
+<td>CBV</td>
+<td>b</td>
+<td>5</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>b5</td>
+<td>Effect</td>
+<td><code>cbuffer</code></td>
+<td>SharedData</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/package/Shaders/Effect.hlsl#L9">/package/Shaders/Effect.hlsl:9</a></td>
+<td>CBV</td>
+<td>b</td>
+<td>5</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>b5</td>
+<td>Lighting</td>
+<td><code>cbuffer</code></td>
+<td>SharedData</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/package/Shaders/Lighting.hlsl#L9">/package/Shaders/Lighting.hlsl:9</a></td>
+<td>CBV</td>
+<td>b</td>
+<td>5</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>b5</td>
+<td>RunGrass</td>
+<td><code>cbuffer</code></td>
+<td>SharedData</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/package/Shaders/RunGrass.hlsl#L9">/package/Shaders/RunGrass.hlsl:9</a></td>
+<td>CBV</td>
+<td>b</td>
+<td>5</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>b5</td>
+<td>Sky</td>
+<td><code>cbuffer</code></td>
+<td>SharedData</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/package/Shaders/Sky.hlsl#L9">/package/Shaders/Sky.hlsl:9</a></td>
+<td>CBV</td>
+<td>b</td>
+<td>5</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>b5</td>
+<td>Water</td>
+<td><code>cbuffer</code></td>
+<td>SharedData</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/package/Shaders/Water.hlsl#L9">/package/Shaders/Water.hlsl:9</a></td>
+<td>CBV</td>
+<td>b</td>
+<td>5</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>b6</td>
+<td>SharedData</td>
+<td><code>cbuffer</code></td>
+<td>FeatureData</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/package/Shaders/Common/SharedData.hlsli#L121">/package/Shaders/Common/SharedData.hlsli:121</a></td>
+<td>CBV</td>
+<td>b</td>
+<td>6</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>b6</td>
+<td>DistantTree</td>
+<td><code>cbuffer</code></td>
+<td>FeatureData</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/package/Shaders/DistantTree.hlsl#L121">/package/Shaders/DistantTree.hlsl:121</a></td>
+<td>CBV</td>
+<td>b</td>
+<td>6</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>b6</td>
+<td>Effect</td>
+<td><code>cbuffer</code></td>
+<td>FeatureData</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/package/Shaders/Effect.hlsl#L121">/package/Shaders/Effect.hlsl:121</a></td>
+<td>CBV</td>
+<td>b</td>
+<td>6</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>b6</td>
+<td>Lighting</td>
+<td><code>cbuffer</code></td>
+<td>FeatureData</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/package/Shaders/Lighting.hlsl#L121">/package/Shaders/Lighting.hlsl:121</a></td>
+<td>CBV</td>
+<td>b</td>
+<td>6</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>b6</td>
+<td>RunGrass</td>
+<td><code>cbuffer</code></td>
+<td>FeatureData</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/package/Shaders/RunGrass.hlsl#L121">/package/Shaders/RunGrass.hlsl:121</a></td>
+<td>CBV</td>
+<td>b</td>
+<td>6</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>b6</td>
+<td>Sky</td>
+<td><code>cbuffer</code></td>
+<td>FeatureData</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/package/Shaders/Sky.hlsl#L121">/package/Shaders/Sky.hlsl:121</a></td>
+<td>CBV</td>
+<td>b</td>
+<td>6</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>b6</td>
+<td>Water</td>
+<td><code>cbuffer</code></td>
+<td>FeatureData</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/package/Shaders/Water.hlsl#L121">/package/Shaders/Water.hlsl:121</a></td>
+<td>CBV</td>
+<td>b</td>
+<td>6</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>b7</td>
+<td>Grass Lighting</td>
+<td><code>cbuffer</code></td>
+<td>cb7</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/features/Grass%20Lighting/Shaders/RunGrass.hlsl#L103">/features/Grass Lighting/Shaders/RunGrass.hlsl:103</a></td>
+<td>CBV</td>
+<td>b</td>
+<td>7</td>
+<td>False</td>
+<td>True</td>
+<td>False</td>
+</tr>
+<tr>
+<td>b7</td>
+<td>RunGrass</td>
+<td><code>cbuffer</code></td>
+<td>cb7</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/package/Shaders/RunGrass.hlsl#L49">/package/Shaders/RunGrass.hlsl:49</a></td>
+<td>CBV</td>
+<td>b</td>
+<td>7</td>
+<td>False</td>
+<td>True</td>
+<td>False</td>
+</tr>
+<tr>
+<td>b7</td>
+<td>Water</td>
+<td><code>cbuffer</code></td>
+<td>PerWaterType</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/package/Shaders/Water.hlsl#L26">/package/Shaders/Water.hlsl:26</a></td>
+<td>CBV</td>
+<td>b</td>
+<td>7</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>b8</td>
+<td>Grass Lighting</td>
+<td><code>cbuffer</code></td>
+<td>cb8</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/features/Grass%20Lighting/Shaders/RunGrass.hlsl#L108">/features/Grass Lighting/Shaders/RunGrass.hlsl:108</a></td>
+<td>CBV</td>
+<td>b</td>
+<td>8</td>
+<td>False</td>
+<td>True</td>
+<td>False</td>
+</tr>
+<tr>
+<td>b8</td>
+<td>Skylighting</td>
+<td><code>cbuffer</code></td>
+<td>SkylightingData</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/features/Skylighting/Shaders/Skylighting/Skylighting.hlsli#L4">/features/Skylighting/Shaders/Skylighting/Skylighting.hlsli:4</a></td>
+<td>CBV</td>
+<td>b</td>
+<td>8</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>b8</td>
+<td>RunGrass</td>
+<td><code>cbuffer</code></td>
+<td>cb8</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/package/Shaders/RunGrass.hlsl#L54">/package/Shaders/RunGrass.hlsl:54</a></td>
+<td>CBV</td>
+<td>b</td>
+<td>8</td>
+<td>False</td>
+<td>True</td>
+<td>False</td>
+</tr>
+<tr>
+<td>b9</td>
+<td>Skinned</td>
+<td><code>cbuffer</code></td>
+<td>PreviousBonesBuffer</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/package/Shaders/Common/Skinned.hlsli#L1">/package/Shaders/Common/Skinned.hlsli:1</a></td>
+<td>CBV</td>
+<td>b</td>
+<td>9</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>b10</td>
+<td>Skinned</td>
+<td><code>cbuffer</code></td>
+<td>BonesBuffer</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/package/Shaders/Common/Skinned.hlsli#L6">/package/Shaders/Common/Skinned.hlsli:6</a></td>
+<td>CBV</td>
+<td>b</td>
+<td>10</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>b10</td>
+<td>Effect</td>
+<td><code>cbuffer</code></td>
+<td>BonesBuffer</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/package/Shaders/Effect.hlsl#L6">/package/Shaders/Effect.hlsl:6</a></td>
+<td>CBV</td>
+<td>b</td>
+<td>10</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>b10</td>
+<td>Lighting</td>
+<td><code>cbuffer</code></td>
+<td>BonesBuffer</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/package/Shaders/Lighting.hlsl#L6">/package/Shaders/Lighting.hlsl:6</a></td>
+<td>CBV</td>
+<td>b</td>
+<td>10</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>b10</td>
+<td>Utility</td>
+<td><code>cbuffer</code></td>
+<td>BonesBuffer</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/package/Shaders/Utility.hlsl#L6">/package/Shaders/Utility.hlsl:6</a></td>
+<td>CBV</td>
+<td>b</td>
+<td>10</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>b11</td>
+<td>Grass Lighting</td>
+<td><code>cbuffer</code></td>
+<td>AlphaTestRefCB</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/features/Grass%20Lighting/Shaders/RunGrass.hlsl#L236">/features/Grass Lighting/Shaders/RunGrass.hlsl:236</a></td>
+<td>CBV</td>
+<td>b</td>
+<td>11</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>b11</td>
+<td>AmbientCompositeCS</td>
+<td><code>cbuffer</code></td>
+<td>PerFrameDeferredShared</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/package/Shaders/AmbientCompositeCS.hlsl#L1">/package/Shaders/AmbientCompositeCS.hlsl:1</a></td>
+<td>CBV</td>
+<td>b</td>
+<td>11</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>b11</td>
+<td>DeferredShared</td>
+<td><code>cbuffer</code></td>
+<td>PerFrameDeferredShared</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/package/Shaders/Common/DeferredShared.hlsli#L1">/package/Shaders/Common/DeferredShared.hlsli:1</a></td>
+<td>CBV</td>
+<td>b</td>
+<td>11</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>b11</td>
+<td>DeferredCompositeCS</td>
+<td><code>cbuffer</code></td>
+<td>PerFrameDeferredShared</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/package/Shaders/DeferredCompositeCS.hlsl#L1">/package/Shaders/DeferredCompositeCS.hlsl:1</a></td>
+<td>CBV</td>
+<td>b</td>
+<td>11</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>b11</td>
+<td>DistantTree</td>
+<td><code>cbuffer</code></td>
+<td>AlphaTestRefCB</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/package/Shaders/DistantTree.hlsl#L123">/package/Shaders/DistantTree.hlsl:123</a></td>
+<td>CBV</td>
+<td>b</td>
+<td>11</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>b11</td>
+<td>Effect</td>
+<td><code>cbuffer</code></td>
+<td>IndexedTexcoordBuffer</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/package/Shaders/Effect.hlsl#L148">/package/Shaders/Effect.hlsl:148</a></td>
+<td>CBV</td>
+<td>b</td>
+<td>11</td>
+<td>False</td>
+<td>True</td>
+<td>False</td>
+</tr>
+<tr>
+<td>b11</td>
+<td>Effect</td>
+<td><code>cbuffer</code></td>
+<td>AlphaTestRefCB</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/package/Shaders/Effect.hlsl#L450">/package/Shaders/Effect.hlsl:450</a></td>
+<td>CBV</td>
+<td>b</td>
+<td>11</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>b11</td>
+<td>Lighting</td>
+<td><code>cbuffer</code></td>
+<td>AlphaTestRefBuffer</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/package/Shaders/Lighting.hlsl#L635">/package/Shaders/Lighting.hlsl:635</a></td>
+<td>CBV</td>
+<td>b</td>
+<td>11</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>b11</td>
+<td>RunGrass</td>
+<td><code>cbuffer</code></td>
+<td>AlphaTestRefCB</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/package/Shaders/RunGrass.hlsl#L167">/package/Shaders/RunGrass.hlsl:167</a></td>
+<td>CBV</td>
+<td>b</td>
+<td>11</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>b11</td>
+<td>Sky</td>
+<td><code>cbuffer</code></td>
+<td>AlphaTestRefCB</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/package/Shaders/Sky.hlsl#L145">/package/Shaders/Sky.hlsl:145</a></td>
+<td>CBV</td>
+<td>b</td>
+<td>11</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>b11</td>
+<td>Utility</td>
+<td><code>cbuffer</code></td>
+<td>AlphaTestRefCB</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/package/Shaders/Utility.hlsl#L354">/package/Shaders/Utility.hlsl:354</a></td>
+<td>CBV</td>
+<td>b</td>
+<td>11</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>b12</td>
+<td>FrameBuffer</td>
+<td><code>cbuffer</code></td>
+<td>PerFrame</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/package/Shaders/Common/FrameBuffer.hlsl#L1">/package/Shaders/Common/FrameBuffer.hlsl:1</a></td>
+<td>CBV</td>
+<td>b</td>
+<td>12</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>b12</td>
+<td>DistantTree</td>
+<td><code>cbuffer</code></td>
+<td>PerFrame</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/package/Shaders/DistantTree.hlsl#L129">/package/Shaders/DistantTree.hlsl:129</a></td>
+<td>CBV</td>
+<td>b</td>
+<td>12</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>b12</td>
+<td>DistantTree</td>
+<td><code>cbuffer</code></td>
+<td>PerFrame</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/package/Shaders/DistantTree.hlsl#L1">/package/Shaders/DistantTree.hlsl:1</a></td>
+<td>CBV</td>
+<td>b</td>
+<td>12</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>b12</td>
+<td>Effect</td>
+<td><code>cbuffer</code></td>
+<td>PerFrame</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/package/Shaders/Effect.hlsl#L1">/package/Shaders/Effect.hlsl:1</a></td>
+<td>CBV</td>
+<td>b</td>
+<td>12</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>b12</td>
+<td>Effect</td>
+<td><code>cbuffer</code></td>
+<td>VS_PerFrame</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/package/Shaders/Effect.hlsl#L92">/package/Shaders/Effect.hlsl:92</a></td>
+<td>CBV</td>
+<td>b</td>
+<td>12</td>
+<td>False</td>
+<td>True</td>
+<td>False</td>
+</tr>
+<tr>
+<td>b12</td>
+<td>Lighting</td>
+<td><code>cbuffer</code></td>
+<td>VS_PerFrame</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/package/Shaders/Lighting.hlsl#L153">/package/Shaders/Lighting.hlsl:153</a></td>
+<td>CBV</td>
+<td>b</td>
+<td>12</td>
+<td>False</td>
+<td>True</td>
+<td>False</td>
+</tr>
+<tr>
+<td>b12</td>
+<td>Lighting</td>
+<td><code>cbuffer</code></td>
+<td>PerFrame</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/package/Shaders/Lighting.hlsl#L1">/package/Shaders/Lighting.hlsl:1</a></td>
+<td>CBV</td>
+<td>b</td>
+<td>12</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>b12</td>
+<td>RunGrass</td>
+<td><code>cbuffer</code></td>
+<td>PerFrame</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/package/Shaders/RunGrass.hlsl#L1">/package/Shaders/RunGrass.hlsl:1</a></td>
+<td>CBV</td>
+<td>b</td>
+<td>12</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>b12</td>
+<td>Sky</td>
+<td><code>cbuffer</code></td>
+<td>PerFrame</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/package/Shaders/Sky.hlsl#L1">/package/Shaders/Sky.hlsl:1</a></td>
+<td>CBV</td>
+<td>b</td>
+<td>12</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>b12</td>
+<td>Utility</td>
+<td><code>cbuffer</code></td>
+<td>PerFrame</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/package/Shaders/Utility.hlsl#L1">/package/Shaders/Utility.hlsl:1</a></td>
+<td>CBV</td>
+<td>b</td>
+<td>12</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>b12</td>
+<td>Water</td>
+<td><code>cbuffer</code></td>
+<td>PerFrame</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/package/Shaders/Water.hlsl#L1">/package/Shaders/Water.hlsl:1</a></td>
+<td>CBV</td>
+<td>b</td>
+<td>12</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>b13</td>
+<td>AmbientCompositeCS</td>
+<td><code>cbuffer</code></td>
+<td>VRValues</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/package/Shaders/AmbientCompositeCS.hlsl#L4">/package/Shaders/AmbientCompositeCS.hlsl:4</a></td>
+<td>CBV</td>
+<td>b</td>
+<td>13</td>
+<td>True</td>
+<td>False</td>
+<td>True</td>
+</tr>
+<tr>
+<td>b13</td>
+<td>VR</td>
+<td><code>cbuffer</code></td>
+<td>VRValues</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/package/Shaders/Common/VR.hlsli#L4">/package/Shaders/Common/VR.hlsli:4</a></td>
+<td>CBV</td>
+<td>b</td>
+<td>13</td>
+<td>True</td>
+<td>False</td>
+<td>True</td>
+</tr>
+<tr>
+<td>b13</td>
+<td>DeferredCompositeCS</td>
+<td><code>cbuffer</code></td>
+<td>VRValues</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/package/Shaders/DeferredCompositeCS.hlsl#L4">/package/Shaders/DeferredCompositeCS.hlsl:4</a></td>
+<td>CBV</td>
+<td>b</td>
+<td>13</td>
+<td>True</td>
+<td>False</td>
+<td>True</td>
+</tr>
+<tr>
+<td>b13</td>
+<td>DistantTree</td>
+<td><code>cbuffer</code></td>
+<td>VRValues</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/package/Shaders/DistantTree.hlsl#L4">/package/Shaders/DistantTree.hlsl:4</a></td>
+<td>CBV</td>
+<td>b</td>
+<td>13</td>
+<td>True</td>
+<td>False</td>
+<td>True</td>
+</tr>
+<tr>
+<td>b13</td>
+<td>Effect</td>
+<td><code>cbuffer</code></td>
+<td>VRValues</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/package/Shaders/Effect.hlsl#L4">/package/Shaders/Effect.hlsl:4</a></td>
+<td>CBV</td>
+<td>b</td>
+<td>13</td>
+<td>True</td>
+<td>False</td>
+<td>True</td>
+</tr>
+<tr>
+<td>b13</td>
+<td>Lighting</td>
+<td><code>cbuffer</code></td>
+<td>VRValues</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/package/Shaders/Lighting.hlsl#L4">/package/Shaders/Lighting.hlsl:4</a></td>
+<td>CBV</td>
+<td>b</td>
+<td>13</td>
+<td>True</td>
+<td>False</td>
+<td>True</td>
+</tr>
+<tr>
+<td>b13</td>
+<td>RunGrass</td>
+<td><code>cbuffer</code></td>
+<td>VRValues</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/package/Shaders/RunGrass.hlsl#L4">/package/Shaders/RunGrass.hlsl:4</a></td>
+<td>CBV</td>
+<td>b</td>
+<td>13</td>
+<td>True</td>
+<td>False</td>
+<td>True</td>
+</tr>
+<tr>
+<td>b13</td>
+<td>Sky</td>
+<td><code>cbuffer</code></td>
+<td>VRValues</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/package/Shaders/Sky.hlsl#L4">/package/Shaders/Sky.hlsl:4</a></td>
+<td>CBV</td>
+<td>b</td>
+<td>13</td>
+<td>True</td>
+<td>False</td>
+<td>True</td>
+</tr>
+<tr>
+<td>b13</td>
+<td>Utility</td>
+<td><code>cbuffer</code></td>
+<td>VRValues</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/package/Shaders/Utility.hlsl#L4">/package/Shaders/Utility.hlsl:4</a></td>
+<td>CBV</td>
+<td>b</td>
+<td>13</td>
+<td>True</td>
+<td>False</td>
+<td>True</td>
+</tr>
+<tr>
+<td>b13</td>
+<td>Water</td>
+<td><code>cbuffer</code></td>
+<td>VRValues</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/package/Shaders/Water.hlsl#L4">/package/Shaders/Water.hlsl:4</a></td>
+<td>CBV</td>
+<td>b</td>
+<td>13</td>
+<td>True</td>
+<td>False</td>
+<td>True</td>
+</tr>
+<tr>
+<td>s0</td>
+<td>Dynamic Cubemaps</td>
+<td><code>SamplerState</code></td>
+<td>LinearSampler</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/features/Dynamic%20Cubemaps/Shaders/DynamicCubemaps/InferCubemapCS.hlsl#L7">/features/Dynamic Cubemaps/Shaders/DynamicCubemaps/InferCubemapCS.hlsl:7</a></td>
+<td>Sampler</td>
+<td>s</td>
+<td>0</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>s0</td>
+<td>Dynamic Cubemaps</td>
+<td><code>SamplerState</code></td>
+<td>linear_wrap_sampler</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/features/Dynamic%20Cubemaps/Shaders/DynamicCubemaps/SpecularIrradianceCS.hlsl#L22">/features/Dynamic Cubemaps/Shaders/DynamicCubemaps/SpecularIrradianceCS.hlsl:22</a></td>
+<td>Sampler</td>
+<td>s</td>
+<td>0</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>s0</td>
+<td>Dynamic Cubemaps</td>
+<td><code>SamplerState</code></td>
+<td>LinearSampler</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/features/Dynamic%20Cubemaps/Shaders/DynamicCubemaps/UpdateCubemapCS.hlsl#L10">/features/Dynamic Cubemaps/Shaders/DynamicCubemaps/UpdateCubemapCS.hlsl:10</a></td>
+<td>Sampler</td>
+<td>s</td>
+<td>0</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>s0</td>
+<td>Grass Lighting</td>
+<td><code>SamplerState</code></td>
+<td>SampBaseSampler</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/features/Grass%20Lighting/Shaders/RunGrass.hlsl#L222">/features/Grass Lighting/Shaders/RunGrass.hlsl:222</a></td>
+<td>Sampler</td>
+<td>s</td>
+<td>0</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>s0</td>
+<td>Screen Space GI</td>
+<td><code>SamplerState</code></td>
+<td>samplerPointClamp</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/features/Screen%20Space%20GI/Shaders/ScreenSpaceGI/common.hlsli#L94">/features/Screen Space GI/Shaders/ScreenSpaceGI/common.hlsli:94</a></td>
+<td>Sampler</td>
+<td>s</td>
+<td>0</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>s0</td>
+<td>Screen-Space Shadows</td>
+<td><code>SamplerState</code></td>
+<td>PointBorderSampler</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/features/Screen-Space%20Shadows/Shaders/ScreenSpaceShadows/RaymarchCS.hlsl#L8">/features/Screen-Space Shadows/Shaders/ScreenSpaceShadows/RaymarchCS.hlsl:8</a></td>
+<td>Sampler</td>
+<td>s</td>
+<td>0</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>s0</td>
+<td>Skylighting</td>
+<td><code>SamplerState</code></td>
+<td>LinearSampler</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/features/Skylighting/Shaders/Skylighting/SkylightingCS.hlsl#L44">/features/Skylighting/Shaders/Skylighting/SkylightingCS.hlsl:44</a></td>
+<td>Sampler</td>
+<td>s</td>
+<td>0</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>s0</td>
+<td>BloodSplatter</td>
+<td><code>SamplerState</code></td>
+<td>SampBloodColor</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/package/Shaders/BloodSplatter.hlsl#L53">/package/Shaders/BloodSplatter.hlsl:53</a></td>
+<td>Sampler</td>
+<td>s</td>
+<td>0</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>s0</td>
+<td>DistantTree</td>
+<td><code>SamplerState</code></td>
+<td>SampDiffuse</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/package/Shaders/DistantTree.hlsl#L118">/package/Shaders/DistantTree.hlsl:118</a></td>
+<td>Sampler</td>
+<td>s</td>
+<td>0</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>s0</td>
+<td>Effect</td>
+<td><code>SamplerState</code></td>
+<td>SampBaseSampler</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/package/Shaders/Effect.hlsl#L406">/package/Shaders/Effect.hlsl:406</a></td>
+<td>Sampler</td>
+<td>s</td>
+<td>0</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>s0</td>
+<td>Lighting</td>
+<td><code>SamplerState</code></td>
+<td>SampColorSampler</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/package/Shaders/Lighting.hlsl#L444">/package/Shaders/Lighting.hlsl:444</a></td>
+<td>Sampler</td>
+<td>s</td>
+<td>0</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>s0</td>
+<td>Particle</td>
+<td><code>SamplerState</code></td>
+<td>SampSourceTexture</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/package/Shaders/Particle.hlsl#L187">/package/Shaders/Particle.hlsl:187</a></td>
+<td>Sampler</td>
+<td>s</td>
+<td>0</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>s0</td>
+<td>RunGrass</td>
+<td><code>SamplerState</code></td>
+<td>SampBaseSampler</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/package/Shaders/RunGrass.hlsl#L161">/package/Shaders/RunGrass.hlsl:161</a></td>
+<td>Sampler</td>
+<td>s</td>
+<td>0</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>s0</td>
+<td>Sky</td>
+<td><code>SamplerState</code></td>
+<td>SampBaseSampler</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/package/Shaders/Sky.hlsl#L132">/package/Shaders/Sky.hlsl:132</a></td>
+<td>Sampler</td>
+<td>s</td>
+<td>0</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>s0</td>
+<td>Utility</td>
+<td><code>SamplerState</code></td>
+<td>SampBaseSampler</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/package/Shaders/Utility.hlsl#L289">/package/Shaders/Utility.hlsl:289</a></td>
+<td>Sampler</td>
+<td>s</td>
+<td>0</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>s0</td>
+<td>Water</td>
+<td><code>SamplerState</code></td>
+<td>ReflectionSampler</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/package/Shaders/Water.hlsl#L257">/package/Shaders/Water.hlsl:257</a></td>
+<td>Sampler</td>
+<td>s</td>
+<td>0</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>s1</td>
+<td>Grass Lighting</td>
+<td><code>SamplerState</code></td>
+<td>SampShadowMaskSampler</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/features/Grass%20Lighting/Shaders/RunGrass.hlsl#L223">/features/Grass Lighting/Shaders/RunGrass.hlsl:223</a></td>
+<td>Sampler</td>
+<td>s</td>
+<td>1</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>s1</td>
+<td>Screen Space GI</td>
+<td><code>SamplerState</code></td>
+<td>samplerLinearClamp</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/features/Screen%20Space%20GI/Shaders/ScreenSpaceGI/common.hlsli#L95">/features/Screen Space GI/Shaders/ScreenSpaceGI/common.hlsli:95</a></td>
+<td>Sampler</td>
+<td>s</td>
+<td>1</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>s1</td>
+<td>Skylighting</td>
+<td><code>SamplerComparisonState</code></td>
+<td>ShadowSamplerPCF</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/features/Skylighting/Shaders/Skylighting/SkylightingCS.hlsl#L45">/features/Skylighting/Shaders/Skylighting/SkylightingCS.hlsl:45</a></td>
+<td>Sampler</td>
+<td>s</td>
+<td>1</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>s1</td>
+<td>BloodSplatter</td>
+<td><code>SamplerState</code></td>
+<td>SampBloodAlpha</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/package/Shaders/BloodSplatter.hlsl#L54">/package/Shaders/BloodSplatter.hlsl:54</a></td>
+<td>Sampler</td>
+<td>s</td>
+<td>1</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>s1</td>
+<td>Effect</td>
+<td><code>SamplerState</code></td>
+<td>SampNormalSampler</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/package/Shaders/Effect.hlsl#L407">/package/Shaders/Effect.hlsl:407</a></td>
+<td>Sampler</td>
+<td>s</td>
+<td>1</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>s1</td>
+<td>Lighting</td>
+<td><code>SamplerState</code></td>
+<td>SampTerrainParallaxSampler</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/package/Shaders/Lighting.hlsl#L424">/package/Shaders/Lighting.hlsl:424</a></td>
+<td>Sampler</td>
+<td>s</td>
+<td>1</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>s1</td>
+<td>RunGrass</td>
+<td><code>SamplerState</code></td>
+<td>SampShadowMaskSampler</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/package/Shaders/RunGrass.hlsl#L162">/package/Shaders/RunGrass.hlsl:162</a></td>
+<td>Sampler</td>
+<td>s</td>
+<td>1</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>s1</td>
+<td>Sky</td>
+<td><code>SamplerState</code></td>
+<td>SampBlendSampler</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/package/Shaders/Sky.hlsl#L133">/package/Shaders/Sky.hlsl:133</a></td>
+<td>Sampler</td>
+<td>s</td>
+<td>1</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>s1</td>
+<td>Utility</td>
+<td><code>SamplerState</code></td>
+<td>SampNormalSampler</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/package/Shaders/Utility.hlsl#L290">/package/Shaders/Utility.hlsl:290</a></td>
+<td>Sampler</td>
+<td>s</td>
+<td>1</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>s1</td>
+<td>Water</td>
+<td><code>SamplerState</code></td>
+<td>RefractionSampler</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/package/Shaders/Water.hlsl#L258">/package/Shaders/Water.hlsl:258</a></td>
+<td>Sampler</td>
+<td>s</td>
+<td>1</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>s2</td>
+<td>BloodSplatter</td>
+<td><code>SamplerState</code></td>
+<td>SampFlareColor</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/package/Shaders/BloodSplatter.hlsl#L55">/package/Shaders/BloodSplatter.hlsl:55</a></td>
+<td>Sampler</td>
+<td>s</td>
+<td>2</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>s2</td>
+<td>Effect</td>
+<td><code>SamplerState</code></td>
+<td>SampNoiseSampler</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/package/Shaders/Effect.hlsl#L408">/package/Shaders/Effect.hlsl:408</a></td>
+<td>Sampler</td>
+<td>s</td>
+<td>2</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>s2</td>
+<td>Sky</td>
+<td><code>SamplerState</code></td>
+<td>SampNoiseGradSampler</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/package/Shaders/Sky.hlsl#L134">/package/Shaders/Sky.hlsl:134</a></td>
+<td>Sampler</td>
+<td>s</td>
+<td>2</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>s2</td>
+<td>Utility</td>
+<td><code>SamplerState</code></td>
+<td>SampDepthSampler</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/package/Shaders/Utility.hlsl#L291">/package/Shaders/Utility.hlsl:291</a></td>
+<td>Sampler</td>
+<td>s</td>
+<td>2</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>s2</td>
+<td>Water</td>
+<td><code>SamplerState</code></td>
+<td>DisplacementSampler</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/package/Shaders/Water.hlsl#L259">/package/Shaders/Water.hlsl:259</a></td>
+<td>Sampler</td>
+<td>s</td>
+<td>2</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>s3</td>
+<td>BloodSplatter</td>
+<td><code>SamplerState</code></td>
+<td>SampFlareHDR</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/package/Shaders/BloodSplatter.hlsl#L56">/package/Shaders/BloodSplatter.hlsl:56</a></td>
+<td>Sampler</td>
+<td>s</td>
+<td>3</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>s3</td>
+<td>Effect</td>
+<td><code>SamplerState</code></td>
+<td>SampDepthSampler</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/package/Shaders/Effect.hlsl#L409">/package/Shaders/Effect.hlsl:409</a></td>
+<td>Sampler</td>
+<td>s</td>
+<td>3</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>s3</td>
+<td>Utility</td>
+<td><code>SamplerState</code></td>
+<td>SampShadowMapSampler</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/package/Shaders/Utility.hlsl#L292">/package/Shaders/Utility.hlsl:292</a></td>
+<td>Sampler</td>
+<td>s</td>
+<td>3</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>s3</td>
+<td>Water</td>
+<td><code>SamplerState</code></td>
+<td>CubeMapSampler</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/package/Shaders/Water.hlsl#L260">/package/Shaders/Water.hlsl:260</a></td>
+<td>Sampler</td>
+<td>s</td>
+<td>3</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>s4</td>
+<td>Effect</td>
+<td><code>SamplerState</code></td>
+<td>SampGrayscaleSampler</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/package/Shaders/Effect.hlsl#L410">/package/Shaders/Effect.hlsl:410</a></td>
+<td>Sampler</td>
+<td>s</td>
+<td>4</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>s4</td>
+<td>Utility</td>
+<td><code>SamplerComparisonState</code></td>
+<td>SampShadowMapSamplerComp</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/package/Shaders/Utility.hlsl#L293">/package/Shaders/Utility.hlsl:293</a></td>
+<td>Sampler</td>
+<td>s</td>
+<td>4</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>s4</td>
+<td>Water</td>
+<td><code>SamplerState</code></td>
+<td>Normals01Sampler</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/package/Shaders/Water.hlsl#L261">/package/Shaders/Water.hlsl:261</a></td>
+<td>Sampler</td>
+<td>s</td>
+<td>4</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>s5</td>
+<td>Utility</td>
+<td><code>SamplerState</code></td>
+<td>SampStencilSampler</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/package/Shaders/Utility.hlsl#L294">/package/Shaders/Utility.hlsl:294</a></td>
+<td>Sampler</td>
+<td>s</td>
+<td>5</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>s5</td>
+<td>Water</td>
+<td><code>SamplerState</code></td>
+<td>Normals02Sampler</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/package/Shaders/Water.hlsl#L262">/package/Shaders/Water.hlsl:262</a></td>
+<td>Sampler</td>
+<td>s</td>
+<td>5</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>s6</td>
+<td>Lighting</td>
+<td><code>SamplerState</code></td>
+<td>SampGlowSampler</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/package/Shaders/Lighting.hlsl#L465">/package/Shaders/Lighting.hlsl:465</a></td>
+<td>Sampler</td>
+<td>s</td>
+<td>6</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>s6</td>
+<td>Utility</td>
+<td><code>SamplerComparisonState</code></td>
+<td>SampFocusShadowMapSamplerComp</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/package/Shaders/Utility.hlsl#L295">/package/Shaders/Utility.hlsl:295</a></td>
+<td>Sampler</td>
+<td>s</td>
+<td>6</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>s6</td>
+<td>Water</td>
+<td><code>SamplerState</code></td>
+<td>Normals03Sampler</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/package/Shaders/Water.hlsl#L263">/package/Shaders/Water.hlsl:263</a></td>
+<td>Sampler</td>
+<td>s</td>
+<td>6</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>s7</td>
+<td>Utility</td>
+<td><code>SamplerState</code></td>
+<td>SampGrayscaleSampler</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/package/Shaders/Utility.hlsl#L296">/package/Shaders/Utility.hlsl:296</a></td>
+<td>Sampler</td>
+<td>s</td>
+<td>7</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>s7</td>
+<td>Water</td>
+<td><code>SamplerState</code></td>
+<td>DepthSampler</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/package/Shaders/Water.hlsl#L264">/package/Shaders/Water.hlsl:264</a></td>
+<td>Sampler</td>
+<td>s</td>
+<td>7</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>s8</td>
+<td>Water</td>
+<td><code>SamplerState</code></td>
+<td>FlowMapSampler</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/package/Shaders/Water.hlsl#L265">/package/Shaders/Water.hlsl:265</a></td>
+<td>Sampler</td>
+<td>s</td>
+<td>8</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>s9</td>
+<td>Lighting</td>
+<td><code>SamplerState</code></td>
+<td>SampBackLightSampler</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/package/Shaders/Lighting.hlsl#L473">/package/Shaders/Lighting.hlsl:473</a></td>
+<td>Sampler</td>
+<td>s</td>
+<td>9</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>s9</td>
+<td>Water</td>
+<td><code>SamplerState</code></td>
+<td>FlowMapNormalsSampler</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/package/Shaders/Water.hlsl#L266">/package/Shaders/Water.hlsl:266</a></td>
+<td>Sampler</td>
+<td>s</td>
+<td>9</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>s10</td>
+<td>Water</td>
+<td><code>SamplerState</code></td>
+<td>SSRReflectionSampler</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/package/Shaders/Water.hlsl#L267">/package/Shaders/Water.hlsl:267</a></td>
+<td>Sampler</td>
+<td>s</td>
+<td>10</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>s11</td>
+<td>Lighting</td>
+<td><code>SamplerState</code></td>
+<td>SampCharacterLightProjNoiseSampler</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/package/Shaders/Lighting.hlsl#L479">/package/Shaders/Lighting.hlsl:479</a></td>
+<td>Sampler</td>
+<td>s</td>
+<td>11</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>s11</td>
+<td>Water</td>
+<td><code>SamplerState</code></td>
+<td>RawSSRReflectionSampler</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/package/Shaders/Water.hlsl#L268">/package/Shaders/Water.hlsl:268</a></td>
+<td>Sampler</td>
+<td>s</td>
+<td>11</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>s12</td>
+<td>Lighting</td>
+<td><code>SamplerState</code></td>
+<td>SampRimSoftLightWorldMapOverlaySampler</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/package/Shaders/Lighting.hlsl#L480">/package/Shaders/Lighting.hlsl:480</a></td>
+<td>Sampler</td>
+<td>s</td>
+<td>12</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>s14</td>
+<td>Lighting</td>
+<td><code>SamplerState</code></td>
+<td>SampShadowMaskSampler</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/package/Shaders/Lighting.hlsl#L495">/package/Shaders/Lighting.hlsl:495</a></td>
+<td>Sampler</td>
+<td>s</td>
+<td>14</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>t0</td>
+<td>Dynamic Cubemaps</td>
+<td><code>TextureCube&lt;float4&gt;</code></td>
+<td>EnvCaptureTexture</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/features/Dynamic%20Cubemaps/Shaders/DynamicCubemaps/InferCubemapCS.hlsl#L1">/features/Dynamic Cubemaps/Shaders/DynamicCubemaps/InferCubemapCS.hlsl:1</a></td>
+<td>SRV</td>
+<td>t</td>
+<td>0</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>t0</td>
+<td>Dynamic Cubemaps</td>
+<td><code>TextureCube</code></td>
+<td>inputTexture</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/features/Dynamic%20Cubemaps/Shaders/DynamicCubemaps/SpecularIrradianceCS.hlsl#L19">/features/Dynamic Cubemaps/Shaders/DynamicCubemaps/SpecularIrradianceCS.hlsl:19</a></td>
+<td>SRV</td>
+<td>t</td>
+<td>0</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>t0</td>
+<td>Dynamic Cubemaps</td>
+<td><code>Texture2D&lt;float&gt;</code></td>
+<td>DepthTexture</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/features/Dynamic%20Cubemaps/Shaders/DynamicCubemaps/UpdateCubemapCS.hlsl#L7">/features/Dynamic Cubemaps/Shaders/DynamicCubemaps/UpdateCubemapCS.hlsl:7</a></td>
+<td>SRV</td>
+<td>t</td>
+<td>0</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>t0</td>
+<td>Grass Lighting</td>
+<td><code>Texture2D&lt;float4&gt;</code></td>
+<td>TexBaseSampler</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/features/Grass%20Lighting/Shaders/RunGrass.hlsl#L225">/features/Grass Lighting/Shaders/RunGrass.hlsl:225</a></td>
+<td>SRV</td>
+<td>t</td>
+<td>0</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>t0</td>
+<td>Light Limit Fix</td>
+<td><code>StructuredBuffer&lt;ClusterAABB&gt;</code></td>
+<td>clusters</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/features/Light%20Limit%20Fix/Shaders/LightLimitFix/ClusterCullingCS.hlsl#L11">/features/Light Limit Fix/Shaders/LightLimitFix/ClusterCullingCS.hlsl:11</a></td>
+<td>SRV</td>
+<td>t</td>
+<td>0</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>t0</td>
+<td>Screen-Space Shadows</td>
+<td><code>Texture2D&lt;unorm half&gt;</code></td>
+<td>DepthTexture</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/features/Screen-Space%20Shadows/Shaders/ScreenSpaceShadows/RaymarchCS.hlsl#L6">/features/Screen-Space Shadows/Shaders/ScreenSpaceShadows/RaymarchCS.hlsl:6</a></td>
+<td>SRV</td>
+<td>t</td>
+<td>0</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>t0</td>
+<td>Skylighting</td>
+<td><code>Texture2D&lt;unorm float&gt;</code></td>
+<td>DepthTexture</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/features/Skylighting/Shaders/Skylighting/SkylightingCS.hlsl#L6">/features/Skylighting/Shaders/Skylighting/SkylightingCS.hlsl:6</a></td>
+<td>SRV</td>
+<td>t</td>
+<td>0</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>t0</td>
+<td>Subsurface Scattering</td>
+<td><code>Texture2D&lt;float4&gt;</code></td>
+<td>ColorTexture</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/features/Subsurface%20Scattering/Shaders/SubsurfaceScattering/SeparableSSSCS.hlsl#L3">/features/Subsurface Scattering/Shaders/SubsurfaceScattering/SeparableSSSCS.hlsl:3</a></td>
+<td>SRV</td>
+<td>t</td>
+<td>0</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>t0</td>
+<td>AmbientCompositeCS</td>
+<td><code>Texture2D&lt;unorm half3&gt;</code></td>
+<td>AlbedoTexture</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/package/Shaders/AmbientCompositeCS.hlsl#L6">/package/Shaders/AmbientCompositeCS.hlsl:6</a></td>
+<td>SRV</td>
+<td>t</td>
+<td>0</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>t0</td>
+<td>BloodSplatter</td>
+<td><code>Texture2D&lt;float4&gt;</code></td>
+<td>TexBloodColor</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/package/Shaders/BloodSplatter.hlsl#L58">/package/Shaders/BloodSplatter.hlsl:58</a></td>
+<td>SRV</td>
+<td>t</td>
+<td>0</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>t0</td>
+<td>DeferredCompositeCS</td>
+<td><code>Texture2D&lt;half3&gt;</code></td>
+<td>SpecularTexture</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/package/Shaders/DeferredCompositeCS.hlsl#L8">/package/Shaders/DeferredCompositeCS.hlsl:8</a></td>
+<td>SRV</td>
+<td>t</td>
+<td>0</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>t0</td>
+<td>DistantTree</td>
+<td><code>Texture2D&lt;float4&gt;</code></td>
+<td>TexDiffuse</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/package/Shaders/DistantTree.hlsl#L120">/package/Shaders/DistantTree.hlsl:120</a></td>
+<td>SRV</td>
+<td>t</td>
+<td>0</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>t0</td>
+<td>Effect</td>
+<td><code>Texture2D&lt;float4&gt;</code></td>
+<td>TexBaseSampler</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/package/Shaders/Effect.hlsl#L412">/package/Shaders/Effect.hlsl:412</a></td>
+<td>SRV</td>
+<td>t</td>
+<td>0</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>t0</td>
+<td>Lighting</td>
+<td><code>Texture2D&lt;float4&gt;</code></td>
+<td>TexColorSampler</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/package/Shaders/Lighting.hlsl#L514">/package/Shaders/Lighting.hlsl:514</a></td>
+<td>SRV</td>
+<td>t</td>
+<td>0</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>t0</td>
+<td>Particle</td>
+<td><code>Texture2D&lt;float4&gt;</code></td>
+<td>TexSourceTexture</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/package/Shaders/Particle.hlsl#L196">/package/Shaders/Particle.hlsl:196</a></td>
+<td>SRV</td>
+<td>t</td>
+<td>0</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>t0</td>
+<td>RunGrass</td>
+<td><code>Texture2D&lt;float4&gt;</code></td>
+<td>TexBaseSampler</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/package/Shaders/RunGrass.hlsl#L164">/package/Shaders/RunGrass.hlsl:164</a></td>
+<td>SRV</td>
+<td>t</td>
+<td>0</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>t0</td>
+<td>Sky</td>
+<td><code>Texture2D&lt;float4&gt;</code></td>
+<td>TexBaseSampler</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/package/Shaders/Sky.hlsl#L136">/package/Shaders/Sky.hlsl:136</a></td>
+<td>SRV</td>
+<td>t</td>
+<td>0</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>t0</td>
+<td>Utility</td>
+<td><code>Texture2D&lt;float4&gt;</code></td>
+<td>TexBaseSampler</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/package/Shaders/Utility.hlsl#L298">/package/Shaders/Utility.hlsl:298</a></td>
+<td>SRV</td>
+<td>t</td>
+<td>0</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>t0</td>
+<td>ComputeNASData</td>
+<td><code>Texture2D&lt;float3&gt;</code></td>
+<td>InputTexture</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/package/Shaders/VariableRateShading/ComputeNASData.hlsl#L3">/package/Shaders/VariableRateShading/ComputeNASData.hlsl:3</a></td>
+<td>SRV</td>
+<td>t</td>
+<td>0</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>t0</td>
+<td>ComputeShadingRate</td>
+<td><code>Texture2D&lt;float4&gt;</code></td>
+<td>nasDataSurface</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/package/Shaders/VariableRateShading/ComputeShadingRate.hlsl#L2">/package/Shaders/VariableRateShading/ComputeShadingRate.hlsl:2</a></td>
+<td>SRV</td>
+<td>t</td>
+<td>0</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>t0</td>
+<td>Water</td>
+<td><code>Texture2D&lt;float4&gt;</code></td>
+<td>ReflectionTex</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/package/Shaders/Water.hlsl#L270">/package/Shaders/Water.hlsl:270</a></td>
+<td>SRV</td>
+<td>t</td>
+<td>0</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>t1</td>
+<td>Dynamic Cubemaps</td>
+<td><code>TextureCube&lt;float4&gt;</code></td>
+<td>ReflectionsTexture</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/features/Dynamic%20Cubemaps/Shaders/DynamicCubemaps/InferCubemapCS.hlsl#L2">/features/Dynamic Cubemaps/Shaders/DynamicCubemaps/InferCubemapCS.hlsl:2</a></td>
+<td>SRV</td>
+<td>t</td>
+<td>1</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>t1</td>
+<td>Dynamic Cubemaps</td>
+<td><code>Texture2D&lt;float4&gt;</code></td>
+<td>ColorTexture</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/features/Dynamic%20Cubemaps/Shaders/DynamicCubemaps/UpdateCubemapCS.hlsl#L8">/features/Dynamic Cubemaps/Shaders/DynamicCubemaps/UpdateCubemapCS.hlsl:8</a></td>
+<td>SRV</td>
+<td>t</td>
+<td>1</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>t1</td>
+<td>Grass Lighting</td>
+<td><code>Texture2D&lt;float4&gt;</code></td>
+<td>TexShadowMaskSampler</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/features/Grass%20Lighting/Shaders/RunGrass.hlsl#L226">/features/Grass Lighting/Shaders/RunGrass.hlsl:226</a></td>
+<td>SRV</td>
+<td>t</td>
+<td>1</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>t1</td>
+<td>Light Limit Fix</td>
+<td><code>StructuredBuffer&lt;StructuredLight&gt;</code></td>
+<td>lights</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/features/Light%20Limit%20Fix/Shaders/LightLimitFix/ClusterCullingCS.hlsl#L12">/features/Light Limit Fix/Shaders/LightLimitFix/ClusterCullingCS.hlsl:12</a></td>
+<td>SRV</td>
+<td>t</td>
+<td>1</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>t1</td>
+<td>Skylighting</td>
+<td><code>Texture2DArray&lt;unorm float&gt;</code></td>
+<td>TexShadowMapSampler</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/features/Skylighting/Shaders/Skylighting/SkylightingCS.hlsl#L29">/features/Skylighting/Shaders/Skylighting/SkylightingCS.hlsl:29</a></td>
+<td>SRV</td>
+<td>t</td>
+<td>1</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>t1</td>
+<td>Subsurface Scattering</td>
+<td><code>Texture2D&lt;float4&gt;</code></td>
+<td>DepthTexture</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/features/Subsurface%20Scattering/Shaders/SubsurfaceScattering/SeparableSSSCS.hlsl#L4">/features/Subsurface Scattering/Shaders/SubsurfaceScattering/SeparableSSSCS.hlsl:4</a></td>
+<td>SRV</td>
+<td>t</td>
+<td>1</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>t1</td>
+<td>AmbientCompositeCS</td>
+<td><code>Texture2D&lt;unorm half3&gt;</code></td>
+<td>NormalRoughnessTexture</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/package/Shaders/AmbientCompositeCS.hlsl#L7">/package/Shaders/AmbientCompositeCS.hlsl:7</a></td>
+<td>SRV</td>
+<td>t</td>
+<td>1</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>t1</td>
+<td>BloodSplatter</td>
+<td><code>Texture2D&lt;float4&gt;</code></td>
+<td>TexBloodAlpha</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/package/Shaders/BloodSplatter.hlsl#L59">/package/Shaders/BloodSplatter.hlsl:59</a></td>
+<td>SRV</td>
+<td>t</td>
+<td>1</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>t1</td>
+<td>DeferredCompositeCS</td>
+<td><code>Texture2D&lt;unorm half3&gt;</code></td>
+<td>AlbedoTexture</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/package/Shaders/DeferredCompositeCS.hlsl#L9">/package/Shaders/DeferredCompositeCS.hlsl:9</a></td>
+<td>SRV</td>
+<td>t</td>
+<td>1</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>t1</td>
+<td>Effect</td>
+<td><code>Texture2D&lt;float4&gt;</code></td>
+<td>TexNormalSampler</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/package/Shaders/Effect.hlsl#L413">/package/Shaders/Effect.hlsl:413</a></td>
+<td>SRV</td>
+<td>t</td>
+<td>1</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>t1</td>
+<td>Lighting</td>
+<td><code>Texture2D&lt;float4&gt;</code></td>
+<td>TexNormalSampler</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/package/Shaders/Lighting.hlsl#L515">/package/Shaders/Lighting.hlsl:515</a></td>
+<td>SRV</td>
+<td>t</td>
+<td>1</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>t1</td>
+<td>RunGrass</td>
+<td><code>Texture2D&lt;float4&gt;</code></td>
+<td>TexShadowMaskSampler</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/package/Shaders/RunGrass.hlsl#L165">/package/Shaders/RunGrass.hlsl:165</a></td>
+<td>SRV</td>
+<td>t</td>
+<td>1</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>t1</td>
+<td>Sky</td>
+<td><code>Texture2D&lt;float4&gt;</code></td>
+<td>TexBlendSampler</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/package/Shaders/Sky.hlsl#L137">/package/Shaders/Sky.hlsl:137</a></td>
+<td>SRV</td>
+<td>t</td>
+<td>1</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>t1</td>
+<td>Utility</td>
+<td><code>Texture2D&lt;float4&gt;</code></td>
+<td>TexNormalSampler</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/package/Shaders/Utility.hlsl#L299">/package/Shaders/Utility.hlsl:299</a></td>
+<td>SRV</td>
+<td>t</td>
+<td>1</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>t1</td>
+<td>ComputeNASData</td>
+<td><code>Texture2D&lt;float2&gt;</code></td>
+<td>InputTextureMotionVectors</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/package/Shaders/VariableRateShading/ComputeNASData.hlsl#L4">/package/Shaders/VariableRateShading/ComputeNASData.hlsl:4</a></td>
+<td>SRV</td>
+<td>t</td>
+<td>1</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>t1</td>
+<td>Water</td>
+<td><code>Texture2D&lt;float4&gt;</code></td>
+<td>RefractionTex</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/package/Shaders/Water.hlsl#L271">/package/Shaders/Water.hlsl:271</a></td>
+<td>SRV</td>
+<td>t</td>
+<td>1</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>t2</td>
+<td>Dynamic Cubemaps</td>
+<td><code>TextureCube&lt;float4&gt;</code></td>
+<td>DefaultCubemap</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/features/Dynamic%20Cubemaps/Shaders/DynamicCubemaps/InferCubemapCS.hlsl#L3">/features/Dynamic Cubemaps/Shaders/DynamicCubemaps/InferCubemapCS.hlsl:3</a></td>
+<td>SRV</td>
+<td>t</td>
+<td>2</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>t2</td>
+<td>Skylighting</td>
+<td><code>StructuredBuffer&lt;PerGeometry&gt;</code></td>
+<td>perShadow</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/features/Skylighting/Shaders/Skylighting/SkylightingCS.hlsl#L30">/features/Skylighting/Shaders/Skylighting/SkylightingCS.hlsl:30</a></td>
+<td>SRV</td>
+<td>t</td>
+<td>2</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>t2</td>
+<td>Subsurface Scattering</td>
+<td><code>Texture2D&lt;float4&gt;</code></td>
+<td>MaskTexture</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/features/Subsurface%20Scattering/Shaders/SubsurfaceScattering/SeparableSSSCS.hlsl#L5">/features/Subsurface Scattering/Shaders/SubsurfaceScattering/SeparableSSSCS.hlsl:5</a></td>
+<td>SRV</td>
+<td>t</td>
+<td>2</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>t2</td>
+<td>BloodSplatter</td>
+<td><code>Texture2D&lt;float4&gt;</code></td>
+<td>TexFlareColor</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/package/Shaders/BloodSplatter.hlsl#L60">/package/Shaders/BloodSplatter.hlsl:60</a></td>
+<td>SRV</td>
+<td>t</td>
+<td>2</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>t2</td>
+<td>DeferredCompositeCS</td>
+<td><code>Texture2D&lt;unorm half3&gt;</code></td>
+<td>NormalRoughnessTexture</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/package/Shaders/DeferredCompositeCS.hlsl#L10">/package/Shaders/DeferredCompositeCS.hlsl:10</a></td>
+<td>SRV</td>
+<td>t</td>
+<td>2</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>t2</td>
+<td>Effect</td>
+<td><code>Texture2D&lt;float4&gt;</code></td>
+<td>TexNoiseSampler</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/package/Shaders/Effect.hlsl#L414">/package/Shaders/Effect.hlsl:414</a></td>
+<td>SRV</td>
+<td>t</td>
+<td>2</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>t2</td>
+<td>Sky</td>
+<td><code>Texture2D&lt;float4&gt;</code></td>
+<td>TexNoiseGradSampler</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/package/Shaders/Sky.hlsl#L138">/package/Shaders/Sky.hlsl:138</a></td>
+<td>SRV</td>
+<td>t</td>
+<td>2</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>t2</td>
+<td>Utility</td>
+<td><code>Texture2D&lt;float4&gt;</code></td>
+<td>TexDepthSampler</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/package/Shaders/Utility.hlsl#L300">/package/Shaders/Utility.hlsl:300</a></td>
+<td>SRV</td>
+<td>t</td>
+<td>2</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>t2</td>
+<td>Water</td>
+<td><code>Texture2D&lt;float4&gt;</code></td>
+<td>DisplacementTex</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/package/Shaders/Water.hlsl#L272">/package/Shaders/Water.hlsl:272</a></td>
+<td>SRV</td>
+<td>t</td>
+<td>2</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>t3</td>
+<td>Skylighting</td>
+<td><code>Texture2DArray&lt;float4&gt;</code></td>
+<td>BlueNoise</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/features/Skylighting/Shaders/Skylighting/SkylightingCS.hlsl#L31">/features/Skylighting/Shaders/Skylighting/SkylightingCS.hlsl:31</a></td>
+<td>SRV</td>
+<td>t</td>
+<td>3</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>t3</td>
+<td>BloodSplatter</td>
+<td><code>Texture2D&lt;float4&gt;</code></td>
+<td>TexFlareHDR</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/package/Shaders/BloodSplatter.hlsl#L61">/package/Shaders/BloodSplatter.hlsl:61</a></td>
+<td>SRV</td>
+<td>t</td>
+<td>3</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>t3</td>
+<td>DeferredCompositeCS</td>
+<td><code>Texture2D&lt;unorm half3&gt;</code></td>
+<td>MasksTexture</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/package/Shaders/DeferredCompositeCS.hlsl#L11">/package/Shaders/DeferredCompositeCS.hlsl:11</a></td>
+<td>SRV</td>
+<td>t</td>
+<td>3</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>t3</td>
+<td>Effect</td>
+<td><code>Texture2D&lt;float4&gt;</code></td>
+<td>TexDepthSamplerEffect</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/package/Shaders/Effect.hlsl#L415">/package/Shaders/Effect.hlsl:415</a></td>
+<td>SRV</td>
+<td>t</td>
+<td>3</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>t3</td>
+<td>Utility</td>
+<td><code>Texture2DArray&lt;float4&gt;</code></td>
+<td>TexShadowMapSampler</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/package/Shaders/Utility.hlsl#L301">/package/Shaders/Utility.hlsl:301</a></td>
+<td>SRV</td>
+<td>t</td>
+<td>3</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>t3</td>
+<td>Water</td>
+<td><code>TextureCube&lt;float4&gt;</code></td>
+<td>CubeMapTex</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/package/Shaders/Water.hlsl#L273">/package/Shaders/Water.hlsl:273</a></td>
+<td>SRV</td>
+<td>t</td>
+<td>3</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>t4</td>
+<td>Skylighting</td>
+<td><code>Texture2D&lt;unorm float&gt;</code></td>
+<td>OcclusionMapSampler</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/features/Skylighting/Shaders/Skylighting/SkylightingCS.hlsl#L32">/features/Skylighting/Shaders/Skylighting/SkylightingCS.hlsl:32</a></td>
+<td>SRV</td>
+<td>t</td>
+<td>4</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>t4</td>
+<td>DeferredCompositeCS</td>
+<td><code>Texture2D&lt;unorm half3&gt;</code></td>
+<td>Masks2Texture</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/package/Shaders/DeferredCompositeCS.hlsl#L12">/package/Shaders/DeferredCompositeCS.hlsl:12</a></td>
+<td>SRV</td>
+<td>t</td>
+<td>4</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>t4</td>
+<td>Effect</td>
+<td><code>Texture2D&lt;float4&gt;</code></td>
+<td>TexGrayscaleSampler</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/package/Shaders/Effect.hlsl#L416">/package/Shaders/Effect.hlsl:416</a></td>
+<td>SRV</td>
+<td>t</td>
+<td>4</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>t4</td>
+<td>Utility</td>
+<td><code>Texture2DArray&lt;float4&gt;</code></td>
+<td>TexShadowMapSamplerComp</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/package/Shaders/Utility.hlsl#L302">/package/Shaders/Utility.hlsl:302</a></td>
+<td>SRV</td>
+<td>t</td>
+<td>4</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>t4</td>
+<td>Water</td>
+<td><code>Texture2D&lt;float4&gt;</code></td>
+<td>Normals01Tex</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/package/Shaders/Water.hlsl#L274">/package/Shaders/Water.hlsl:274</a></td>
+<td>SRV</td>
+<td>t</td>
+<td>4</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>t5</td>
+<td>Skylighting</td>
+<td><code>Texture2D&lt;unorm half3&gt;</code></td>
+<td>NormalRoughnessTexture</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/features/Skylighting/Shaders/Skylighting/SkylightingCS.hlsl#L33">/features/Skylighting/Shaders/Skylighting/SkylightingCS.hlsl:33</a></td>
+<td>SRV</td>
+<td>t</td>
+<td>5</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>t5</td>
+<td>Utility</td>
+<td><code>Texture2D&lt;uint4&gt;</code></td>
+<td>TexStencilSampler</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/package/Shaders/Utility.hlsl#L303">/package/Shaders/Utility.hlsl:303</a></td>
+<td>SRV</td>
+<td>t</td>
+<td>5</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>t5</td>
+<td>Water</td>
+<td><code>Texture2D&lt;float4&gt;</code></td>
+<td>Normals02Tex</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/package/Shaders/Water.hlsl#L275">/package/Shaders/Water.hlsl:275</a></td>
+<td>SRV</td>
+<td>t</td>
+<td>5</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>t6</td>
+<td>Lighting</td>
+<td><code>Texture2D&lt;float4&gt;</code></td>
+<td>TexGlowSampler</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/package/Shaders/Lighting.hlsl#L534">/package/Shaders/Lighting.hlsl:534</a></td>
+<td>SRV</td>
+<td>t</td>
+<td>6</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>t6</td>
+<td>Utility</td>
+<td><code>Texture2DArray&lt;float4&gt;</code></td>
+<td>TexFocusShadowMapSamplerComp</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/package/Shaders/Utility.hlsl#L304">/package/Shaders/Utility.hlsl:304</a></td>
+<td>SRV</td>
+<td>t</td>
+<td>6</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>t6</td>
+<td>Water</td>
+<td><code>Texture2D&lt;float4&gt;</code></td>
+<td>Normals03Tex</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/package/Shaders/Water.hlsl#L276">/package/Shaders/Water.hlsl:276</a></td>
+<td>SRV</td>
+<td>t</td>
+<td>6</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>t7</td>
+<td>Utility</td>
+<td><code>Texture2D&lt;float4&gt;</code></td>
+<td>TexGrayscaleSampler</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/package/Shaders/Utility.hlsl#L305">/package/Shaders/Utility.hlsl:305</a></td>
+<td>SRV</td>
+<td>t</td>
+<td>7</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>t7</td>
+<td>Water</td>
+<td><code>Texture2D&lt;float4&gt;</code></td>
+<td>DepthTex</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/package/Shaders/Water.hlsl#L277">/package/Shaders/Water.hlsl:277</a></td>
+<td>SRV</td>
+<td>t</td>
+<td>7</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>t8</td>
+<td>Water</td>
+<td><code>Texture2D&lt;float4&gt;</code></td>
+<td>FlowMapTex</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/package/Shaders/Water.hlsl#L278">/package/Shaders/Water.hlsl:278</a></td>
+<td>SRV</td>
+<td>t</td>
+<td>8</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>t9</td>
+<td>Lighting</td>
+<td><code>Texture2D&lt;float4&gt;</code></td>
+<td>TexBackLightSampler</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/package/Shaders/Lighting.hlsl#L542">/package/Shaders/Lighting.hlsl:542</a></td>
+<td>SRV</td>
+<td>t</td>
+<td>9</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>t9</td>
+<td>Water</td>
+<td><code>Texture2D&lt;float4&gt;</code></td>
+<td>FlowMapNormalsTex</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/package/Shaders/Water.hlsl#L279">/package/Shaders/Water.hlsl:279</a></td>
+<td>SRV</td>
+<td>t</td>
+<td>9</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>t10</td>
+<td>Water</td>
+<td><code>Texture2D&lt;float4&gt;</code></td>
+<td>SSRReflectionTex</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/package/Shaders/Water.hlsl#L280">/package/Shaders/Water.hlsl:280</a></td>
+<td>SRV</td>
+<td>t</td>
+<td>10</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>t11</td>
+<td>Lighting</td>
+<td><code>Texture2D&lt;float4&gt;</code></td>
+<td>TexCharacterLightProjNoiseSampler</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/package/Shaders/Lighting.hlsl#L548">/package/Shaders/Lighting.hlsl:548</a></td>
+<td>SRV</td>
+<td>t</td>
+<td>11</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>t11</td>
+<td>Water</td>
+<td><code>Texture2D&lt;float4&gt;</code></td>
+<td>RawSSRReflectionTex</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/package/Shaders/Water.hlsl#L281">/package/Shaders/Water.hlsl:281</a></td>
+<td>SRV</td>
+<td>t</td>
+<td>11</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>t12</td>
+<td>Lighting</td>
+<td><code>Texture2D&lt;float4&gt;</code></td>
+<td>TexRimSoftLightWorldMapOverlaySampler</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/package/Shaders/Lighting.hlsl#L549">/package/Shaders/Lighting.hlsl:549</a></td>
+<td>SRV</td>
+<td>t</td>
+<td>12</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>t14</td>
+<td>Lighting</td>
+<td><code>Texture2D&lt;float4&gt;</code></td>
+<td>TexShadowMaskSampler</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/package/Shaders/Lighting.hlsl#L564">/package/Shaders/Lighting.hlsl:564</a></td>
+<td>SRV</td>
+<td>t</td>
+<td>14</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>t17</td>
+<td>Screen-Space Shadows</td>
+<td><code>Texture2D&lt;unorm half&gt;</code></td>
+<td>ScreenSpaceShadowsTexture</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/features/Screen-Space%20Shadows/Shaders/ScreenSpaceShadows/ScreenSpaceShadows.hlsli#L1">/features/Screen-Space Shadows/Shaders/ScreenSpaceShadows/ScreenSpaceShadows.hlsli:1</a></td>
+<td>SRV</td>
+<td>t</td>
+<td>17</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>t20</td>
+<td>SharedData</td>
+<td><code>Texture2D&lt;float4&gt;</code></td>
+<td>TexDepthSampler</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/package/Shaders/Common/SharedData.hlsli#L131">/package/Shaders/Common/SharedData.hlsli:131</a></td>
+<td>SRV</td>
+<td>t</td>
+<td>20</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>t20</td>
+<td>DistantTree</td>
+<td><code>Texture2D&lt;float4&gt;</code></td>
+<td>TexDepthSampler</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/package/Shaders/DistantTree.hlsl#L131">/package/Shaders/DistantTree.hlsl:131</a></td>
+<td>SRV</td>
+<td>t</td>
+<td>20</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>t20</td>
+<td>Effect</td>
+<td><code>Texture2D&lt;float4&gt;</code></td>
+<td>TexDepthSampler</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/package/Shaders/Effect.hlsl#L131">/package/Shaders/Effect.hlsl:131</a></td>
+<td>SRV</td>
+<td>t</td>
+<td>20</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>t20</td>
+<td>Lighting</td>
+<td><code>Texture2D&lt;float4&gt;</code></td>
+<td>TexDepthSampler</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/package/Shaders/Lighting.hlsl#L131">/package/Shaders/Lighting.hlsl:131</a></td>
+<td>SRV</td>
+<td>t</td>
+<td>20</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>t20</td>
+<td>RunGrass</td>
+<td><code>Texture2D&lt;float4&gt;</code></td>
+<td>TexDepthSampler</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/package/Shaders/RunGrass.hlsl#L131">/package/Shaders/RunGrass.hlsl:131</a></td>
+<td>SRV</td>
+<td>t</td>
+<td>20</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>t20</td>
+<td>Sky</td>
+<td><code>Texture2D&lt;float4&gt;</code></td>
+<td>TexDepthSampler</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/package/Shaders/Sky.hlsl#L131">/package/Shaders/Sky.hlsl:131</a></td>
+<td>SRV</td>
+<td>t</td>
+<td>20</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>t20</td>
+<td>Water</td>
+<td><code>Texture2D&lt;float4&gt;</code></td>
+<td>TexDepthSampler</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/package/Shaders/Water.hlsl#L131">/package/Shaders/Water.hlsl:131</a></td>
+<td>SRV</td>
+<td>t</td>
+<td>20</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>t25</td>
+<td>ShadowSampling</td>
+<td><code>Texture2DArray&lt;float4&gt;</code></td>
+<td>TexShadowMapSampler</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/package/Shaders/Common/ShadowSampling.hlsli#L21">/package/Shaders/Common/ShadowSampling.hlsli:21</a></td>
+<td>SRV</td>
+<td>t</td>
+<td>25</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>t25</td>
+<td>Water</td>
+<td><code>Texture2DArray&lt;float4&gt;</code></td>
+<td>TexShadowMapSampler</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/package/Shaders/Water.hlsl#L21">/package/Shaders/Water.hlsl:21</a></td>
+<td>SRV</td>
+<td>t</td>
+<td>25</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>t26</td>
+<td>ShadowSampling</td>
+<td><code>StructuredBuffer&lt;PerGeometry&gt;</code></td>
+<td>perShadow</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/package/Shaders/Common/ShadowSampling.hlsli#L22">/package/Shaders/Common/ShadowSampling.hlsli:22</a></td>
+<td>SRV</td>
+<td>t</td>
+<td>26</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>t26</td>
+<td>Water</td>
+<td><code>StructuredBuffer&lt;PerGeometry&gt;</code></td>
+<td>perShadow</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/package/Shaders/Water.hlsl#L22">/package/Shaders/Water.hlsl:22</a></td>
+<td>SRV</td>
+<td>t</td>
+<td>26</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>t27</td>
+<td>Cloud Shadows</td>
+<td><code>TextureCube&lt;float4&gt;</code></td>
+<td>cloudShadowsTexture</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/features/Cloud%20Shadows/Shaders/CloudShadows/CloudShadows.hlsli#L2">/features/Cloud Shadows/Shaders/CloudShadows/CloudShadows.hlsli:2</a></td>
+<td>SRV</td>
+<td>t</td>
+<td>27</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>t29</td>
+<td>Skylighting</td>
+<td><code>Texture2D&lt;unorm float&gt;</code></td>
+<td>OcclusionMapSampler</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/features/Skylighting/Shaders/Skylighting/Skylighting.hlsli#L2">/features/Skylighting/Shaders/Skylighting/Skylighting.hlsli:2</a></td>
+<td>SRV</td>
+<td>t</td>
+<td>29</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>t36</td>
+<td>Subsurface Scattering</td>
+<td><code>StructuredBuffer&lt;PerPassSSS&gt;</code></td>
+<td>perPassSSS</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/features/Subsurface%20Scattering/Shaders/SubsurfaceScattering/SubsurfaceScattering.hlsli#L8">/features/Subsurface Scattering/Shaders/SubsurfaceScattering/SubsurfaceScattering.hlsli:8</a></td>
+<td>SRV</td>
+<td>t</td>
+<td>36</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>t40</td>
+<td>Terrain Occlusion</td>
+<td><code>Texture2D&lt;float&gt;</code></td>
+<td>TexTerraOcc</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/features/Terrain%20Occlusion/Shaders/TerrainOcclusion/TerrainOcclusion.hlsli#L1">/features/Terrain Occlusion/Shaders/TerrainOcclusion/TerrainOcclusion.hlsli:1</a></td>
+<td>SRV</td>
+<td>t</td>
+<td>40</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>t41</td>
+<td>Terrain Occlusion</td>
+<td><code>Texture2D&lt;float&gt;</code></td>
+<td>TexNormalisedHeight</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/features/Terrain%20Occlusion/Shaders/TerrainOcclusion/TerrainOcclusion.hlsli#L2">/features/Terrain Occlusion/Shaders/TerrainOcclusion/TerrainOcclusion.hlsli:2</a></td>
+<td>SRV</td>
+<td>t</td>
+<td>41</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>t42</td>
+<td>Terrain Occlusion</td>
+<td><code>Texture2D&lt;float2&gt;</code></td>
+<td>TexShadowHeight</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/features/Terrain%20Occlusion/Shaders/TerrainOcclusion/TerrainOcclusion.hlsli#L3">/features/Terrain Occlusion/Shaders/TerrainOcclusion/TerrainOcclusion.hlsli:3</a></td>
+<td>SRV</td>
+<td>t</td>
+<td>42</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>t50</td>
+<td>Light Limit Fix</td>
+<td><code>StructuredBuffer&lt;StructuredLight&gt;</code></td>
+<td>lights</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/features/Light%20Limit%20Fix/Shaders/LightLimitFix/LightLimitFix.hlsli#L27">/features/Light Limit Fix/Shaders/LightLimitFix/LightLimitFix.hlsli:27</a></td>
+<td>SRV</td>
+<td>t</td>
+<td>50</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>t51</td>
+<td>Light Limit Fix</td>
+<td><code>StructuredBuffer&lt;uint&gt;</code></td>
+<td>lightList</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/features/Light%20Limit%20Fix/Shaders/LightLimitFix/LightLimitFix.hlsli#L28">/features/Light Limit Fix/Shaders/LightLimitFix/LightLimitFix.hlsli:28</a></td>
+<td>SRV</td>
+<td>t</td>
+<td>51</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>t52</td>
+<td>Light Limit Fix</td>
+<td><code>StructuredBuffer&lt;LightGrid&gt;</code></td>
+<td>lightGrid</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/features/Light%20Limit%20Fix/Shaders/LightLimitFix/LightLimitFix.hlsli#L29">/features/Light Limit Fix/Shaders/LightLimitFix/LightLimitFix.hlsli:29</a></td>
+<td>SRV</td>
+<td>t</td>
+<td>52</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>t53</td>
+<td>Light Limit Fix</td>
+<td><code>StructuredBuffer&lt;StrictLightData&gt;</code></td>
+<td>strictLights</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/features/Light%20Limit%20Fix/Shaders/LightLimitFix/LightLimitFix.hlsli#L30">/features/Light Limit Fix/Shaders/LightLimitFix/LightLimitFix.hlsli:30</a></td>
+<td>SRV</td>
+<td>t</td>
+<td>53</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>t64</td>
+<td>Dynamic Cubemaps</td>
+<td><code>TextureCube&lt;float4&gt;</code></td>
+<td>specularTexture</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/features/Dynamic%20Cubemaps/Shaders/DynamicCubemaps/DynamicCubemaps.hlsli#L1">/features/Dynamic Cubemaps/Shaders/DynamicCubemaps/DynamicCubemaps.hlsli:1</a></td>
+<td>SRV</td>
+<td>t</td>
+<td>64</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>t70</td>
+<td>Water Caustics</td>
+<td><code>Texture2D&lt;float4&gt;</code></td>
+<td>WaterCaustics</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/features/Water%20Caustics/Shaders/WaterCaustics/WaterCaustics.hlsli#L7">/features/Water Caustics/Shaders/WaterCaustics/WaterCaustics.hlsli:7</a></td>
+<td>SRV</td>
+<td>t</td>
+<td>70</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>t71</td>
+<td>Water Caustics</td>
+<td><code>StructuredBuffer&lt;PerPassWaterCaustics&gt;</code></td>
+<td>perPassWaterCaustics</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/features/Water%20Caustics/Shaders/WaterCaustics/WaterCaustics.hlsli#L8">/features/Water Caustics/Shaders/WaterCaustics/WaterCaustics.hlsli:8</a></td>
+<td>SRV</td>
+<td>t</td>
+<td>71</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>t72</td>
+<td>Water Parallax</td>
+<td><code>StructuredBuffer&lt;PerPassWaterParallax&gt;</code></td>
+<td>perPassWaterParallax</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/features/Water%20Parallax/Shaders/WaterParallax/WaterParallax.hlsli#L14">/features/Water Parallax/Shaders/WaterParallax/WaterParallax.hlsli:14</a></td>
+<td>SRV</td>
+<td>t</td>
+<td>72</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>u0</td>
+<td>Dynamic Cubemaps</td>
+<td><code>RWTexture2DArray&lt;float4&gt;</code></td>
+<td>EnvInferredTexture</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/features/Dynamic%20Cubemaps/Shaders/DynamicCubemaps/InferCubemapCS.hlsl#L5">/features/Dynamic Cubemaps/Shaders/DynamicCubemaps/InferCubemapCS.hlsl:5</a></td>
+<td>UAV</td>
+<td>u</td>
+<td>0</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>u0</td>
+<td>Dynamic Cubemaps</td>
+<td><code>RWTexture2DArray&lt;float4&gt;</code></td>
+<td>outputTexture</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/features/Dynamic%20Cubemaps/Shaders/DynamicCubemaps/SpecularIrradianceCS.hlsl#L20">/features/Dynamic Cubemaps/Shaders/DynamicCubemaps/SpecularIrradianceCS.hlsl:20</a></td>
+<td>UAV</td>
+<td>u</td>
+<td>0</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>u0</td>
+<td>Dynamic Cubemaps</td>
+<td><code>RWTexture2DArray&lt;float4&gt;</code></td>
+<td>DynamicCubemap</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/features/Dynamic%20Cubemaps/Shaders/DynamicCubemaps/UpdateCubemapCS.hlsl#L3">/features/Dynamic Cubemaps/Shaders/DynamicCubemaps/UpdateCubemapCS.hlsl:3</a></td>
+<td>UAV</td>
+<td>u</td>
+<td>0</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>u0</td>
+<td>Light Limit Fix</td>
+<td><code>RWStructuredBuffer&lt;ClusterAABB&gt;</code></td>
+<td>clusters</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/features/Light%20Limit%20Fix/Shaders/LightLimitFix/ClusterBuildingCS.hlsl#L24">/features/Light Limit Fix/Shaders/LightLimitFix/ClusterBuildingCS.hlsl:24</a></td>
+<td>UAV</td>
+<td>u</td>
+<td>0</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>u0</td>
+<td>Light Limit Fix</td>
+<td><code>RWStructuredBuffer&lt;uint&gt;</code></td>
+<td>lightIndexCounter</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/features/Light%20Limit%20Fix/Shaders/LightLimitFix/ClusterCullingCS.hlsl#L14">/features/Light Limit Fix/Shaders/LightLimitFix/ClusterCullingCS.hlsl:14</a></td>
+<td>UAV</td>
+<td>u</td>
+<td>0</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>u0</td>
+<td>Screen-Space Shadows</td>
+<td><code>RWTexture2D&lt;unorm half&gt;</code></td>
+<td>OutputTexture</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/features/Screen-Space%20Shadows/Shaders/ScreenSpaceShadows/RaymarchCS.hlsl#L7">/features/Screen-Space Shadows/Shaders/ScreenSpaceShadows/RaymarchCS.hlsl:7</a></td>
+<td>UAV</td>
+<td>u</td>
+<td>0</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>u0</td>
+<td>Skylighting</td>
+<td><code>RWTexture2D&lt;half2&gt;</code></td>
+<td>SkylightingTextureRW</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/features/Skylighting/Shaders/Skylighting/SkylightingCS.hlsl#L35">/features/Skylighting/Shaders/Skylighting/SkylightingCS.hlsl:35</a></td>
+<td>UAV</td>
+<td>u</td>
+<td>0</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>u0</td>
+<td>Subsurface Scattering</td>
+<td><code>RWTexture2D&lt;float4&gt;</code></td>
+<td>SSSRW</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/features/Subsurface%20Scattering/Shaders/SubsurfaceScattering/SeparableSSSCS.hlsl#L1">/features/Subsurface Scattering/Shaders/SubsurfaceScattering/SeparableSSSCS.hlsl:1</a></td>
+<td>UAV</td>
+<td>u</td>
+<td>0</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>u0</td>
+<td>AmbientCompositeCS</td>
+<td><code>RWTexture2D&lt;half3&gt;</code></td>
+<td>MainRW</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/package/Shaders/AmbientCompositeCS.hlsl#L13">/package/Shaders/AmbientCompositeCS.hlsl:13</a></td>
+<td>UAV</td>
+<td>u</td>
+<td>0</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>u0</td>
+<td>DeferredCompositeCS</td>
+<td><code>RWTexture2D&lt;half3&gt;</code></td>
+<td>MainRW</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/package/Shaders/DeferredCompositeCS.hlsl#L14">/package/Shaders/DeferredCompositeCS.hlsl:14</a></td>
+<td>UAV</td>
+<td>u</td>
+<td>0</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>u0</td>
+<td>CopyShadowData</td>
+<td><code>RWStructuredBuffer&lt;PerGeometry&gt;</code></td>
+<td>copiedData</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/package/Shaders/ShadowTest/CopyShadowData.hlsl#L95">/package/Shaders/ShadowTest/CopyShadowData.hlsl:95</a></td>
+<td>UAV</td>
+<td>u</td>
+<td>0</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>u0</td>
+<td>ComputeNASData</td>
+<td><code>RWTexture2D&lt;float4&gt;</code></td>
+<td>OutputTexture</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/package/Shaders/VariableRateShading/ComputeNASData.hlsl#L5">/package/Shaders/VariableRateShading/ComputeNASData.hlsl:5</a></td>
+<td>UAV</td>
+<td>u</td>
+<td>0</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>u0</td>
+<td>ComputeShadingRate</td>
+<td><code>RWTexture2D&lt;uint&gt;</code></td>
+<td>vrsSurface</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/package/Shaders/VariableRateShading/ComputeShadingRate.hlsl#L1">/package/Shaders/VariableRateShading/ComputeShadingRate.hlsl:1</a></td>
+<td>UAV</td>
+<td>u</td>
+<td>0</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>u1</td>
+<td>Dynamic Cubemaps</td>
+<td><code>RWTexture2DArray&lt;float4&gt;</code></td>
+<td>DynamicCubemapRaw</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/features/Dynamic%20Cubemaps/Shaders/DynamicCubemaps/UpdateCubemapCS.hlsl#L4">/features/Dynamic Cubemaps/Shaders/DynamicCubemaps/UpdateCubemapCS.hlsl:4</a></td>
+<td>UAV</td>
+<td>u</td>
+<td>1</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>u1</td>
+<td>Light Limit Fix</td>
+<td><code>RWStructuredBuffer&lt;uint&gt;</code></td>
+<td>lightIndexList</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/features/Light%20Limit%20Fix/Shaders/LightLimitFix/ClusterCullingCS.hlsl#L15">/features/Light Limit Fix/Shaders/LightLimitFix/ClusterCullingCS.hlsl:15</a></td>
+<td>UAV</td>
+<td>u</td>
+<td>1</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>u1</td>
+<td>DeferredCompositeCS</td>
+<td><code>RWTexture2D&lt;half4&gt;</code></td>
+<td>NormalTAAMaskSpecularMaskRW</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/package/Shaders/DeferredCompositeCS.hlsl#L15">/package/Shaders/DeferredCompositeCS.hlsl:15</a></td>
+<td>UAV</td>
+<td>u</td>
+<td>1</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>u2</td>
+<td>Dynamic Cubemaps</td>
+<td><code>RWTexture2DArray&lt;float4&gt;</code></td>
+<td>DynamicCubemapPosition</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/features/Dynamic%20Cubemaps/Shaders/DynamicCubemaps/UpdateCubemapCS.hlsl#L5">/features/Dynamic Cubemaps/Shaders/DynamicCubemaps/UpdateCubemapCS.hlsl:5</a></td>
+<td>UAV</td>
+<td>u</td>
+<td>2</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>u2</td>
+<td>Light Limit Fix</td>
+<td><code>RWStructuredBuffer&lt;LightGrid&gt;</code></td>
+<td>lightGrid</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/features/Light%20Limit%20Fix/Shaders/LightLimitFix/ClusterCullingCS.hlsl#L16">/features/Light Limit Fix/Shaders/LightLimitFix/ClusterCullingCS.hlsl:16</a></td>
+<td>UAV</td>
+<td>u</td>
+<td>2</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>u2</td>
+<td>DeferredCompositeCS</td>
+<td><code>RWTexture2D&lt;half2&gt;</code></td>
+<td>SnowParametersRW</td>
+<td><a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/package/Shaders/DeferredCompositeCS.hlsl#L16">/package/Shaders/DeferredCompositeCS.hlsl:16</a></td>
+<td>UAV</td>
+<td>u</td>
+<td>2</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href=".." class="md-footer__link md-footer__link--prev" aria-label="Previous: Home">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Home
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../Developers/" class="md-footer__link md-footer__link--next" aria-label="Next: Developers">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Developers
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://www.nexusmods.com/skyrimspecialedition/mods/86492" target="_blank" rel="noopener" title="www.nexusmods.com" class="md-social__link">
+      <?xml version="1.0" encoding="utf-8"?><!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
+<svg width="800px" height="800px" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
+   <circle cx="512" cy="512" r="512" style="fill:#da8e35"/>
+   <path d="M765.2 609.1c-3.1-10.1-7.6-19.8-12.9-29.3-3.1-5.7-6.9-11.3-11-17.3 6.9-30.8 7.6-62.9 1.9-94.1-2.8-14.8-6.9-29.3-12.6-43.4 2.8-7.6 5.3-15.1 7.6-22.7 2.8-10.1 4.4-21.1 5-32.7.3-5.4.3-10.7 0-15.7-.3-14.5-4.7-24.9-10.4-32.1-1.6-2.5-3.8-4.7-6-6.6l-4.4-4.4c-5.3-5-11-10.1-16.7-14.8-12.9-10.7-25.2-19.2-37.1-26.1-5.4-3.1-12.9-7.2-21.7-10.1-5-1.6-9.4-2.5-14.2-3.1-1.9-.3-4.1-.3-6-.3-9.1 0-16.1 2.2-19.2 3.5h-.3c-14.2 4.4-27.7 11.6-42.5 21.7-4.4-.9-8.8-1.9-13.2-2.5-18.6-3.1-38.1-4.1-57.3-2.5-18.3 1.3-36.5 5-53.5 10.7-7.2 2.5-14.2 5-20.8 7.9-10.1-3.8-21.4-7.2-34-9.1-8.2-1.3-16.7-1.9-24.5-1.9h-.3c-4.1 0-8.2.3-12 .6-12 .3-20.8 4.4-27.1 9.1-2.8 1.9-5.3 4.1-7.6 6.6l-4.4 4.4c-5 5-9.8 10.7-14.5 16.4-10.4 12.9-18.9 24.9-25.8 36.8-3.1 5.4-7.2 12.6-10.1 21.4-1.6 4.7-2.5 9.1-3.1 13.5-1.9 12 1.3 21.4 2.5 25.2v.3c6 18.3 15.4 34 23 45-.9 3.8-1.6 7.9-2.2 12-2.8 19.2-3.5 38.7-1.6 57.9 1.9 18.3 5.7 36.5 11.3 52.9 1.3 3.1 2.2 6.3 3.5 9.1-.3.9-.6 1.9-.9 2.8-4.1 11-9.4 25.5-11.6 41.9-1.3 7.9-1.6 16.1-1.6 23.6 0 3.8.3 7.2.6 10.7.3 10.7 3.8 18.9 7.9 25.2 2.2 3.5 5 6.6 8.2 9.4l4.4 4.4c5.3 5 11 10.1 16.7 14.8 12.9 10.7 25.2 19.2 37.1 26.1 5.3 3.1 12.9 7.2 21.7 10.1 5 1.6 9.4 2.5 14.2 3.1 1.9.3 4.1.3 6 .3 9.1 0 16.1-2.5 19.2-2.2h.3c15.1-5 29.6-12.6 45.9-24.2 2.2.3 4.7.9 6.9 1.3 18.9 3.5 38.4 5 57.6 3.8 18.6-.9 37.1-4.4 54.8-9.8 6-1.9 12.3-4.1 18.3-6.6 11.3 4.4 23.9 8.8 38.1 11 8.8 1.6 17.3 2.2 25.8 2.2h.3c4.1 0 8.2-.3 12-.6 12-.6 20.8-4.4 27.1-9.1 2.8-2.2 5.4-4.4 7.6-6.9l3.8-3.8c10.1-10.7 19.8-22.3 28.3-34.3 7.9-11 16.7-24.2 22.3-40.3 1.6-4.7 2.8-8.8 3.5-13.2 1.8-12.8-1.1-22.2-2.3-26zm-72.9-35.9c-13.4-13.8-36.2-30.8-79-49.5l11.6-22-89.1 23.9L568 608l12.9-24.5c11 5 19.2 10.1 27.4 16.1 12.6 8.8 24.2 18.6 34 29 23.8 24.1 36.3 48.8 33.1 69.2l-.4.2-1.6.3c-11 1.3-23 .6-35.2-2.2h-.3c-13.2-3.5-26.3-8.4-39.5-14.5-25.9 13.2-55.3 20.8-86.4 20.8-21.4 0-41.9-3.6-61.1-10.1 13.5-13.6 29.9-36.3 47.9-77.4l22 11.6-23.9-89.1-82.8 31.6 24.9 13.5c-5 11-10.1 19.2-16.1 27.4-8.8 12.6-18.6 24.2-29 34-24.1 23.8-48.8 36.3-69.2 33.1l-.4-.4-.3-1.6c-1.3-11-.6-23 2.2-35.2v-.3c3.7-14 9-27.9 15.6-41.9-13-25.7-20.3-54.8-20.3-85.6 0-19.9 3.1-39.1 8.8-57.1 13.3 13.9 36.2 31.2 79.7 50.2l-11.6 22 89.1-23.9-31.8-83.4-13.3 25.2c-11-5-19.2-10.1-27.4-16.1-12.6-8.8-24.2-18.6-34-29-23.6-24-36.2-48.5-33.1-68.8l.7-.7 1.6-.3c11-1.3 23-.6 35.2 2.2h.3c11.7 3.1 23.4 7.3 35.1 12.5C448 330 479 321.6 512 321.6c21.7 0 42.5 3.7 61.9 10.3-14 13.2-31.4 36.1-50.6 80l-22-11.6 23.9 89.1 83.1-31.5-25.2-13.5c5-11 10.1-19.2 16.1-27.4 8.8-12.6 18.6-24.2 29-34 24.1-23.8 48.8-36.3 69.2-33.1l.4.4.3 1.6c1.3 11 .6 23-2.2 35.2v.3c-3.4 12.8-8.2 25.7-14 38.5 13.2 25.9 20.6 55.1 20.6 86.2-.1 21.3-3.7 41.9-10.2 61.1z" style="fill:#fff"/>
+</svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://discord.gg/nkrQybAsyy" target="_blank" rel="noopener" title="discord.gg" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M524.531 69.836a1.5 1.5 0 0 0-.764-.7A485 485 0 0 0 404.081 32.03a1.82 1.82 0 0 0-1.923.91 338 338 0 0 0-14.9 30.6 447.9 447.9 0 0 0-134.426 0 310 310 0 0 0-15.135-30.6 1.89 1.89 0 0 0-1.924-.91 483.7 483.7 0 0 0-119.688 37.107 1.7 1.7 0 0 0-.788.676C39.068 183.651 18.186 294.69 28.43 404.354a2.02 2.02 0 0 0 .765 1.375 487.7 487.7 0 0 0 146.825 74.189 1.9 1.9 0 0 0 2.063-.676A348 348 0 0 0 208.12 430.4a1.86 1.86 0 0 0-1.019-2.588 321 321 0 0 1-45.868-21.853 1.885 1.885 0 0 1-.185-3.126 251 251 0 0 0 9.109-7.137 1.82 1.82 0 0 1 1.9-.256c96.229 43.917 200.41 43.917 295.5 0a1.81 1.81 0 0 1 1.924.233 235 235 0 0 0 9.132 7.16 1.884 1.884 0 0 1-.162 3.126 301.4 301.4 0 0 1-45.89 21.83 1.875 1.875 0 0 0-1 2.611 391 391 0 0 0 30.014 48.815 1.86 1.86 0 0 0 2.063.7A486 486 0 0 0 610.7 405.729a1.88 1.88 0 0 0 .765-1.352c12.264-126.783-20.532-236.912-86.934-334.541M222.491 337.58c-28.972 0-52.844-26.587-52.844-59.239s23.409-59.241 52.844-59.241c29.665 0 53.306 26.82 52.843 59.239 0 32.654-23.41 59.241-52.843 59.241m195.38 0c-28.971 0-52.843-26.587-52.843-59.239s23.409-59.241 52.843-59.241c29.667 0 53.307 26.82 52.844 59.239 0 32.654-23.177 59.241-52.844 59.241"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.instant", "navigation.footer", "header.autohide", "content.tabs.link"], "search": "../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.83f73b43.min.js"></script>
+      
+    
+  </body>
+</html>
