@@ -1,0 +1,1626 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://fenrirkey.github.io/0.6/Changelog/">
+      
+      
+        <link rel="prev" href="../VR-Developer-Notes/">
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.48">
+    
+    
+      
+        <title>Changelog - Community Shaders</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.6f8fc17f.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i%7CRed+Hat+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Open Sans";--md-code-font:"Red Hat Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+      
+        <meta  property="og:type"  content="website" >
+      
+        <meta  property="og:title"  content="Changelog - Community Shaders" >
+      
+        <meta  property="og:description"  content="None" >
+      
+        <meta  property="og:image"  content="https://fenrirkey.github.io/0.6/assets/images/social/Changelog/index.png" >
+      
+        <meta  property="og:image:type"  content="image/png" >
+      
+        <meta  property="og:image:width"  content="1200" >
+      
+        <meta  property="og:image:height"  content="630" >
+      
+        <meta  property="og:url"  content="https://fenrirkey.github.io/0.6/Changelog/" >
+      
+        <meta  name="twitter:card"  content="summary_large_image" >
+      
+        <meta  name="twitter:title"  content="Changelog - Community Shaders" >
+      
+        <meta  name="twitter:description"  content="None" >
+      
+        <meta  name="twitter:image"  content="https://fenrirkey.github.io/0.6/assets/images/social/Changelog/index.png" >
+      
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#skyrim-community-shaders" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <div data-md-color-scheme="default" data-md-component="outdated" hidden>
+        
+      </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Community Shaders" class="md-header__button md-logo" aria-label="Community Shaders" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Community Shaders
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Changelog
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14.3 16-.7-2h-3.2l-.7 2H7.8L11 7h2l3.2 9zM20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12zm-9.15 3.96h2.3L12 9z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="blue"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="blue-grey" data-md-color-accent="grey"  aria-label="Switch to system preference"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to system preference" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/fenrirkey/fenrirkey.github.io" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    fenrirkey/fenrirkey.github.io
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Community Shaders" class="md-nav__button md-logo" aria-label="Community Shaders" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Community Shaders
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/fenrirkey/fenrirkey.github.io" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    fenrirkey/fenrirkey.github.io
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Buffers/" class="md-nav__link">
+        
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M1.371 5.476 11.943 0l10.686 5.476-10.686 5.495zm3.36 4.81 7.212 3.547 7.288-3.547 3.398 1.655-10.686 5.202L1.371 11.94zm0 6.171 7.212 3.911 7.288-3.91 3.398 1.815L11.943 24 1.371 18.273z"/></svg>
+  
+  <span class="md-ellipsis">
+    Buffers
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Developers/" class="md-nav__link">
+        
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M22 9V7h-2V5a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-2h2v-2h-2v-2h2v-2h-2V9zm-4 10H4V5h14zM6 13h5v4H6zm6-6h4v3h-4zM6 7h5v5H6zm6 4h4v6h-4z"/></svg>
+  
+  <span class="md-ellipsis">
+    Developers
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Dynamic-Cubemap-Creator/" class="md-nav__link">
+        
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 16.5c0 .38-.21.71-.53.88l-7.9 4.44c-.16.12-.36.18-.57.18s-.41-.06-.57-.18l-7.9-4.44A.99.99 0 0 1 3 16.5v-9c0-.38.21-.71.53-.88l7.9-4.44c.16-.12.36-.18.57-.18s.41.06.57.18l7.9 4.44c.32.17.53.5.53.88zM12 4.15 6.04 7.5 12 10.85l5.96-3.35z"/></svg>
+  
+  <span class="md-ellipsis">
+    Dynamic Cubemap Creator
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../FAQ/" class="md-nav__link">
+        
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 19h3v3h-3zm2-17c5.35.22 7.68 5.62 4.5 9.67-.83 1-2.17 1.66-2.83 2.5C13 15 13 16 13 17h-3c0-1.67 0-3.08.67-4.08.66-1 2-1.59 2.83-2.25C15.92 8.43 15.32 5.26 12 5a3 3 0 0 0-3 3H6a6 6 0 0 1 6-6"/></svg>
+  
+  <span class="md-ellipsis">
+    FAQ
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Light-Placer/" class="md-nav__link">
+        
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 2.38 1.19 4.47 3 5.74V17a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-2.26c1.81-1.27 3-3.36 3-5.74a7 7 0 0 0-7-7M9 21a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1v-1H9z"/></svg>
+  
+  <span class="md-ellipsis">
+    Light Placer
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Particle-Lights/" class="md-nav__link">
+        
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15 14v2a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1v-2a5 5 0 1 1 6 0m-1 4h-4v1a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1m-7 0v-1H5v1a1 1 0 0 0 1 1h1.17A2.9 2.9 0 0 1 7 19m-2-9a6.8 6.8 0 0 1 .68-3A4 4 0 0 0 4 14.45V16a1 1 0 0 0 1 1h2v-2.12A6.92 6.92 0 0 1 5 10m12 8v1a2.9 2.9 0 0 1-.17 1H18a1 1 0 0 0 1-1v-1m-.68-11a6.8 6.8 0 0 1 .68 3 6.92 6.92 0 0 1-2 4.88V17h2a1 1 0 0 0 1-1v-1.55A4 4 0 0 0 18.32 7"/></svg>
+  
+  <span class="md-ellipsis">
+    Particle Lights
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Shader-Constant-Buffers/" class="md-nav__link">
+        
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5.75 0A2.75 2.75 0 0 0 3 2.75v1a.75.75 0 0 0 1.5 0v-1c0-.69.56-1.25 1.25-1.25h1a.75.75 0 0 0 0-1.5zm4 0a.75.75 0 0 0 0 1.5h4.5a.75.75 0 0 0 0-1.5zm7.5 0a.75.75 0 0 0 0 1.5h2.25v2.25a.75.75 0 0 0 1.5 0v-3a.75.75 0 0 0-.75-.75zM4.5 6.5a.75.75 0 0 0-1.5 0v3.75a.75.75 0 0 0 1.5 0zm16.5 0a.75.75 0 0 0-1.5 0v3.75a.75.75 0 0 0 1.5 0zM4.5 13.25a.75.75 0 0 0-1.5 0v5.5a3.25 3.25 0 0 0 1.95 2.98.75.75 0 1 0 .6-1.375A1.75 1.75 0 0 1 4.5 18.75V18A1.5 1.5 0 0 1 6 16.5h.75a.75.75 0 0 0 0-1.5H6c-.546 0-1.059.146-1.5.401zm16.5 0a.75.75 0 0 0-1.5 0V15h-2.25a.75.75 0 0 0 0 1.5h2.25v4h-5.25a.75.75 0 0 0 0 1.5h6a.75.75 0 0 0 .75-.75zM9.75 15a.75.75 0 0 0 0 1.5h4.5a.75.75 0 0 0 0-1.5zm-2.353 8.461A.25.25 0 0 1 7 23.26v-5.01a.25.25 0 0 1 .25-.25h5a.25.25 0 0 1 .25.25v5.01a.25.25 0 0 1-.397.201l-2.206-1.604a.25.25 0 0 0-.294 0z"/></svg>
+  
+  <span class="md-ellipsis">
+    Shader Constant Buffers
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../True-PBR/" class="md-nav__link">
+        
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-2 .9-2 2v16a2 2 0 0 0 2 2h16c1.11 0 2-.89 2-2V4a2 2 0 0 0-2-2M4 6l2-2h4.9L4 10.9zm0 7.7L13.7 4h4.9L4 18.6zM20 18l-2 2h-4.9l6.9-6.9zm0-7.7L10.3 20H5.4L20 5.4z"/></svg>
+  
+  <span class="md-ellipsis">
+    True PBR
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../VR-Developer-Notes/" class="md-nav__link">
+        
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M576 64H64C28.7 64 0 92.7 0 128v256c0 35.3 28.7 64 64 64h120.4c24.2 0 46.4-13.7 57.2-35.4l32-64c8.8-17.5 26.7-28.6 46.3-28.6s37.5 11.1 46.3 28.6l32 64c10.8 21.7 33 35.4 57.2 35.4H576c35.3 0 64-28.7 64-64V128c0-35.3-28.7-64-64-64M96 240a64 64 0 1 1 128 0 64 64 0 1 1-128 0m384-64a64 64 0 1 1 0 128 64 64 0 1 1 0-128"/></svg>
+  
+  <span class="md-ellipsis">
+    VR Developer Notes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="./" class="md-nav__link md-nav__link--active">
+              
+  
+  <span class="md-ellipsis">
+    Changelog
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_11">
+            <span class="md-nav__icon md-icon"></span>
+            Changelog
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#skyrim-community-shaders" class="md-nav__link">
+    <span class="md-ellipsis">
+      Skyrim Community Shaders
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Skyrim Community Shaders">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#v112-2024-12-12" class="md-nav__link">
+    <span class="md-ellipsis">
+      v1.1.2 (2024-12-12)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#v111-2024-12-11" class="md-nav__link">
+    <span class="md-ellipsis">
+      v1.1.1 (2024-12-11)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#v110-2024-12-11" class="md-nav__link">
+    <span class="md-ellipsis">
+      v1.1.0 (2024-12-11)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#v102-2024-12-07" class="md-nav__link">
+    <span class="md-ellipsis">
+      v1.0.2 (2024-12-07)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#v101-2024-12-07" class="md-nav__link">
+    <span class="md-ellipsis">
+      v1.0.1 (2024-12-07)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#v100-2024-12-07" class="md-nav__link">
+    <span class="md-ellipsis">
+      v1.0.0 (2024-12-07)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="v1.0.0 (2024-12-07)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#v087-2024-03-30" class="md-nav__link">
+    <span class="md-ellipsis">
+      v0.8.7 (2024-03-30)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#v080-2024-03-15" class="md-nav__link">
+    <span class="md-ellipsis">
+      v0.8.0 (2024-03-15)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#v074-2023-12-23" class="md-nav__link">
+    <span class="md-ellipsis">
+      v0.7.4 (2023-12-23)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  <h1>Changelog</h1>
+
+<h2 id="skyrim-community-shaders">Skyrim Community Shaders<a class="headerlink" href="#skyrim-community-shaders" title="Permanent link">&para;</a></h2>
+<h3 id="v112-2024-12-12"><a href="https://github.com/doodlum/skyrim-community-shaders/releases/tag/v1.1.2">v1.1.2</a> (2024-12-12)<a class="headerlink" href="#v112-2024-12-12" title="Permanent link">&para;</a></h3>
+<p><strong>Merged Pull Requests</strong></p>
+<ul>
+<li>Chore: hide ssgi slice &amp; step, blur with minimum weight (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/852">#852</a>) by <a href="https://github.com/Pentalimbed">Pentalimbed</a></li>
+<li>Fix(VR): fix vr offset and bump address lib dependency (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/851">#851</a>) by <a href="https://github.com/FlayaN">FlayaN</a></li>
+<li>Fix: detect lack of d3d11.1 support, TAA sharpening (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/850">#850</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Fix: clean up ssgi blur and upsample, change presets (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/849">#849</a>) by <a href="https://github.com/Pentalimbed">Pentalimbed</a></li>
+<li>Feat: add quarter res, default settings for minimal noise (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/848">#848</a>) by <a href="https://github.com/Pentalimbed">Pentalimbed</a></li>
+</ul>
+<p><a href="https://github.com/doodlum/skyrim-community-shaders/compare/v1.1.1...v1.1.2"><code>Full Changelog</code></a> | <a href="https://github.com/doodlum/skyrim-community-shaders/compare/v1.1.1...v1.1.2.diff"><code>Diff</code></a> | <a href="https://github.com/doodlum/skyrim-community-shaders/compare/v1.1.1...v1.1.2.patch"><code>Patch</code></a></p>
+<h3 id="v111-2024-12-11"><a href="https://github.com/doodlum/skyrim-community-shaders/releases/tag/v1.1.1">v1.1.1</a> (2024-12-11)<a class="headerlink" href="#v111-2024-12-11" title="Permanent link">&para;</a></h3>
+<p><strong>Merged Pull Requests</strong></p>
+<ul>
+<li>Feat: add saturation slider for ssgi il, remove backface mult (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/845">#845</a>) by <a href="https://github.com/Pentalimbed">Pentalimbed</a></li>
+<li>Fix: change default settings to prevent ssgi feedback loop (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/844">#844</a>) by <a href="https://github.com/Pentalimbed">Pentalimbed</a></li>
+</ul>
+<p><a href="https://github.com/doodlum/skyrim-community-shaders/compare/v1.1.0...v1.1.1"><code>Full Changelog</code></a> | <a href="https://github.com/doodlum/skyrim-community-shaders/compare/v1.1.0...v1.1.1.diff"><code>Diff</code></a> | <a href="https://github.com/doodlum/skyrim-community-shaders/compare/v1.1.0...v1.1.1.patch"><code>Patch</code></a></p>
+<h3 id="v110-2024-12-11"><a href="https://github.com/doodlum/skyrim-community-shaders/releases/tag/v1.1.0">v1.1.0</a> (2024-12-11)<a class="headerlink" href="#v110-2024-12-11" title="Permanent link">&para;</a></h3>
+<p><strong>Closed Issues</strong></p>
+<ul>
+<li>Crash on Windows 7. (<a href="https://github.com/doodlum/skyrim-community-shaders/issues/835">#835</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>PrivateProfileRedirector VR 0.6.2 doesnt work in VR (crash on startup) and latest CS is not compatible with 0.6.1 (<a href="https://github.com/doodlum/skyrim-community-shaders/issues/826">#826</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+</ul>
+<p><strong>Merged Pull Requests</strong></p>
+<ul>
+<li>Fix: fix terrain shadows ctd when texture name has less than 10 fields (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/841">#841</a>) by <a href="https://github.com/Pentalimbed">Pentalimbed</a></li>
+<li>Chore: bump ssgi ver to 3.0, disable vanilla ao (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/840">#840</a>) by <a href="https://github.com/Pentalimbed">Pentalimbed</a></li>
+<li>Fix: fix clearing the wrong ssao buffer (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/839">#839</a>) by <a href="https://github.com/Pentalimbed">Pentalimbed</a></li>
+<li>Fix: fix ssgi vr consistency and foliage glowing (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/838">#838</a>) by <a href="https://github.com/Pentalimbed">Pentalimbed</a></li>
+<li>Feat: refactor ssgi to use spherical harmonics (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/837">#837</a>) by <a href="https://github.com/Pentalimbed">Pentalimbed</a></li>
+<li>Fix: skylighting alpha testing (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/836">#836</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+</ul>
+<p><a href="https://github.com/doodlum/skyrim-community-shaders/compare/v1.0.2...v1.1.0"><code>Full Changelog</code></a> | <a href="https://github.com/doodlum/skyrim-community-shaders/compare/v1.0.2...v1.1.0.diff"><code>Diff</code></a> | <a href="https://github.com/doodlum/skyrim-community-shaders/compare/v1.0.2...v1.1.0.patch"><code>Patch</code></a></p>
+<h3 id="v102-2024-12-07"><a href="https://github.com/doodlum/skyrim-community-shaders/releases/tag/v1.0.2">v1.0.2</a> (2024-12-07)<a class="headerlink" href="#v102-2024-12-07" title="Permanent link">&para;</a></h3>
+<p><strong>Merged Pull Requests</strong></p>
+<ul>
+<li>Fix: fix terrain shadow ctd (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/834">#834</a>) by <a href="https://github.com/Pentalimbed">Pentalimbed</a></li>
+<li>Docs: fix terrain shadows spelling error (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/833">#833</a>) by <a href="https://github.com/Pentalimbed">Pentalimbed</a></li>
+<li>Fix: gog detection (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/832">#832</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+</ul>
+<p><a href="https://github.com/doodlum/skyrim-community-shaders/compare/v1.0.1...v1.0.2"><code>Full Changelog</code></a> | <a href="https://github.com/doodlum/skyrim-community-shaders/compare/v1.0.1...v1.0.2.diff"><code>Diff</code></a> | <a href="https://github.com/doodlum/skyrim-community-shaders/compare/v1.0.1...v1.0.2.patch"><code>Patch</code></a></p>
+<h3 id="v101-2024-12-07"><a href="https://github.com/doodlum/skyrim-community-shaders/releases/tag/v1.0.1">v1.0.1</a> (2024-12-07)<a class="headerlink" href="#v101-2024-12-07" title="Permanent link">&para;</a></h3>
+<p><strong>Merged Pull Requests</strong></p>
+<ul>
+<li>Fix: llf strict light array padding (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/831">#831</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Fix: finish LLF refactor (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/830">#830</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Build: remove frame generation from core (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/829">#829</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Fix: fix skylighting cb padding (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/828">#828</a>) by <a href="https://github.com/Pentalimbed">Pentalimbed</a></li>
+<li>Fix: fix terrain shadow texture slot and add dlc heightmaps (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/827">#827</a>) by <a href="https://github.com/Pentalimbed">Pentalimbed</a></li>
+</ul>
+<p><a href="https://github.com/doodlum/skyrim-community-shaders/compare/v1.0.0...v1.0.1"><code>Full Changelog</code></a> | <a href="https://github.com/doodlum/skyrim-community-shaders/compare/v1.0.0...v1.0.1.diff"><code>Diff</code></a> | <a href="https://github.com/doodlum/skyrim-community-shaders/compare/v1.0.0...v1.0.1.patch"><code>Patch</code></a></p>
+<h3 id="v100-2024-12-07"><a href="https://github.com/doodlum/skyrim-community-shaders/releases/tag/v1.0.0">v1.0.0</a> (2024-12-07)<a class="headerlink" href="#v100-2024-12-07" title="Permanent link">&para;</a></h3>
+<p><strong>Closed Issues</strong></p>
+<ul>
+<li>VR broken raindrops (<a href="https://github.com/doodlum/skyrim-community-shaders/issues/753">#753</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>VR water refraction is incorrect (<a href="https://github.com/doodlum/skyrim-community-shaders/issues/732">#732</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>VR eye desync bugs with CS 1.0.0 FC3 (<a href="https://github.com/doodlum/skyrim-community-shaders/issues/711">#711</a>) by <a href="https://github.com/FlayaN">FlayaN</a></li>
+<li>Using PBR landscape textures leads to CTD in VR (<a href="https://github.com/doodlum/skyrim-community-shaders/issues/707">#707</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Glitches with particles (<a href="https://github.com/doodlum/skyrim-community-shaders/issues/693">#693</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Incorrect alpha on sky statics (<a href="https://github.com/doodlum/skyrim-community-shaders/issues/688">#688</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Bake ApplyHuePreservingShoulder to a LUT (<a href="https://github.com/doodlum/skyrim-community-shaders/issues/686">#686</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Motion Vector smudge on sky and some other stuff when antialiasing used in VR and any build since skylight tests, including the latest ones. (<a href="https://github.com/doodlum/skyrim-community-shaders/issues/684">#684</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>CTD before main menu loads on Windows 11 (<a href="https://github.com/doodlum/skyrim-community-shaders/issues/683">#683</a>) by <a href="https://github.com/pacman2109">pacman2109</a></li>
+<li>Effect shader define NIF flags (<a href="https://github.com/doodlum/skyrim-community-shaders/issues/681">#681</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>WetnessEffectsSettings padding (<a href="https://github.com/doodlum/skyrim-community-shaders/issues/680">#680</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>VL shader for VR test builds ghosting "issue" (<a href="https://github.com/doodlum/skyrim-community-shaders/issues/676">#676</a>) by <a href="https://github.com/FlayaN">FlayaN</a></li>
+<li>Ssgi: ctd when toggling specular/diffuse rapidly (<a href="https://github.com/doodlum/skyrim-community-shaders/issues/655">#655</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>DEV (2024-10-12) Test  Failed to compile Pixel shader Lighting (<a href="https://github.com/doodlum/skyrim-community-shaders/issues/648">#648</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>DEV (2024-10-12) Test fails to load on 1.6.640 AE (<a href="https://github.com/doodlum/skyrim-community-shaders/issues/636">#636</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>DEV (2024-10-12) Test fails to load on 1.5.97 SE (<a href="https://github.com/doodlum/skyrim-community-shaders/issues/634">#634</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Releases after 0.7.3 are causing CTD when starting the game (<a href="https://github.com/doodlum/skyrim-community-shaders/issues/627">#627</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>CommunityShaders.json is generated blank with PrivateProfilereDirector &lt; 0.6.2 (<a href="https://github.com/doodlum/skyrim-community-shaders/issues/624">#624</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Renderdoc CTDs or hangs while debugging (<a href="https://github.com/doodlum/skyrim-community-shaders/issues/606">#606</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Llf: broken in VR due to eye desync (<a href="https://github.com/doodlum/skyrim-community-shaders/issues/601">#601</a>) by <a href="https://github.com/alandtse">alandtse</a></li>
+<li>PD Upscaler causes CTD in VR on game start due to streamline hook (<a href="https://github.com/doodlum/skyrim-community-shaders/issues/600">#600</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>PBR terrain / landscapes not working (<a href="https://github.com/doodlum/skyrim-community-shaders/issues/583">#583</a>) by <a href="https://github.com/matm-git">matm-git</a></li>
+<li>DEV (2024-10-1) Test not loading on GOG 1.6.659.0 (<a href="https://github.com/doodlum/skyrim-community-shaders/issues/581">#581</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Particle shader breaks precipitation occlusion on recent test builds (<a href="https://github.com/doodlum/skyrim-community-shaders/issues/558">#558</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>CommunityShaders.json is generated blank, thus most shaders are not compiled (<a href="https://github.com/doodlum/skyrim-community-shaders/issues/536">#536</a>) by <a href="https://github.com/FlayaN">FlayaN</a></li>
+<li>Fix the shader compile warnings ffs (<a href="https://github.com/doodlum/skyrim-community-shaders/issues/534">#534</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Objects flicker under skylighting shadow (<a href="https://github.com/doodlum/skyrim-community-shaders/issues/530">#530</a>) by <a href="https://github.com/FlayaN">FlayaN</a></li>
+<li>Allow for generic non-fatal errors to be displayed similar to ShaderCache compilation. (<a href="https://github.com/doodlum/skyrim-community-shaders/issues/519">#519</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>SSR causes dark/transparent water below the compass (<a href="https://github.com/doodlum/skyrim-community-shaders/issues/510">#510</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Failed to compile shader: Data/Shaders/OBBOcclusionTesting.hlsl does not exist (<a href="https://github.com/doodlum/skyrim-community-shaders/issues/481">#481</a>) by <a href="https://github.com/alandtse">alandtse</a></li>
+<li>Unknown variable name BlurOffsets (<a href="https://github.com/doodlum/skyrim-community-shaders/issues/480">#480</a>) by <a href="https://github.com/alandtse">alandtse</a></li>
+<li>VR: Upscaler Issues (<a href="https://github.com/doodlum/skyrim-community-shaders/issues/476">#476</a>) by <a href="https://github.com/FlayaN">FlayaN</a></li>
+<li>CTD happening when encountering certain meshes (<a href="https://github.com/doodlum/skyrim-community-shaders/issues/473">#473</a>) by <a href="https://github.com/alandtse">alandtse</a></li>
+<li>PBR texture LandscapeDirt02 is not picked (<a href="https://github.com/doodlum/skyrim-community-shaders/issues/470">#470</a>) by <a href="https://github.com/alandtse">alandtse</a></li>
+<li>Shader compilation maximized system resources causing crashes and unresponsiveness of the system (<a href="https://github.com/doodlum/skyrim-community-shaders/issues/469">#469</a>) by <a href="https://github.com/alandtse">alandtse</a></li>
+<li>VR: Night sky issue (<a href="https://github.com/doodlum/skyrim-community-shaders/issues/468">#468</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>VR: Utility Shaders weird shadows with upscaler enabled (<a href="https://github.com/doodlum/skyrim-community-shaders/issues/446">#446</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Issues before next release (<a href="https://github.com/doodlum/skyrim-community-shaders/issues/402">#402</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>VR issues in dev (<a href="https://github.com/doodlum/skyrim-community-shaders/issues/331">#331</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>CPM/Enviroment mapped meshes and projecteddiffuse bug using single pass snow shader in VR (<a href="https://github.com/doodlum/skyrim-community-shaders/issues/329">#329</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Raindrop fx shows up in loading screen and inventory (<a href="https://github.com/doodlum/skyrim-community-shaders/issues/311">#311</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Util::CompilerShader should handle malformed defines (<a href="https://github.com/doodlum/skyrim-community-shaders/issues/300">#300</a>) by <a href="https://github.com/alandtse">alandtse</a></li>
+<li>Skyrim exe hangs and cannot exit on game close (<a href="https://github.com/doodlum/skyrim-community-shaders/issues/296">#296</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>VR Effect Shader missing spray from waterfalls (<a href="https://github.com/doodlum/skyrim-community-shaders/issues/294">#294</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Missing blood with deferred (<a href="https://github.com/doodlum/skyrim-community-shaders/issues/285">#285</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>VR first person shadows are weird in LLF (<a href="https://github.com/doodlum/skyrim-community-shaders/issues/281">#281</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>D3D Compilers should use a common directory for includes (<a href="https://github.com/doodlum/skyrim-community-shaders/issues/260">#260</a>) by <a href="https://github.com/alandtse">alandtse</a></li>
+<li>VR Water shader is clearer for shallow water than it should be (<a href="https://github.com/doodlum/skyrim-community-shaders/issues/258">#258</a>) by <a href="https://github.com/alandtse">alandtse</a></li>
+<li>UAV for each mips in <code>Texture</code> classes (<a href="https://github.com/doodlum/skyrim-community-shaders/issues/246">#246</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Water SSR is including UI elements in Flat (<a href="https://github.com/doodlum/skyrim-community-shaders/issues/244">#244</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Refactor to consolidate variables from <code>RE::BSGraphics::Renderer</code> (<a href="https://github.com/doodlum/skyrim-community-shaders/issues/237">#237</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>V1170 specific problem (i think). "Lighting" option. (<a href="https://github.com/doodlum/skyrim-community-shaders/issues/232">#232</a>) by <a href="https://github.com/PeaceoftheWorldRlordumX">PeaceoftheWorldRlordumX</a></li>
+<li>Adding custom post processing? (<a href="https://github.com/doodlum/skyrim-community-shaders/issues/224">#224</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>After Latest Public Update to Water Shader, Water Glint is Drastically Reduced (<a href="https://github.com/doodlum/skyrim-community-shaders/issues/223">#223</a>) by <a href="https://github.com/Slemaire-PNI">Slemaire-PNI</a></li>
+<li>Build CI broken (<a href="https://github.com/doodlum/skyrim-community-shaders/issues/222">#222</a>) by <a href="https://github.com/alandtse">alandtse</a></li>
+<li>Grass Lighting adjustment (<a href="https://github.com/doodlum/skyrim-community-shaders/issues/195">#195</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Enable Shaders does not affect <code>DrawDeferred</code> and <code>DrawPreprocess</code> (<a href="https://github.com/doodlum/skyrim-community-shaders/issues/192">#192</a>) by <a href="https://github.com/Pentalimbed">Pentalimbed</a></li>
+<li>Change imgui theme colour so selected <code>Selectable</code>s are highlighted (<a href="https://github.com/doodlum/skyrim-community-shaders/issues/187">#187</a>) by <a href="https://github.com/alandtse">alandtse</a></li>
+<li>Make <code>Feature::Draw</code> implementation optional (<a href="https://github.com/doodlum/skyrim-community-shaders/issues/186">#186</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Add <code>StructuredBufferDesc</code> template like <code>ConstantBufferDesc</code>, and use <code>win_rt::com_ptr</code> for <code>StructuredBuffer</code> members (<a href="https://github.com/doodlum/skyrim-community-shaders/issues/185">#185</a>) by <a href="https://github.com/Pentalimbed">Pentalimbed</a></li>
+<li>Dynamic Cubemap Failure to Apply Original Cubemap Colors (<a href="https://github.com/doodlum/skyrim-community-shaders/issues/179">#179</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Shared PerPass/PerTechnique/PerFrame etc. buffers for all CS features (<a href="https://github.com/doodlum/skyrim-community-shaders/issues/178">#178</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Move RunGrass.hlsl and DistantTree.hlsl out of individual features. (<a href="https://github.com/doodlum/skyrim-community-shaders/issues/169">#169</a>) by <a href="https://github.com/FlayaN">FlayaN</a></li>
+<li>Parallax decals on top of parallax textures unrealistic depth where they interact (<a href="https://github.com/doodlum/skyrim-community-shaders/issues/59">#59</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Performance issues (<a href="https://github.com/doodlum/skyrim-community-shaders/issues/30">#30</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Changing shader macro from feature settings (<a href="https://github.com/doodlum/skyrim-community-shaders/issues/29">#29</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+</ul>
+<p><strong>Merged Pull Requests</strong></p>
+<ul>
+<li>Fix: fix shader compile for llf debug (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/825">#825</a>) by <a href="https://github.com/FlayaN">FlayaN</a></li>
+<li>Feat: group not loaded features in UI (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/824">#824</a>) by <a href="https://github.com/FlayaN">FlayaN</a></li>
+<li>Refactor: move CopyShadowData (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/823">#823</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Chore: remove displaymapping (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/822">#822</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Feat: use constant buffer for strictlightdata (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/821">#821</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Refactor: adjust brackets for VL (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/820">#820</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Fix: dont save vl settings to ini on flatrim (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/819">#819</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Fix: ssr lines (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/818">#818</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Chore: tweaked contact shadows (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/817">#817</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Fix: water caustics on water edge (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/816">#816</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Fix: compilation window alpha (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/815">#815</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Fix(VR): fix vr offsets (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/814">#814</a>) by <a href="https://github.com/FlayaN">FlayaN</a></li>
+<li>Chore: cleanups (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/813">#813</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Fix: blended decals with zbufferwrite (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/812">#812</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Refactor: fully use namespaces (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/811">#811</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Chore: grass normal tweaks (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/810">#810</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Refactor: move FrameBuffer buffer to namespace (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/809">#809</a>) by <a href="https://github.com/FlayaN">FlayaN</a></li>
+<li>Refactor: shader bindings (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/808">#808</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Chore: complex mat roughness tweaked (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/807">#807</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Fix: hue preservation NaN (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/806">#806</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Fix: remove broken Git text from Lighting.hlsl (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/805">#805</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Refactor: rename Water Lighting (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/803">#803</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Fix(VR): mismatched puddles (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/801">#801</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Fix: caustics and shadow fixes (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/800">#800</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Chore: rename screenspace shadows to match SSGI (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/799">#799</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Refactor: DICE to DisplayMapping (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/798">#798</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Refactor: IsOutsideFrame capitalisation (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/797">#797</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Chore: add VL IsCore (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/796">#796</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Chore: cleanup VL settings (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/795">#795</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Chore: better skyrim upscaler compat (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/794">#794</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Fix(VR): grass distance fade (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/793">#793</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Fix: incorrect water reflections (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/792">#792</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Fix: minor dynamic cubemap issues (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/791">#791</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Fix: dynamic cubemap fixes (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/790">#790</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Chore: pb shadow improvements (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/789">#789</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Chore: even more ssr tweaks (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/788">#788</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Refactor: ssr cleanup (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/786">#786</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Perf: ssr optimisation (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/785">#785</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Chore: more ssr tweaks (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/784">#784</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Fix: particle lighting in menus (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/783">#783</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Fix: force create communityshaders directory (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/782">#782</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Chore: less aggressive ssr edge (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/781">#781</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Chore: remove MaxIterations, SSR formatting (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/780">#780</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Chore: ssr tweaks (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/779">#779</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Chore: better hue preservation (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/778">#778</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Fix: filmic tonemapping hues (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/777">#777</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Feat: no water ssr fade (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/776">#776</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Fix: do not modify reinhard saturation (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/775">#775</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Fix: water depth samples, sun specular (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/774">#774</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Fix: screenspace shadow weights (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/773">#773</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Fix: tonemapping saturation (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/772">#772</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Fix: screenspace shadows on decals (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/771">#771</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Chore: improve settings, remove PBR settings (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/770">#770</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Fix: inconsistent raindrop visibility (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/769">#769</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Feat: ssr improvements (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/768">#768</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Fix: ini settings saving to a random ini file (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/767">#767</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Fix: disable some effect shaders (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/766">#766</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Perf(VR): performance tweaks for vr (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/765">#765</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Fix(GOG): fix crash with upscaling (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/764">#764</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Fix: water parallax on angled surfaces (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/763">#763</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Fix(VR): vl ghosting (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/762">#762</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Refactor(HLSL): create namespaces for rest of hlsli (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/761">#761</a>) by <a href="https://github.com/FlayaN">FlayaN</a></li>
+<li>Fix: fix deferred vs forward rendering (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/760">#760</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Chore: update rainfx branch (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/759">#759</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Fix(VR): update clib with VR support for raindata (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/757">#757</a>) by <a href="https://github.com/FlayaN">FlayaN</a></li>
+<li>Fix(VR): water refraction (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/756">#756</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Fix(VR): grass compile when grass lighting is missing (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/755">#755</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Chore: update rainfx branch (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/754">#754</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Fix: sky motion vectors (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/752">#752</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Fix: fixes for pbr land crashes in vr. (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/751">#751</a>) by <a href="https://github.com/Jonahex">Jonahex</a></li>
+<li>Chore: sss menu text tweaks (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/750">#750</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Chore: remove unused llf flags (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/749">#749</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Chore: update rainfx branch (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/748">#748</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Feat: po3 light placer support (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/747">#747</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Fix: effect shader lights (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/746">#746</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Feat: fixed vanilla ssr (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/745">#745</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Feat: better rain fx (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/744">#744</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Feat: effect shadows improvements (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/743">#743</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Fix: whiterun water flows invisible (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/742">#742</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Fix: grass point lights (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/741">#741</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Fix: bias AA against rain (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/740">#740</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Fix: particle light radius (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/739">#739</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Fix: water brightness (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/738">#738</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Feat: remove added tonemapping, per-channel vanilla (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/737">#737</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Fix: corrupt lightFlags (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/736">#736</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Feat: add incompatibility check for PrivateProfileRedirector &lt; 0.6.2 (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/735">#735</a>) by <a href="https://github.com/FlayaN">FlayaN</a></li>
+<li>Feat: unified tree lod shading (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/734">#734</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Feat: water composite rewrite (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/733">#733</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Fix: lighting fixes (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/731">#731</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Fix: fix rungrass not compiling with skylighting (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/730">#730</a>) by <a href="https://github.com/mrslanddrops">mrslanddrops</a></li>
+<li>Fix: character lighting flickering (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/729">#729</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Fix: force disable "improved" snow shader (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/728">#728</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Chore: less intense ao (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/727">#727</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Chore: further effect shader tweaks (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/726">#726</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Chore: effect shader improvements (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/725">#725</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Fix: remove effect shader testing logging (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/724">#724</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Fix: remove shadow bias changes (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/723">#723</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Chore: increase skylighting resolution and range (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/722">#722</a>) by <a href="https://github.com/Pentalimbed">Pentalimbed</a></li>
+<li>Refactor: fake enums for PBR (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/721">#721</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Chore: use vanilla contrast (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/720">#720</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Fix(UI): change missing feature ini color (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/719">#719</a>) by <a href="https://github.com/FlayaN">FlayaN</a></li>
+<li>Fix: minor shader fixes (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/718">#718</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Fix: pbr grass compile (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/717">#717</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Feat: grass updates (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/716">#716</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Fix: alpha testing (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/715">#715</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Fix: remove redundant calculation in terrain shadow (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/714">#714</a>) by <a href="https://github.com/Pentalimbed">Pentalimbed</a></li>
+<li>Feat: add missing pbr permutations for pre-compilation (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/713">#713</a>) by <a href="https://github.com/Jonahex">Jonahex</a></li>
+<li>Feat(UI): add gpu memory usage to menu footer (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/712">#712</a>) by <a href="https://github.com/FlayaN">FlayaN</a></li>
+<li>Fix: bump required vr addresslib version (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/710">#710</a>) by <a href="https://github.com/FlayaN">FlayaN</a></li>
+<li>Fix: light clustering issues (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/708">#708</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Chore: increase lights per cluster (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/706">#706</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Fix: disable unmodified imagespace shader replacement (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/705">#705</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Refactor: shader flags (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/704">#704</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Fix: default constant buffers to dynamic (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/703">#703</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Perf: optimize particle lights (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/702">#702</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Build: update clib with portal RE and perf relocation fixes (#700) (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/701">#701</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Build: update clib with portal RE and perf relocation fixes (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/700">#700</a>) by <a href="https://github.com/FlayaN">FlayaN</a></li>
+<li>Chore: llf toggling and refactoring (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/698">#698</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Chore: remove cluster culling while loop (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/697">#697</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Chore: llf tweaks (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/696">#696</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Build: update version numbers (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/695">#695</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Fix: complex materials not working (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/694">#694</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Feat: consistent backlighting (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/692">#692</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Refactor: unify shadercache clearing (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/691">#691</a>) by <a href="https://github.com/alandtse">alandtse</a></li>
+<li>Fix(VR): fix ctd on start (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/690">#690</a>) by <a href="https://github.com/alandtse">alandtse</a></li>
+<li>Refactor: rename Constants to Math with namespace (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/689">#689</a>) by <a href="https://github.com/FlayaN">FlayaN</a></li>
+<li>Feat: automatic effect shader colours (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/687">#687</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Feat: weather and shadow nif flags for effects. (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/685">#685</a>) by <a href="https://github.com/Jonahex">Jonahex</a></li>
+<li>Fix: probably fixed broken shadow portal-strict lights. (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/677">#677</a>) by <a href="https://github.com/Jonahex">Jonahex</a></li>
+<li>Feat: add core feature support (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/675">#675</a>) by <a href="https://github.com/FlayaN">FlayaN</a></li>
+<li>Fix: fix terrain shadows (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/674">#674</a>) by <a href="https://github.com/Pentalimbed">Pentalimbed</a></li>
+<li>Refactor: remove DeferredShared (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/673">#673</a>) by <a href="https://github.com/Pentalimbed">Pentalimbed</a></li>
+<li>Refactor: force include path to Shaders folder (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/672">#672</a>) by <a href="https://github.com/Pentalimbed">Pentalimbed</a></li>
+<li>Refactor: remove unused argument of <code>GetTerrainShadow</code> (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/671">#671</a>) by <a href="https://github.com/Pentalimbed">Pentalimbed</a></li>
+<li>Fix: handle malformed defines pairs in Util::CompilerShader (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/670">#670</a>) by <a href="https://github.com/JanuarySnow">JanuarySnow</a></li>
+<li>Docs: improve terrain height map instruction (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/669">#669</a>) by <a href="https://github.com/Pentalimbed">Pentalimbed</a></li>
+<li>Revert: "fix: handle malformed defines pairs in Util::CompilerShader" (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/668">#668</a>) by <a href="https://github.com/alandtse">alandtse</a></li>
+<li>Fix(VR): fix eye mismatch for screenspacegi (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/666">#666</a>) by <a href="https://github.com/alandtse">alandtse</a></li>
+<li>Feat: add sky reflection fix (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/665">#665</a>) by <a href="https://github.com/Pentalimbed">Pentalimbed</a></li>
+<li>Fix: handle malformed defines pairs in Util::CompilerShader (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/664">#664</a>) by <a href="https://github.com/JanuarySnow">JanuarySnow</a></li>
+<li>Fix(VR): fix SSGI movement ghosting (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/663">#663</a>) by <a href="https://github.com/alandtse">alandtse</a></li>
+<li>Fix: correct ssgi backface mult (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/662">#662</a>) by <a href="https://github.com/Pentalimbed">Pentalimbed</a></li>
+<li>Fix: (roughly) correct specular ssgi multiplier (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/661">#661</a>) by <a href="https://github.com/Pentalimbed">Pentalimbed</a></li>
+<li>Refactor: break down <code>Util</code> into separate files (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/660">#660</a>) by <a href="https://github.com/Pentalimbed">Pentalimbed</a></li>
+<li>Refactor: fix shader warnings (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/658">#658</a>) by <a href="https://github.com/alandtse">alandtse</a></li>
+<li>Feat(UI): use full-fledged theme editor (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/657">#657</a>) by <a href="https://github.com/Pentalimbed">Pentalimbed</a></li>
+<li>Refactor: simpler ssgi recompile ctd fix (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/656">#656</a>) by <a href="https://github.com/Pentalimbed">Pentalimbed</a></li>
+<li>Fix: bug for loading features due to missing keys (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/654">#654</a>) by <a href="https://github.com/alandtse">alandtse</a></li>
+<li>Build: fix missing themeSettings (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/653">#653</a>) by <a href="https://github.com/alandtse">alandtse</a></li>
+<li>Fix: fix ctd on recompiling screenspacegi (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/652">#652</a>) by <a href="https://github.com/alandtse">alandtse</a></li>
+<li>Chore: merge dev into hdr (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/651">#651</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Chore(UI): tighter footer (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/650">#650</a>) by <a href="https://github.com/Pentalimbed">Pentalimbed</a></li>
+<li>Fix: fix imgui input buildup (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/649">#649</a>) by <a href="https://github.com/Pentalimbed">Pentalimbed</a></li>
+<li>Chore(UI): set Keybindings header to default open (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/647">#647</a>) by <a href="https://github.com/Pentalimbed">Pentalimbed</a></li>
+<li>Feat: allow disabling of upscaling/framegeneration (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/646">#646</a>) by <a href="https://github.com/alandtse">alandtse</a></li>
+<li>Refactor: use themes for remaining colors (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/645">#645</a>) by <a href="https://github.com/alandtse">alandtse</a></li>
+<li>Feat: add feature disabling at boot (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/644">#644</a>) by <a href="https://github.com/alandtse">alandtse</a></li>
+<li>Fix: fix Lighting.hlsl warnings (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/643">#643</a>) by <a href="https://github.com/Pentalimbed">Pentalimbed</a></li>
+<li>Fix: fix ShadowSampling warnings (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/642">#642</a>) by <a href="https://github.com/Pentalimbed">Pentalimbed</a></li>
+<li>Refactor: serialize ImVec to array instead of object (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/641">#641</a>) by <a href="https://github.com/Pentalimbed">Pentalimbed</a></li>
+<li>Fix: fix errors loading and saving (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/640">#640</a>) by <a href="https://github.com/alandtse">alandtse</a></li>
+<li>Fix(UI): fix debug assert (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/639">#639</a>) by <a href="https://github.com/FlayaN">FlayaN</a></li>
+<li>Fix: sky motion vectors (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/638">#638</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Feat(UI): add footer with diaginfo (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/637">#637</a>) by <a href="https://github.com/FlayaN">FlayaN</a></li>
+<li>Chore: put effect shader lighting changes behind defines (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/635">#635</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Fix: upscaling fixes (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/633">#633</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Fix: dynamic cubemaps slow updates (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/632">#632</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Docs: add tooltips for upscaling (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/630">#630</a>) by <a href="https://github.com/alandtse">alandtse</a></li>
+<li>Chore: hide frame generation in VR (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/629">#629</a>) by <a href="https://github.com/alandtse">alandtse</a></li>
+<li>Fix: fix crash when fsrContext not initialized (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/628">#628</a>) by <a href="https://github.com/alandtse">alandtse</a></li>
+<li>Chore: frame generation menu (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/626">#626</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Feat(UI): Add theme settings for menu (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/625">#625</a>) by <a href="https://github.com/FlayaN">FlayaN</a></li>
+<li>Chore: VR upscaling screen sizes (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/623">#623</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Fix: only use imgui io after init (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/622">#622</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Feat: upscaling update (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/621">#621</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Feat(UI): more imgui design changes (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/619">#619</a>) by <a href="https://github.com/FlayaN">FlayaN</a></li>
+<li>Chore: imgui improvements (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/618">#618</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Fix(VR): fix VR namespace define conflict (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/617">#617</a>) by <a href="https://github.com/FlayaN">FlayaN</a></li>
+<li>Fix(VR): fix llf desync in eyes (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/616">#616</a>) by <a href="https://github.com/alandtse">alandtse</a></li>
+<li>Refactor(HLSL): create some hlsli namespaces (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/615">#615</a>) by <a href="https://github.com/FlayaN">FlayaN</a></li>
+<li>Fix: fixes wetness persisting across saves (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/614">#614</a>) by <a href="https://github.com/TheRiverwoodModder">TheRiverwoodModder</a></li>
+<li>Fix(UI): fix font spacing (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/612">#612</a>) by <a href="https://github.com/FlayaN">FlayaN</a></li>
+<li>Feat(UI): create new theme (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/611">#611</a>) by <a href="https://github.com/FlayaN">FlayaN</a></li>
+<li>Chore(UI): changes to fit the new layout (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/610">#610</a>) by <a href="https://github.com/Pentalimbed">Pentalimbed</a></li>
+<li>Fix: skylighting hooks when disabled (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/609">#609</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Chore(UI): move all top options to the sidebar (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/608">#608</a>) by <a href="https://github.com/Pentalimbed">Pentalimbed</a></li>
+<li>Revert: "fix(VR): fix llf eye desync" (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/607">#607</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Fix(VR): fix llf eye desync (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/605">#605</a>) by <a href="https://github.com/alandtse">alandtse</a></li>
+<li>Feat: improve llf visualization (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/604">#604</a>) by <a href="https://github.com/alandtse">alandtse</a></li>
+<li>Fix(VR): fix ctd when upscaler present (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/603">#603</a>) by <a href="https://github.com/alandtse">alandtse</a></li>
+<li>Fix(VR): fix ghosting in fsr (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/602">#602</a>) by <a href="https://github.com/alandtse">alandtse</a></li>
+<li>Refactor: move hooks out of State (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/599">#599</a>) by <a href="https://github.com/alandtse">alandtse</a></li>
+<li>Fix: fix broken vanilla taa (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/598">#598</a>) by <a href="https://github.com/alandtse">alandtse</a></li>
+<li>Fix: fix compile error (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/597">#597</a>) by <a href="https://github.com/alandtse">alandtse</a></li>
+<li>Refactor: remove unnecessary <code>#pragma warning</code> (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/596">#596</a>) by <a href="https://github.com/Pentalimbed">Pentalimbed</a></li>
+<li>Refactor: replace <code>Microsoft::WRL::ComPtr</code> with <code>winrt::com_ptr</code> (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/595">#595</a>) by <a href="https://github.com/Pentalimbed">Pentalimbed</a></li>
+<li>Refactor: <code>std::span</code> for safer shader defines (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/594">#594</a>) by <a href="https://github.com/Pentalimbed">Pentalimbed</a></li>
+<li>Feat: sync upscaler settings with skyrim setting (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/593">#593</a>) by <a href="https://github.com/alandtse">alandtse</a></li>
+<li>Feat(VR): enable upscaling (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/592">#592</a>) by <a href="https://github.com/alandtse">alandtse</a></li>
+<li>Fix(VR): fix incorrect shader warning (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/591">#591</a>) by <a href="https://github.com/alandtse">alandtse</a></li>
+<li>Feat: add Util::IsDynamicResolution (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/590">#590</a>) by <a href="https://github.com/alandtse">alandtse</a></li>
+<li>Chore: utility shader changes (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/589">#589</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Fix: dyndolod 3d trees shading (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/588">#588</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Docs: add descriptor to shader completion debug (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/586">#586</a>) by <a href="https://github.com/alandtse">alandtse</a></li>
+<li>Fix: use proper output for DEPTHBUFFER_COPY (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/585">#585</a>) by <a href="https://github.com/alandtse">alandtse</a></li>
+<li>Docs: add filename for shader events (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/582">#582</a>) by <a href="https://github.com/alandtse">alandtse</a></li>
+<li>Feat: native FSR 3 sharpening (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/580">#580</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Build: move fsr cmake and remove warnings (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/579">#579</a>) by <a href="https://github.com/FlayaN">FlayaN</a></li>
+<li>Fix: fix shader-specific clear (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/578">#578</a>) by <a href="https://github.com/alandtse">alandtse</a></li>
+<li>Fix: compile and imagespace errors (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/575">#575</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Revert: "feat: improve vanilla VL" (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/574">#574</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Fix: llf fixed alignment issues (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/573">#573</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Fix: camera data fixes (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/572">#572</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Fix: fix performance drop due to divide by 0 (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/571">#571</a>) by <a href="https://github.com/alandtse">alandtse</a></li>
+<li>Build: move FidelityFX to updated fork (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/570">#570</a>) by <a href="https://github.com/MapleHinata">MapleHinata</a></li>
+<li>Feat: improve vanilla VL (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/569">#569</a>) by <a href="https://github.com/alandtse">alandtse</a></li>
+<li>Feat: add non-time InterleavedGradientNoise (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/568">#568</a>) by <a href="https://github.com/alandtse">alandtse</a></li>
+<li>Refactor: reorganize defines in VR.hlsli (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/567">#567</a>) by <a href="https://github.com/alandtse">alandtse</a></li>
+<li>Feat: support INIPrefSetting and gameSetting (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/566">#566</a>) by <a href="https://github.com/alandtse">alandtse</a></li>
+<li>Feat(VR): enable volumetric lighting (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/565">#565</a>) by <a href="https://github.com/alandtse">alandtse</a></li>
+<li>Feat: add min screen radius setting for ssgi (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/564">#564</a>) by <a href="https://github.com/Pentalimbed">Pentalimbed</a></li>
+<li>Chore: remove accumulator from LLF prepass, use constants (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/563">#563</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Revert: "fix: llf lights fade" (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/562">#562</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Fix: deferred multi layer parallax (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/561">#561</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Fix: llf lights fade (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/560">#560</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Refactor: change detours to use thunk syntax (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/559">#559</a>) by <a href="https://github.com/FlayaN">FlayaN</a></li>
+<li>Fix: fix vr ssgi reprojection (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/557">#557</a>) by <a href="https://github.com/Pentalimbed">Pentalimbed</a></li>
+<li>Feat: DLAA (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/556">#556</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Feat: add dlss support WIP (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/555">#555</a>) by <a href="https://github.com/FlayaN">FlayaN</a></li>
+<li>Fix: tree skylighting darkness (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/554">#554</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Fix: fixed llf-pbr interaction issue and re-enabled pbr. (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/553">#553</a>) by <a href="https://github.com/Jonahex">Jonahex</a></li>
+<li>Fix: fix padding for StructuredLight (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/552">#552</a>) by <a href="https://github.com/alandtse">alandtse</a></li>
+<li>Feat: tweakable pbr multiplier for better matching (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/551">#551</a>) by <a href="https://github.com/Pentalimbed">Pentalimbed</a></li>
+<li>Build: fix build if using defined vckpg commit (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/549">#549</a>) by <a href="https://github.com/FlayaN">FlayaN</a></li>
+<li>Fix: recreate config if json parsing error (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/548">#548</a>) by <a href="https://github.com/alandtse">alandtse</a></li>
+<li>Fix: fix undeclared TexProjNormalSampler (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/547">#547</a>) by <a href="https://github.com/alandtse">alandtse</a></li>
+<li>Docs: make descriptors print as hex (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/546">#546</a>) by <a href="https://github.com/alandtse">alandtse</a></li>
+<li>Refactor: remove redundant ifdef (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/545">#545</a>) by <a href="https://github.com/alandtse">alandtse</a></li>
+<li>Fix: fix effect shader for ADDBLEND &amp;&amp; VC &amp;&amp; !TEXTURE (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/544">#544</a>) by <a href="https://github.com/Jonahex">Jonahex</a></li>
+<li>Feat: add hlsl-specific clear (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/543">#543</a>) by <a href="https://github.com/alandtse">alandtse</a></li>
+<li>Fix: fix broken vr lights due to buffer alignment (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/541">#541</a>) by <a href="https://github.com/alandtse">alandtse</a></li>
+<li>Fix: fixed permutation buffer not resetting between frames. (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/540">#540</a>) by <a href="https://github.com/Jonahex">Jonahex</a></li>
+<li>Fix: add missing right parens (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/539">#539</a>) by <a href="https://github.com/Pentalimbed">Pentalimbed</a></li>
+<li>Feat: decouple AO/GI radius and remove unused HBAO code (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/538">#538</a>) by <a href="https://github.com/Pentalimbed">Pentalimbed</a></li>
+<li>Perf: pbr glint optimization (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/537">#537</a>) by <a href="https://github.com/Pentalimbed">Pentalimbed</a></li>
+<li>Feat: add gamesettings functions for features (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/533">#533</a>) by <a href="https://github.com/alandtse">alandtse</a></li>
+<li>Refactor: move WStringToString to util (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/532">#532</a>) by <a href="https://github.com/alandtse">alandtse</a></li>
+<li>Fix: fix skylighting CB alignment (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/531">#531</a>) by <a href="https://github.com/Pentalimbed">Pentalimbed</a></li>
+<li>Docs: lower unknown hlsl variables to debug (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/529">#529</a>) by <a href="https://github.com/alandtse">alandtse</a></li>
+<li>Feat: allow features to pass define options (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/528">#528</a>) by <a href="https://github.com/alandtse">alandtse</a></li>
+<li>Refactor: explain GetVRVSOutput better (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/527">#527</a>) by <a href="https://github.com/alandtse">alandtse</a></li>
+<li>Revert:  "feat: linear space ssao" (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/525">#525</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Build: introduces a windows based build container (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/524">#524</a>) by <a href="https://github.com/mnkll">mnkll</a></li>
+<li>Fix: screenspace shadow blur in distance (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/523">#523</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Chore: blur ss shadows in proj space (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/522">#522</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Refactor: rename terrain occlusion to terrain shadows (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/521">#521</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Fix: shadow cascade sampling (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/520">#520</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Feat: linear space ssao (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/518">#518</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Fix: fix skylighting fade and darkness (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/517">#517</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Fix: enable all effect shaders (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/515">#515</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Fix: match vanilla shadows (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/514">#514</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Docs: provide gpl exception for hardware sdks (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/513">#513</a>) by <a href="https://github.com/alandtse">alandtse</a></li>
+<li>Feat: rebuild shaders when editing shader defines (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/512">#512</a>) by <a href="https://github.com/alandtse">alandtse</a></li>
+<li>Fix: fix missing directory ctd with DynamicCubeMap Creator (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/511">#511</a>) by <a href="https://github.com/langfod">langfod</a></li>
+<li>Refactor: llf use the game invprofmatrix (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/508">#508</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Refactor: move streamline includes to forked submodule (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/507">#507</a>) by <a href="https://github.com/FlayaN">FlayaN</a></li>
+<li>Feat: remove portal-strict light limit (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/506">#506</a>) by <a href="https://github.com/Jonahex">Jonahex</a></li>
+<li>Build: remove duplicate magic-enum vcpkg dependency (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/505">#505</a>) by <a href="https://github.com/Dasinhoo">Dasinhoo</a></li>
+<li>Feat: DLSSG frame generation (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/504">#504</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Fix: Specify magic-enum port version in vcpkg.json (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/503">#503</a>) by <a href="https://github.com/ThePagi">ThePagi</a></li>
+<li>Feat(VR): enable SSR (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/502">#502</a>) by <a href="https://github.com/alandtse">alandtse</a></li>
+<li>Fix(VR): fix missing snow hook (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/501">#501</a>) by <a href="https://github.com/alandtse">alandtse</a></li>
+<li>Fix: fixed pbr decals texture set parameters application. (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/500">#500</a>) by <a href="https://github.com/Jonahex">Jonahex</a></li>
+<li>Fix: fixes for subsurface and projected material in pbr (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/499">#499</a>) by <a href="https://github.com/Jonahex">Jonahex</a></li>
+<li>Chore: merge dev into fidelityfx branch (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/497">#497</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Fix: fixed crash on meshes with kVertexLighting flag enabled. (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/496">#496</a>) by <a href="https://github.com/Jonahex">Jonahex</a></li>
+<li>Fix: too noisy shadows (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/495">#495</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Feat: do tonemapping in gamma space (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/494">#494</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Chore: less hue preservation in tonemapping (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/493">#493</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Fix: texture set and material object configs not applying in some cases. (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/492">#492</a>) by <a href="https://github.com/Jonahex">Jonahex</a></li>
+<li>Feat: Height blending toggle, parallax shadows edits (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/491">#491</a>) by <a href="https://github.com/ThePagi">ThePagi</a></li>
+<li>Feat: material object editor and more. (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/490">#490</a>) by <a href="https://github.com/Jonahex">Jonahex</a></li>
+<li>Feat: pbr replacement for default land texture. (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/489">#489</a>) by <a href="https://github.com/Jonahex">Jonahex</a></li>
+<li>Refactor: use dynamic resolution helper (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/487">#487</a>) by <a href="https://github.com/alandtse">alandtse</a></li>
+<li>Fix(VR): fix utility shader shadows with upscaler (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/486">#486</a>) by <a href="https://github.com/alandtse">alandtse</a></li>
+<li>Fix: adaptation black screen fix (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/485">#485</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Revert: "fix: potential black screen fix" (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/484">#484</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Feat: removed separate SSS buffer (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/483">#483</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Fix(VR): fix issues due to wrong variable name (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/482">#482</a>) by <a href="https://github.com/alandtse">alandtse</a></li>
+<li>Fix: HDR tonemapping errors (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/479">#479</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Refactor: Lin2sRGB changed to LinearToGamma etc. (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/478">#478</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Fix(VR): fix ghosting for water (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/477">#477</a>) by <a href="https://github.com/alandtse">alandtse</a></li>
+<li>Perf: reduce default compilerThreads (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/475">#475</a>) by <a href="https://github.com/alandtse">alandtse</a></li>
+<li>Feat: water optimisation, skylighting, fixes (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/474">#474</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Fix(VR): fix flickering of non-PBR assets (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/472">#472</a>) by <a href="https://github.com/alandtse">alandtse</a></li>
+<li>Feat: improved contrast function (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/471">#471</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Feat: linear water composite (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/467">#467</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Fix: black reflections (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/466">#466</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Fix: potential black screen fix (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/465">#465</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Fix: kill management thread on stop (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/464">#464</a>) by <a href="https://github.com/alandtse">alandtse</a></li>
+<li>Feat(VR): add ImageSpace shaders (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/463">#463</a>) by <a href="https://github.com/alandtse">alandtse</a></li>
+<li>Feat: in-game editor for pbr land texture parameters. (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/462">#462</a>) by <a href="https://github.com/Jonahex">Jonahex</a></li>
+<li>Fix: pbr landscape scale and height blending (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/461">#461</a>) by <a href="https://github.com/ThePagi">ThePagi</a></li>
+<li>Fix: fixed black face in race menu. (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/460">#460</a>) by <a href="https://github.com/Jonahex">Jonahex</a></li>
+<li>Fix: ISHDR on flat (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/459">#459</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Feat: VR support for ISHDR and ISSAOComposite. (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/458">#458</a>) by <a href="https://github.com/Jonahex">Jonahex</a></li>
+<li>Fix(VR): fix ctd when enabling imageshaders (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/457">#457</a>) by <a href="https://github.com/alandtse">alandtse</a></li>
+<li>Fix: water parallax and improved performance (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/455">#455</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Fix: small ISVolumetricLightingGenerateCS fix. (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/454">#454</a>) by <a href="https://github.com/Jonahex">Jonahex</a></li>
+<li>Fix: fixed constant indices in VR. (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/453">#453</a>) by <a href="https://github.com/Jonahex">Jonahex</a></li>
+<li>Feat: ISReflectionsRayTracing shader added. (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/452">#452</a>) by <a href="https://github.com/Jonahex">Jonahex</a></li>
+<li>Perf: blur ss shadows in parallel (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/451">#451</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Fix: fixes for pbr land seams. (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/450">#450</a>) by <a href="https://github.com/Jonahex">Jonahex</a></li>
+<li>Fix: skylighting skin artifacts + unroll (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/449">#449</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Feat: PBR asset matching (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/448">#448</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Revert "perf: removed snow mask, do all diffuse specular addition in linear" (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/447">#447</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Perf: removed snow mask, do all diffuse specular addition in linear (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/445">#445</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Fix: add skylighting shadow bias (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/444">#444</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Fix: grass shadows in interiors (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/443">#443</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Fix: disable effect shadows on world map (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/442">#442</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Feat: add FidelityFX-SDK-DX11 submodule (#440) (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/441">#441</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Feat: add FidelityFX-SDK-DX11 submodule (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/440">#440</a>) by <a href="https://github.com/FlayaN">FlayaN</a></li>
+<li>Fix: glowmap brightness (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/439">#439</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Feat: hdr tonemapping (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/438">#438</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Feat: volumetric lighting RE. (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/437">#437</a>) by <a href="https://github.com/Jonahex">Jonahex</a></li>
+<li>Chore: set default pbr gamma to 2.2 (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/436">#436</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Fix: black terrain (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/435">#435</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Revert "fix: alt+tab input sticking" (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/434">#434</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Feat: complete skylighting during loadscreen (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/433">#433</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Fix: probable fix for skylighting interior crashes (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/432">#432</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Refactor: add namespaces for features (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/431">#431</a>) by <a href="https://github.com/FlayaN">FlayaN</a></li>
+<li>Feat: effect lighting (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/430">#430</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Feat: pbr diffuse lighting in srgb. (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/429">#429</a>) by <a href="https://github.com/Jonahex">Jonahex</a></li>
+<li>Fix: fixes for effect shader; effect shader enabled fully. (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/427">#427</a>) by <a href="https://github.com/Jonahex">Jonahex</a></li>
+<li>Revert: revert linearisation attempts (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/426">#426</a>) by <a href="https://github.com/Pentalimbed">Pentalimbed</a></li>
+<li>Revert "chore: updated feature settings for correct color space" (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/425">#425</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Chore: updated feature settings for correct color space (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/424">#424</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Fix: pbr parallax and terrain parallax intensity (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/423">#423</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Fix: remove tpbr albedo lin2srgb (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/421">#421</a>) by <a href="https://github.com/Pentalimbed">Pentalimbed</a></li>
+<li>Fix: remove all linear/srgb conversion, save for pbr albedo (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/420">#420</a>) by <a href="https://github.com/Pentalimbed">Pentalimbed</a></li>
+<li>Feat: llf cleanup and optimisations, plus shadow improvements (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/419">#419</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Fix: ssgi use perceptual roughness instead of linear (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/418">#418</a>) by <a href="https://github.com/Pentalimbed">Pentalimbed</a></li>
+<li>Fix: ssgi: limit min roughness, remove luminance weight (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/417">#417</a>) by <a href="https://github.com/Pentalimbed">Pentalimbed</a></li>
+<li>Feat: unlocked HDR range of game buffers (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/416">#416</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Fix: PBR directional light specular fix and llf compile fixes (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/415">#415</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Fix: added padding for pbr settings struct (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/414">#414</a>) by <a href="https://github.com/Pentalimbed">Pentalimbed</a></li>
+<li>Feat: glint for PBR (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/413">#413</a>) by <a href="https://github.com/Jonahex">Jonahex</a></li>
+<li>Fix: more specular gi attenuation fix (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/412">#412</a>) by <a href="https://github.com/Pentalimbed">Pentalimbed</a></li>
+<li>Fix: gi attenuation, stripes, remove back face option (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/410">#410</a>) by <a href="https://github.com/Pentalimbed">Pentalimbed</a></li>
+<li>Fix: switched to using in-game imagespace shader defines. (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/409">#409</a>) by <a href="https://github.com/Jonahex">Jonahex</a></li>
+<li>Fix: Fix zero weight on pbr landscape without displacement (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/408">#408</a>) by <a href="https://github.com/ThePagi">ThePagi</a></li>
+<li>Fix: specular gi affecting diffuse gi, revert disable temporal denoiser on diffuse AO (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/407">#407</a>) by <a href="https://github.com/Pentalimbed">Pentalimbed</a></li>
+<li>Fix: fixes for ISRefraction and ISSAOBlur. (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/406">#406</a>) by <a href="https://github.com/Jonahex">Jonahex</a></li>
+<li>Fix: missing <code>InterleavedGradientNoise</code> change (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/405">#405</a>) by <a href="https://github.com/Pentalimbed">Pentalimbed</a></li>
+<li>Chore: disable temporal denoiser on diffuse AO (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/404">#404</a>) by <a href="https://github.com/Pentalimbed">Pentalimbed</a></li>
+<li>Fix: alt+tab input sticking (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/403">#403</a>) by <a href="https://github.com/Pentalimbed">Pentalimbed</a></li>
+<li>Feat: sharper ssgi blur (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/401">#401</a>) by <a href="https://github.com/Pentalimbed">Pentalimbed</a></li>
+<li>Fix: char event treated as button events aka numpad bug (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/400">#400</a>) by <a href="https://github.com/Pentalimbed">Pentalimbed</a></li>
+<li>Fix: black reflections + InWorld flag (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/399">#399</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Feat: ISUnderwaterMask shader. Disabled ISLightingComposite shaders. (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/398">#398</a>) by <a href="https://github.com/Jonahex">Jonahex</a></li>
+<li>Fix: missing skylighting diffuse multiplier (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/396">#396</a>) by <a href="https://github.com/Pentalimbed">Pentalimbed</a></li>
+<li>Fix: water caustics loading incorrect texture (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/395">#395</a>) by <a href="https://github.com/Pentalimbed">Pentalimbed</a></li>
+<li>Fix: arrays as valid json settings structure (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/394">#394</a>) by <a href="https://github.com/Pentalimbed">Pentalimbed</a></li>
+<li>Fix: SharedData compile without Skylighting (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/393">#393</a>) by <a href="https://github.com/Pentalimbed">Pentalimbed</a></li>
+<li>Chore: change default settings of skylighting &amp; ssgi (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/392">#392</a>) by <a href="https://github.com/Pentalimbed">Pentalimbed</a></li>
+<li>Fix: pbr fixes (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/391">#391</a>) by <a href="https://github.com/Jonahex">Jonahex</a></li>
+<li>Fix: use pixel coordinates for InterleavedGradientNoise (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/390">#390</a>) by <a href="https://github.com/Pentalimbed">Pentalimbed</a></li>
+<li>Fix: add missing PBR namespace (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/389">#389</a>) by <a href="https://github.com/FlayaN">FlayaN</a></li>
+<li>Fix: add missing Random.hlsli include to Water (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/388">#388</a>) by <a href="https://github.com/Pentalimbed">Pentalimbed</a></li>
+<li>Build: remove fallout4 refs and cleanup (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/387">#387</a>) by <a href="https://github.com/FlayaN">FlayaN</a></li>
+<li>Chore: removed LLF flicker code (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/386">#386</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Build: update clib-ng to latest and remove old RE (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/385">#385</a>) by <a href="https://github.com/FlayaN">FlayaN</a></li>
+<li>Build: allow multiple presets in build folder (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/384">#384</a>) by <a href="https://github.com/FlayaN">FlayaN</a></li>
+<li>Fix: uav support for <code>StructuredBufferDesc</code> (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/383">#383</a>) by <a href="https://github.com/Pentalimbed">Pentalimbed</a></li>
+<li>Fix: fix lighting shader compile issue in flatrim (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/381">#381</a>) by <a href="https://github.com/FlayaN">FlayaN</a></li>
+<li>Fix: remove ZH3 hallucination due to seams in certain situation (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/380">#380</a>) by <a href="https://github.com/Pentalimbed">Pentalimbed</a></li>
+<li>Fix: add back water lighting cpp files (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/379">#379</a>) by <a href="https://github.com/FlayaN">FlayaN</a></li>
+<li>Refactor: merge water caustics and parallax to water lighting (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/378">#378</a>) by <a href="https://github.com/FlayaN">FlayaN</a></li>
+<li>Feat: resolution-adaptive llf cluster count (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/376">#376</a>) by <a href="https://github.com/Pentalimbed">Pentalimbed</a></li>
+<li>Refactor: move hash/random/noise functions into a single file (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/375">#375</a>) by <a href="https://github.com/Pentalimbed">Pentalimbed</a></li>
+<li>Refactor: add PBR shader namespace (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/374">#374</a>) by <a href="https://github.com/FlayaN">FlayaN</a></li>
+<li>Refactor: move rungrass from grasslighting to root (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/373">#373</a>) by <a href="https://github.com/FlayaN">FlayaN</a></li>
+<li>Fix: ssgi blur normal weight &amp; undefined normal in grass skylighting (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/372">#372</a>) by <a href="https://github.com/Pentalimbed">Pentalimbed</a></li>
+<li>Refactor: change all possible include files to hlsli (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/371">#371</a>) by <a href="https://github.com/FlayaN">FlayaN</a></li>
+<li>Fix: fix dynamic cubemaps interior (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/370">#370</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Fix: no screenspace shadows in interiors (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/369">#369</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Chore: more accurate specular lobe, change skylight blending, skylighting namespace (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/368">#368</a>) by <a href="https://github.com/Pentalimbed">Pentalimbed</a></li>
+<li>Fix: save settings crash fix (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/367">#367</a>) by <a href="https://github.com/Pentalimbed">Pentalimbed</a></li>
+<li>Fix: wrong skylighting pi (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/366">#366</a>) by <a href="https://github.com/Pentalimbed">Pentalimbed</a></li>
+<li>Feat: tracy profiler integration (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/365">#365</a>) by <a href="https://github.com/Pentalimbed">Pentalimbed</a></li>
+<li>Feat: QoL skylighting settings and mathematically correct SH scaling (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/364">#364</a>) by <a href="https://github.com/Pentalimbed">Pentalimbed</a></li>
+<li>Refactor: misc code cleanup (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/363">#363</a>) by <a href="https://github.com/Pentalimbed">Pentalimbed</a></li>
+<li>Fix: fix SSGI for VR (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/362">#362</a>) by <a href="https://github.com/FlayaN">FlayaN</a></li>
+<li>Fix: fix upscaler support (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/361">#361</a>) by <a href="https://github.com/FlayaN">FlayaN</a></li>
+<li>Fix: hq shadows (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/360">#360</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Feat: imagespace shaders support. (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/359">#359</a>) by <a href="https://github.com/Jonahex">Jonahex</a></li>
+<li>Feat: skylighting distance fadeout that better blends to distance (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/358">#358</a>) by <a href="https://github.com/Pentalimbed">Pentalimbed</a></li>
+<li>Feat: specular bitmask gi and return of half-res (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/357">#357</a>) by <a href="https://github.com/Pentalimbed">Pentalimbed</a></li>
+<li>Chore: cleanup related to skylighting (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/356">#356</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Fix: fix fancy skylighting for VR (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/355">#355</a>) by <a href="https://github.com/FlayaN">FlayaN</a></li>
+<li>Chore: skylighting fadein within updateProbes (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/354">#354</a>) by <a href="https://github.com/Pentalimbed">Pentalimbed</a></li>
+<li>Chore: (SL) 255 frames update limit (#351) (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/353">#353</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Feat: material system extensions for physically-based rendering support. (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/352">#352</a>) by <a href="https://github.com/Jonahex">Jonahex</a></li>
+<li>Chore: (SL) 255 frames update limit (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/351">#351</a>) by <a href="https://github.com/Pentalimbed">Pentalimbed</a></li>
+<li>Fix: ssgi outlines and terrain occlusion slow update (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/350">#350</a>) by <a href="https://github.com/Pentalimbed">Pentalimbed</a></li>
+<li>Refactor: CppCheck complaint fixing (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/349">#349</a>) by <a href="https://github.com/Pentalimbed">Pentalimbed</a></li>
+<li>Feat: complex skylighting (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/348">#348</a>) by <a href="https://github.com/Pentalimbed">Pentalimbed</a></li>
+<li>Fix: fix references to obsolete variables, tidy up Skylighting class (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/347">#347</a>) by <a href="https://github.com/Pentalimbed">Pentalimbed</a></li>
+<li>Fix: black terrain when all heights are 0 (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/346">#346</a>) by <a href="https://github.com/ThePagi">ThePagi</a></li>
+<li>Fix: reduced ssgi noise &amp; ghosting, fixed linearisation (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/345">#345</a>) by <a href="https://github.com/Pentalimbed">Pentalimbed</a></li>
+<li>Refactor: clean up dynamic resolution utils (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/344">#344</a>) by <a href="https://github.com/FlayaN">FlayaN</a></li>
+<li>Fix: fix AE support (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/343">#343</a>) by <a href="https://github.com/FlayaN">FlayaN</a></li>
+<li>Chore: misc tidying and warning suppresion (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/342">#342</a>) by <a href="https://github.com/Pentalimbed">Pentalimbed</a></li>
+<li>Chore: ssgi improvements and fixes (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/341">#341</a>) by <a href="https://github.com/Pentalimbed">Pentalimbed</a></li>
+<li>Revert: revert ci: #340 (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/340">#340</a>) by <a href="https://github.com/alandtse">alandtse</a></li>
+<li>Fix: remove raindrop fx on bottom-facing surfaces (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/339">#339</a>) by <a href="https://github.com/Pentalimbed">Pentalimbed</a></li>
+<li>Feat: Use parallax in landscape texture blending (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/338">#338</a>) by <a href="https://github.com/ThePagi">ThePagi</a></li>
+<li>Feat: adjustments to improve dynamic cubemaps after quality reduction (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/337">#337</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Fix: fix AE support (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/336">#336</a>) by <a href="https://github.com/FlayaN">FlayaN</a></li>
+<li>Fix: fix VR in skylighting-sh branch (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/335">#335</a>) by <a href="https://github.com/FlayaN">FlayaN</a></li>
+<li>Feat: sh skylighting, fixes and cleanup (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/334">#334</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Chore: merge dev with new optimisations and fixes (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/333">#333</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Chore: convolve and ZH3 hallucination for diffuse skylighting (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/332">#332</a>) by <a href="https://github.com/Pentalimbed">Pentalimbed</a></li>
+<li>Feat: add compiler warnings for debug (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/330">#330</a>) by <a href="https://github.com/alandtse">alandtse</a></li>
+<li>Fix: fix VR (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/328">#328</a>) by <a href="https://github.com/FlayaN">FlayaN</a></li>
+<li>Feat: terrain blending fixes plus decals (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/327">#327</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Refactor: simplify feature implementation (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/326">#326</a>) by <a href="https://github.com/FlayaN">FlayaN</a></li>
+<li>Feat: update ssgi (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/324">#324</a>) by <a href="https://github.com/Pentalimbed">Pentalimbed</a></li>
+<li>Revert "fix: fix Skyrim hanging on exit" (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/323">#323</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Fix: prevent memory leak from <code>GetFeatureBufferData</code> (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/322">#322</a>) by <a href="https://github.com/Pentalimbed">Pentalimbed</a></li>
+<li>Feat: optimisation (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/321">#321</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Chore: terrain occlusion optimisation (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/318">#318</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Feat: update terrain occlusion (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/317">#317</a>) by <a href="https://github.com/Pentalimbed">Pentalimbed</a></li>
+<li>Chore: proper jittering, respect caustics toggles (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/316">#316</a>) by <a href="https://github.com/Pentalimbed">Pentalimbed</a></li>
+<li>Refactor: dynamic-ish constant buffer construction (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/315">#315</a>) by <a href="https://github.com/Pentalimbed">Pentalimbed</a></li>
+<li>Fix: fix Skyrim hanging on exit (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/313">#313</a>) by <a href="https://github.com/alandtse">alandtse</a></li>
+<li>Feat: skylighting (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/312">#312</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Feat: sky occlusion map rendering (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/310">#310</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Fix: fix utility ShadowMapProj for SHADOWMASKS (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/308">#308</a>) by <a href="https://github.com/alandtse">alandtse</a></li>
+<li>Chore: sync with dev (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/307">#307</a>) by <a href="https://github.com/alandtse">alandtse</a></li>
+<li>Ci: run clang-format on all pushes (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/306">#306</a>) by <a href="https://github.com/alandtse">alandtse</a></li>
+<li>Fix: fix VR ShadowData structures (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/305">#305</a>) by <a href="https://github.com/alandtse">alandtse</a></li>
+<li>Feat: add shadercache developer improvements (#302) (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/303">#303</a>) by <a href="https://github.com/alandtse">alandtse</a></li>
+<li>Feat: add shadercache developer improvements (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/302">#302</a>) by <a href="https://github.com/alandtse">alandtse</a></li>
+<li>Fix: fix VR (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/301">#301</a>) by <a href="https://github.com/alandtse">alandtse</a></li>
+<li>Chore: sync with dev (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/299">#299</a>) by <a href="https://github.com/alandtse">alandtse</a></li>
+<li>Fix: fix VR (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/298">#298</a>) by <a href="https://github.com/alandtse">alandtse</a></li>
+<li>Chore: Sync with dev (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/297">#297</a>) by <a href="https://github.com/alandtse">alandtse</a></li>
+<li>Chore: ssgi improvements (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/295">#295</a>) by <a href="https://github.com/Pentalimbed">Pentalimbed</a></li>
+<li>Fix: add ssgi dynamic resolution support (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/293">#293</a>) by <a href="https://github.com/Pentalimbed">Pentalimbed</a></li>
+<li>Fix: refractionScreenPosition undefined (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/292">#292</a>) by <a href="https://github.com/Pentalimbed">Pentalimbed</a></li>
+<li>Feat: physically based water scattering (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/291">#291</a>) by <a href="https://github.com/Pentalimbed">Pentalimbed</a></li>
+<li>Fix: water vl raymarch (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/290">#290</a>) by <a href="https://github.com/Pentalimbed">Pentalimbed</a></li>
+<li>Feat: added Utility shader (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/289">#289</a>) by <a href="https://github.com/Jonahex">Jonahex</a></li>
+<li>Feat: spatial filter for ssgi (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/288">#288</a>) by <a href="https://github.com/Pentalimbed">Pentalimbed</a></li>
+<li>Chore: minor changes (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/287">#287</a>) by <a href="https://github.com/Pentalimbed">Pentalimbed</a></li>
+<li>Feat: re effect shader for VR (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/286">#286</a>) by <a href="https://github.com/alandtse">alandtse</a></li>
+<li>Fix: shader errors and warnings (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/284">#284</a>) by <a href="https://github.com/FlayaN">FlayaN</a></li>
+<li>Fix: add back GetScreenDepth to RaymarchCS (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/283">#283</a>) by <a href="https://github.com/FlayaN">FlayaN</a></li>
+<li>Fix: undo delete of ComputeShadingRate.hlsl (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/282">#282</a>) by <a href="https://github.com/FlayaN">FlayaN</a></li>
+<li>Fix: check for compute shader file existence (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/280">#280</a>) by <a href="https://github.com/alandtse">alandtse</a></li>
+<li>Fix: fix deferred screen space shadows for VR (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/279">#279</a>) by <a href="https://github.com/FlayaN">FlayaN</a></li>
+<li>Feat: port deferred DistantTree to VR (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/278">#278</a>) by <a href="https://github.com/FlayaN">FlayaN</a></li>
+<li>Fix: use GET_INSTANCE_MEMBER macro to get proper state runtime (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/277">#277</a>) by <a href="https://github.com/FlayaN">FlayaN</a></li>
+<li>Chore: misc edits (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/276">#276</a>) by <a href="https://github.com/Pentalimbed">Pentalimbed</a></li>
+<li>Refactor: rename newly added hlsl without entrypoint to hlsli (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/275">#275</a>) by <a href="https://github.com/FlayaN">FlayaN</a></li>
+<li>Fix: fix common VR includes (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/274">#274</a>) by <a href="https://github.com/FlayaN">FlayaN</a></li>
+<li>Feat: add vanilla frame annotations (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/273">#273</a>) by <a href="https://github.com/Jonahex">Jonahex</a></li>
+<li>Build: add clang-format cmake target (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/272">#272</a>) by <a href="https://github.com/FlayaN">FlayaN</a></li>
+<li>Fix: fix vrs merge (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/271">#271</a>) by <a href="https://github.com/FlayaN">FlayaN</a></li>
+<li>Feat: variable rate shading (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/270">#270</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Chore: update to latest CLIB-NG (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/269">#269</a>) by <a href="https://github.com/FlayaN">FlayaN</a></li>
+<li>Fix: consistent padding in shaders for older cards (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/268">#268</a>) by <a href="https://github.com/Pentalimbed">Pentalimbed</a></li>
+<li>Fix: compile only shaders with available source (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/267">#267</a>) by <a href="https://github.com/alandtse">alandtse</a></li>
+<li>Chore: sync with dev (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/266">#266</a>) by <a href="https://github.com/alandtse">alandtse</a></li>
+<li>Revert: "fix: fix warning <code>Ternary error with non scalar</code>" (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/265">#265</a>) by <a href="https://github.com/alandtse">alandtse</a></li>
+<li>Feat: add deferred rendering (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/264">#264</a>) by <a href="https://github.com/alandtse">alandtse</a></li>
+<li>Chore: sync with dev (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/263">#263</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Fix: fix warning <code>Ternary error with non scalar</code> (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/262">#262</a>) by <a href="https://github.com/alandtse">alandtse</a></li>
+<li>Refactor: simplify VR code and structures (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/261">#261</a>) by <a href="https://github.com/alandtse">alandtse</a></li>
+<li>Fix: fix VR lack of shallow water distortion (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/259">#259</a>) by <a href="https://github.com/alandtse">alandtse</a></li>
+<li>Build: fix compilation errors in terrainocclusion (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/256">#256</a>) by <a href="https://github.com/alandtse">alandtse</a></li>
+<li>Feat: add ssgi and terrain occlusion (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/255">#255</a>) by <a href="https://github.com/Pentalimbed">Pentalimbed</a></li>
+<li>Fix: fix VR Water Caustics edge cases (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/254">#254</a>) by <a href="https://github.com/TheRiverwoodModder">TheRiverwoodModder</a></li>
+<li>Chore: show which feature is selected in the CS menu (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/253">#253</a>) by <a href="https://github.com/TheRiverwoodModder">TheRiverwoodModder</a></li>
+<li>Fix: fix wetness bugs on older Nvidia cards (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/251">#251</a>) by <a href="https://github.com/TheRiverwoodModder">TheRiverwoodModder</a></li>
+<li>Feat: add VR support for distanttree (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/250">#250</a>) by <a href="https://github.com/alandtse">alandtse</a></li>
+<li>Fix: update on added files (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/248">#248</a>) by <a href="https://github.com/alandtse">alandtse</a></li>
+<li>Fix: fix wrong namespace for debug build (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/247">#247</a>) by <a href="https://github.com/FlayaN">FlayaN</a></li>
+<li>Build: add cmake COPY_SHADERS target (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/245">#245</a>) by <a href="https://github.com/FlayaN">FlayaN</a></li>
+<li>Feat: add settings for water parallax and caustics (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/243">#243</a>) by <a href="https://github.com/alandtse">alandtse</a></li>
+<li>Ci: fix vcpkg commit id (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/242">#242</a>) by <a href="https://github.com/FlayaN">FlayaN</a></li>
+<li>Feat: autogenerate settings file (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/241">#241</a>) by <a href="https://github.com/FlayaN">FlayaN</a></li>
+<li>Feat: add perfevent and marker flags (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/240">#240</a>) by <a href="https://github.com/FlayaN">FlayaN</a></li>
+<li>Fix: fix effect shader RE (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/239">#239</a>) by <a href="https://github.com/Jonahex">Jonahex</a></li>
+<li>Build: bump commonlibng to 3.7.0 (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/236">#236</a>) by <a href="https://github.com/alandtse">alandtse</a></li>
+<li>Ci: clang_format.yml lints only modified source files (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/196">#196</a>) by <a href="https://github.com/rjwignar">rjwignar</a></li>
+<li>Feat: add VR water shader (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/193">#193</a>) by <a href="https://github.com/alandtse">alandtse</a></li>
+</ul>
+<p><a href="https://github.com/doodlum/skyrim-community-shaders/compare/v0.8.7...v1.0.0"><code>Full Changelog</code></a> | <a href="https://github.com/doodlum/skyrim-community-shaders/compare/v0.8.7...v1.0.0.diff"><code>Diff</code></a> | <a href="https://github.com/doodlum/skyrim-community-shaders/compare/v0.8.7...v1.0.0.patch"><code>Patch</code></a></p>
+<h4 id="v087-2024-03-30"><a href="https://github.com/doodlum/skyrim-community-shaders/releases/tag/v0.8.7">v0.8.7</a> (2024-03-30)<a class="headerlink" href="#v087-2024-03-30" title="Permanent link">&para;</a></h4>
+<p><strong>Closed Issues</strong></p>
+<ul>
+<li>Not working with intel GPU Arc 770 (<a href="https://github.com/doodlum/skyrim-community-shaders/issues/230">#230</a>) by <a href="https://github.com/alandtse">alandtse</a></li>
+<li>Detect out of date compiled shaders files (<a href="https://github.com/doodlum/skyrim-community-shaders/issues/211">#211</a>) by <a href="https://github.com/alandtse">alandtse</a></li>
+</ul>
+<p><strong>Merged Pull Requests</strong></p>
+<ul>
+<li>Chore: release 0.8.7 (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/238">#238</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Fix: fix crash in soul cairn (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/234">#234</a>) by <a href="https://github.com/TheRiverwoodModder">TheRiverwoodModder</a></li>
+<li>Feat: improve featureList (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/231">#231</a>) by <a href="https://github.com/alandtse">alandtse</a></li>
+<li>Fix: fix VR hook for shadowmask (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/229">#229</a>) by <a href="https://github.com/alandtse">alandtse</a></li>
+<li>Feat: add initial VR support (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/228">#228</a>) by <a href="https://github.com/alandtse">alandtse</a></li>
+<li>Feat: allow debug compilation for compute shaders (#226) (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/227">#227</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Feat: allow debug compilation for compute shaders (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/226">#226</a>) by <a href="https://github.com/alandtse">alandtse</a></li>
+<li>Feat: disable fileWatcher by default (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/225">#225</a>) by <a href="https://github.com/alandtse">alandtse</a></li>
+</ul>
+<p><a href="https://github.com/doodlum/skyrim-community-shaders/compare/v0.8.0...v0.8.7"><code>Full Changelog</code></a> | <a href="https://github.com/doodlum/skyrim-community-shaders/compare/v0.8.0...v0.8.7.diff"><code>Diff</code></a> | <a href="https://github.com/doodlum/skyrim-community-shaders/compare/v0.8.0...v0.8.7.patch"><code>Patch</code></a></p>
+<h3 id="v080-2024-03-15"><a href="https://github.com/doodlum/skyrim-community-shaders/releases/tag/v0.8.0">v0.8.0</a> (2024-03-15)<a class="headerlink" href="#v080-2024-03-15" title="Permanent link">&para;</a></h3>
+<p><strong>Closed Issues</strong></p>
+<ul>
+<li>Does not use timescale/global time modifiers (<a href="https://github.com/doodlum/skyrim-community-shaders/issues/210">#210</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Add shader recompile on changed file (<a href="https://github.com/doodlum/skyrim-community-shaders/issues/205">#205</a>) by <a href="https://github.com/alandtse">alandtse</a></li>
+<li>Various zip names for testing should have buildtime in name (<a href="https://github.com/doodlum/skyrim-community-shaders/issues/204">#204</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Cmake build error: MSB3073    The command "setlocal (<a href="https://github.com/doodlum/skyrim-community-shaders/issues/189">#189</a>) by <a href="https://github.com/alandtse">alandtse</a></li>
+<li>Putting shared resources in a common hlsl header (<a href="https://github.com/doodlum/skyrim-community-shaders/issues/171">#171</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Refactor repeated code into helper functions (<a href="https://github.com/doodlum/skyrim-community-shaders/issues/163">#163</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Detect out of date features (<a href="https://github.com/doodlum/skyrim-community-shaders/issues/145">#145</a>) by <a href="https://github.com/alandtse">alandtse</a></li>
+<li>Simplify Feature loading code (<a href="https://github.com/doodlum/skyrim-community-shaders/issues/97">#97</a>) by <a href="https://github.com/alandtse">alandtse</a></li>
+<li>Option to reset settings to default values. (<a href="https://github.com/doodlum/skyrim-community-shaders/issues/81">#81</a>) by <a href="https://github.com/alandtse">alandtse</a></li>
+</ul>
+<p><strong>Merged Pull Requests</strong></p>
+<ul>
+<li>Chore: release 2024-03-15 (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/221">#221</a>) by <a href="https://github.com/alandtse">alandtse</a></li>
+<li>Feat: enable shader debug info in developer mode (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/220">#220</a>) by <a href="https://github.com/alandtse">alandtse</a></li>
+<li>Fix: add locks to modifiedShaderMap (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/219">#219</a>) by <a href="https://github.com/alandtse">alandtse</a></li>
+<li>Feat: revised dynamic cubemaps (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/218">#218</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Chore: separate raindrop splash and ripple intervals (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/217">#217</a>) by <a href="https://github.com/TheRiverwoodModder">TheRiverwoodModder</a></li>
+<li>Fix: ctd when files were deleted from shaders path (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/216">#216</a>) by <a href="https://github.com/alandtse">alandtse</a></li>
+<li>Fix: fix raindrop effects (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/215">#215</a>) by <a href="https://github.com/TheRiverwoodModder">TheRiverwoodModder</a></li>
+<li>Feat: add datetime to zips (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/214">#214</a>) by <a href="https://github.com/FlayaN">FlayaN</a></li>
+<li>Chore: Move hardcoded values to user settings (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/209">#209</a>) by <a href="https://github.com/TheRiverwoodModder">TheRiverwoodModder</a></li>
+<li>Merge test (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/208">#208</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Chore: reduce log level for uav access (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/207">#207</a>) by <a href="https://github.com/alandtse">alandtse</a></li>
+<li>Feat: recompile automatically for changed shaders (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/206">#206</a>) by <a href="https://github.com/alandtse">alandtse</a></li>
+<li>Feat: add vr support to screen space shadows (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/203">#203</a>) by <a href="https://github.com/FlayaN">FlayaN</a></li>
+<li>Perf: use <code>ankerl::unordered_dense::map</code> as Particle Lights maps, and minor optimsations (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/202">#202</a>) by <a href="https://github.com/Pentalimbed">Pentalimbed</a></li>
+<li>Build: bump commonlibng (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/201">#201</a>) by <a href="https://github.com/alandtse">alandtse</a></li>
+<li>Merge (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/200">#200</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Fix: cloud shadows blend state reset (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/199">#199</a>) by <a href="https://github.com/Pentalimbed">Pentalimbed</a></li>
+<li>Fix: fix VR for SSS (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/198">#198</a>) by <a href="https://github.com/alandtse">alandtse</a></li>
+<li>Feat: add VR offsets for CreateRenderTarget hooks (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/197">#197</a>) by <a href="https://github.com/FlayaN">FlayaN</a></li>
+<li>Chore: add helper functions and classes (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/194">#194</a>) by <a href="https://github.com/Pentalimbed">Pentalimbed</a></li>
+<li>Fix: fix black squares issue and bring back puddles (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/191">#191</a>) by <a href="https://github.com/TheRiverwoodModder">TheRiverwoodModder</a></li>
+<li>Fix: Wetness fixes for settings and eyes (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/188">#188</a>) by <a href="https://github.com/TheRiverwoodModder">TheRiverwoodModder</a></li>
+<li>Fix: fix VR resolution detection (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/183">#183</a>) by <a href="https://github.com/alandtse">alandtse</a></li>
+<li>Fix: fix VR ctd (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/182">#182</a>) by <a href="https://github.com/alandtse">alandtse</a></li>
+<li>Build: added AIO_ZIP_TO_DIST cmake flag to build AIO zip for testing (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/181">#181</a>) by <a href="https://github.com/FlayaN">FlayaN</a></li>
+<li>Feat: add feature version detection (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/180">#180</a>) by <a href="https://github.com/FlayaN">FlayaN</a></li>
+<li>Feat: add water parallax, caustics, and improved cubemaps (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/177">#177</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Feat: add raindrop effects, splashes and ripples to rain wetness (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/176">#176</a>) by <a href="https://github.com/Pentalimbed">Pentalimbed</a></li>
+<li>Refactor: move LightingData into common (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/174">#174</a>) by <a href="https://github.com/FlayaN">FlayaN</a></li>
+<li>Feat: add wetness system based on water depth (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/173">#173</a>) by <a href="https://github.com/TheRiverwoodModder">TheRiverwoodModder</a></li>
+<li>Feat: add cloud shadows (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/172">#172</a>) by <a href="https://github.com/Pentalimbed">Pentalimbed</a></li>
+<li>Refactor: extract common UI codes, including restore default button, and hovered tooltip formatting (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/170">#170</a>) by <a href="https://github.com/Pentalimbed">Pentalimbed</a></li>
+<li>Revert "refactor: move RunGrass and DistantTree out of individual features and into main packages" (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/167">#167</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Refactor: move RunGrass and DistantTree out of individual features and into main packages (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/166">#166</a>) by <a href="https://github.com/Pentalimbed">Pentalimbed</a></li>
+<li>Feat: skin wetness, min wetness, and other wetness updates (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/165">#165</a>) by <a href="https://github.com/TheRiverwoodModder">TheRiverwoodModder</a></li>
+<li>Build: update commonlib (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/164">#164</a>) by <a href="https://github.com/alandtse">alandtse</a></li>
+<li>Fix: clear imgui inputs when window focus lost (alt-tabbing) (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/162">#162</a>) by <a href="https://github.com/FlayaN">FlayaN</a></li>
+<li>Chore: set default menu text color to white (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/161">#161</a>) by <a href="https://github.com/TheRiverwoodModder">TheRiverwoodModder</a></li>
+<li>Fix: black reflections on water for amd (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/160">#160</a>) by <a href="https://github.com/TKCen">TKCen</a></li>
+<li>Fix: wetness specular for amd (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/159">#159</a>) by <a href="https://github.com/TKCen">TKCen</a></li>
+<li>Feat: add feature-level restore defaults option (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/158">#158</a>) by <a href="https://github.com/TheRiverwoodModder">TheRiverwoodModder</a></li>
+<li>Fix: fix ImGui Assert (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/157">#157</a>) by <a href="https://github.com/TheRiverwoodModder">TheRiverwoodModder</a></li>
+<li>Fix: Some QoL Menu fixes (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/156">#156</a>) by <a href="https://github.com/TheRiverwoodModder">TheRiverwoodModder</a></li>
+<li>Chore: wetness value adjustments (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/155">#155</a>) by <a href="https://github.com/TheRiverwoodModder">TheRiverwoodModder</a></li>
+<li>Fix: VR fix of the FirstPerson calculation for the Fog in Lighting Shader Reflections feature. (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/154">#154</a>) by <a href="https://github.com/TheRiverwoodModder">TheRiverwoodModder</a></li>
+<li>Feat: further LLF improvements (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/153">#153</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Feat: add LLF support to effect and waters shaders (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/152">#152</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Fix: fix wetness calculation logic (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/151">#151</a>) by <a href="https://github.com/TheRiverwoodModder">TheRiverwoodModder</a></li>
+<li>Merge pull request #149 from doodlum/dev (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/150">#150</a>) by <a href="https://github.com/alandtse">alandtse</a></li>
+<li>Feat: add helper macros for IMGUI menus (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/126">#126</a>) by <a href="https://github.com/alandtse">alandtse</a></li>
+</ul>
+<p><a href="https://github.com/doodlum/skyrim-community-shaders/compare/v0.7.4...v0.8.0"><code>Full Changelog</code></a> | <a href="https://github.com/doodlum/skyrim-community-shaders/compare/v0.7.4...v0.8.0.diff"><code>Diff</code></a> | <a href="https://github.com/doodlum/skyrim-community-shaders/compare/v0.7.4...v0.8.0.patch"><code>Patch</code></a></p>
+<h3 id="v074-2023-12-23"><a href="https://github.com/doodlum/skyrim-community-shaders/releases/tag/v0.7.4">v0.7.4</a> (2023-12-23)<a class="headerlink" href="#v074-2023-12-23" title="Permanent link">&para;</a></h3>
+<p><strong>Closed Issues</strong></p>
+<ul>
+<li>VR grass culling per eye issue with grass lighting mod (<a href="https://github.com/doodlum/skyrim-community-shaders/issues/124">#124</a>) by <a href="https://github.com/alandtse">alandtse</a></li>
+<li>Grass issues (<a href="https://github.com/doodlum/skyrim-community-shaders/issues/120">#120</a>) by <a href="https://github.com/Kazlehoff">Kazlehoff</a></li>
+<li>Fix menu multiline strings (<a href="https://github.com/doodlum/skyrim-community-shaders/issues/87">#87</a>) by <a href="https://github.com/alandtse">alandtse</a></li>
+<li>Investigate options to improve compiling performance at startup (<a href="https://github.com/doodlum/skyrim-community-shaders/issues/72">#72</a>) by <a href="https://github.com/alandtse">alandtse</a></li>
+<li>Compiler failure results infinite loop compiling (<a href="https://github.com/doodlum/skyrim-community-shaders/issues/71">#71</a>) by <a href="https://github.com/alandtse">alandtse</a></li>
+<li>User configs (<a href="https://github.com/doodlum/skyrim-community-shaders/issues/66">#66</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Cmake build copy option (<a href="https://github.com/doodlum/skyrim-community-shaders/issues/63">#63</a>) by <a href="https://github.com/alandtse">alandtse</a></li>
+<li>Grass lighting for particles will suddenly enable when getting closer (<a href="https://github.com/doodlum/skyrim-community-shaders/issues/61">#61</a>) by <a href="https://github.com/alandtse">alandtse</a></li>
+<li>Add weather to shaders (<a href="https://github.com/doodlum/skyrim-community-shaders/issues/60">#60</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>The VR lighting shader has an issue with certain textures. (<a href="https://github.com/doodlum/skyrim-community-shaders/issues/51">#51</a>) by <a href="https://github.com/alandtse">alandtse</a></li>
+<li>Encapsulate OldState class to manage compute shader resources (<a href="https://github.com/doodlum/skyrim-community-shaders/issues/34">#34</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Input data race crash fix: synchronize input event handling (<a href="https://github.com/doodlum/skyrim-community-shaders/issues/32">#32</a>) by <a href="https://github.com/alandtse">alandtse</a></li>
+<li>Closing the window by clicking the X won't resume control (<a href="https://github.com/doodlum/skyrim-community-shaders/issues/15">#15</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+</ul>
+<p><strong>Merged Pull Requests</strong></p>
+<ul>
+<li>Chore: release 2023-12-23 (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/149">#149</a>) by <a href="https://github.com/alandtse">alandtse</a></li>
+<li>Chore: prepare for release (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/148">#148</a>) by <a href="https://github.com/alandtse">alandtse</a></li>
+<li>Fix: fix AE1130 (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/147">#147</a>) by <a href="https://github.com/alandtse">alandtse</a></li>
+<li>Fix: fix VR zfighting in distant mountains (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/146">#146</a>) by <a href="https://github.com/alandtse">alandtse</a></li>
+<li>Feat: add debug shader mode (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/144">#144</a>) by <a href="https://github.com/alandtse">alandtse</a></li>
+<li>Refactor: Consolidate multiline strings in feature code (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/143">#143</a>) by <a href="https://github.com/rjwignar">rjwignar</a></li>
+<li>Fix: fix detection of Skyrim Upscaler dll (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/142">#142</a>) by <a href="https://github.com/alandtse">alandtse</a></li>
+<li>Feat: allow override for complex grass lighting (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/141">#141</a>) by <a href="https://github.com/alandtse">alandtse</a></li>
+<li>Ci: add pr lint action (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/140">#140</a>) by <a href="https://github.com/alandtse">alandtse</a></li>
+<li>Fix: change Input handling hook (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/139">#139</a>) by <a href="https://github.com/H4vC">H4vC</a></li>
+<li>Fix: use VR eyePosition for PointLightPosition (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/138">#138</a>) by <a href="https://github.com/alandtse">alandtse</a></li>
+<li>0.7.0 (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/137">#137</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Adding a global effect hotkey (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/136">#136</a>) by <a href="https://github.com/H4vC">H4vC</a></li>
+<li>Typo Fix in Wetness Effects settings (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/135">#135</a>) by <a href="https://github.com/H4vC">H4vC</a></li>
+<li>Feat: wetness effects and dynamic cubemaps (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/134">#134</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Feat: screenspace reflection capture (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/133">#133</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Triplanar Mapping for Projected Textures (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/132">#132</a>) by <a href="https://github.com/CiMaWi">CiMaWi</a></li>
+<li>Feat: add TESTCUBEMAP define testmode (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/131">#131</a>) by <a href="https://github.com/alandtse">alandtse</a></li>
+<li>Fix: fix VR wetness (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/130">#130</a>) by <a href="https://github.com/alandtse">alandtse</a></li>
+<li>Ci: add todo action (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/127">#127</a>) by <a href="https://github.com/alandtse">alandtse</a></li>
+<li>Fix: fix inconsistent VR grass culling (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/125">#125</a>) by <a href="https://github.com/thorwin99">thorwin99</a></li>
+<li>Feat: increased portal strict light limit (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/123">#123</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Fix: add vr offset for llf hook (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/122">#122</a>) by <a href="https://github.com/alandtse">alandtse</a></li>
+<li>Chore: sync with dev (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/121">#121</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Chore: break apart menu multiline strings (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/119">#119</a>) by <a href="https://github.com/rjwignar">rjwignar</a></li>
+<li>Fix: bump commonlib (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/118">#118</a>) by <a href="https://github.com/alandtse">alandtse</a></li>
+<li>Refactor: move opt in for shaders to virtual feature function (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/117">#117</a>) by <a href="https://github.com/FlayaN">FlayaN</a></li>
+<li>Feat: add testing mode (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/116">#116</a>) by <a href="https://github.com/alandtse">alandtse</a></li>
+<li>Feat: simplify feature loading (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/115">#115</a>) by <a href="https://github.com/FlayaN">FlayaN</a></li>
+<li>Fix: fix compilation error in treelod (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/113">#113</a>) by <a href="https://github.com/alandtse">alandtse</a></li>
+<li>Fix: fix SSS compiler error (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/112">#112</a>) by <a href="https://github.com/alandtse">alandtse</a></li>
+<li>Fix: fix VR tAA detection (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/111">#111</a>) by <a href="https://github.com/alandtse">alandtse</a></li>
+<li>Fix: save screen space shadows enable setting (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/110">#110</a>) by <a href="https://github.com/alandtse">alandtse</a></li>
+<li>Feat: static branching instead of macros (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/109">#109</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Chore: sync with dev (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/108">#108</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Revert "chore: sync with dev" (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/107">#107</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Chore: sync with dev (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/106">#106</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Fix: fix EnableFirstPersonShadows for VR (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/104">#104</a>) by <a href="https://github.com/alandtse">alandtse</a></li>
+<li>Fix: fix stuck compiling after clearing cache (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/103">#103</a>) by <a href="https://github.com/alandtse">alandtse</a></li>
+<li>Fix: fix load of backgroundCompilerThreads setting (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/102">#102</a>) by <a href="https://github.com/alandtse">alandtse</a></li>
+<li>Feat: improve compilation options (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/101">#101</a>) by <a href="https://github.com/alandtse">alandtse</a></li>
+<li>Revert: "feat: allow adjustment of compiler threads (#99)" (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/100">#100</a>) by <a href="https://github.com/alandtse">alandtse</a></li>
+<li>Feat: allow adjustment of compiler threads (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/99">#99</a>) by <a href="https://github.com/alandtse">alandtse</a></li>
+<li>Fix: fix subsurface-scattering for VR (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/98">#98</a>) by <a href="https://github.com/alandtse">alandtse</a></li>
+<li>Fix: remove forced settings for shadercache (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/95">#95</a>) by <a href="https://github.com/alandtse">alandtse</a></li>
+<li>Chore: use progress bar instead of text (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/94">#94</a>) by <a href="https://github.com/alandtse">alandtse</a></li>
+<li>Build: add hlsl files to visual studio (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/92">#92</a>) by <a href="https://github.com/alandtse">alandtse</a></li>
+<li>Chore: sync with dev and VR fixes (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/91">#91</a>) by <a href="https://github.com/alandtse">alandtse</a></li>
+<li>Chore: sync dev with main (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/90">#90</a>) by <a href="https://github.com/alandtse">alandtse</a></li>
+<li>Docs: simplify build commands (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/89">#89</a>) by <a href="https://github.com/Pentalimbed">Pentalimbed</a></li>
+<li>Fix: set bLandSpecular to support Terrain Parallax (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/88">#88</a>) by <a href="https://github.com/alandtse">alandtse</a></li>
+<li>Feat: improve ShaderCache (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/86">#86</a>) by <a href="https://github.com/alandtse">alandtse</a></li>
+<li>Docs: improve compilation instructions (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/85">#85</a>) by <a href="https://github.com/AceAmir">AceAmir</a></li>
+<li>Ci: update build workflow to include assets (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/84">#84</a>) by <a href="https://github.com/FlayaN">FlayaN</a></li>
+<li>Feat: add Rain wetness effects (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/83">#83</a>) by <a href="https://github.com/TheRiverwoodModder">TheRiverwoodModder</a></li>
+<li>Chore: polish Feature menus (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/82">#82</a>) by <a href="https://github.com/TheRiverwoodModder">TheRiverwoodModder</a></li>
+<li>Chore: WIP polish main menu (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/80">#80</a>) by <a href="https://github.com/TheRiverwoodModder">TheRiverwoodModder</a></li>
+<li>Feat: add NPC grass collision (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/79">#79</a>) by <a href="https://github.com/alandtse">alandtse</a></li>
+<li>Feat: reload ParticleLight ini on Load Settings (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/78">#78</a>) by <a href="https://github.com/alandtse">alandtse</a></li>
+<li>Chore: add feature version to menu (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/77">#77</a>) by <a href="https://github.com/alandtse">alandtse</a></li>
+<li>Docs: add feature version to log (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/76">#76</a>) by <a href="https://github.com/alandtse">alandtse</a></li>
+<li>0.6.0 VR hotfix (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/75">#75</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>0.6.0 hotfixes (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/74">#74</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Chore: version bump screenspace shadows (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/73">#73</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Chore: sync dev with main (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/70">#70</a>) by <a href="https://github.com/alandtse">alandtse</a></li>
+<li>Chore: release 0.6.0 (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/69">#69</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Ci: clang format on pushes too (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/68">#68</a>) by <a href="https://github.com/alandtse">alandtse</a></li>
+<li>Feat: allow user specific configs (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/67">#67</a>) by <a href="https://github.com/alandtse">alandtse</a></li>
+<li>Build: added automatic plugin deployment (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/65">#65</a>) by <a href="https://github.com/FlayaN">FlayaN</a></li>
+<li>Build: update commonlibvr submodule (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/64">#64</a>) by <a href="https://github.com/alandtse">alandtse</a></li>
+<li>Fix: fix contact shadows in VR lighting (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/62">#62</a>) by <a href="https://github.com/alandtse">alandtse</a></li>
+<li>Fix LLF for right eye VR (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/58">#58</a>) by <a href="https://github.com/FlayaN">FlayaN</a></li>
+<li>Feat: add Grass Collision to VR (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/56">#56</a>) by <a href="https://github.com/alandtse">alandtse</a></li>
+<li>Feat: add Shader Defines advanced option (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/55">#55</a>) by <a href="https://github.com/alandtse">alandtse</a></li>
+<li>Fix: adjust right eye by averaged position (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/54">#54</a>) by <a href="https://github.com/alandtse">alandtse</a></li>
+<li>Fix: always populate right eye WS for particles (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/53">#53</a>) by <a href="https://github.com/alandtse">alandtse</a></li>
+<li>Fix: fix alpha test in VR (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/52">#52</a>) by <a href="https://github.com/alandtse">alandtse</a></li>
+<li>Chore: sync dev with main (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/50">#50</a>) by <a href="https://github.com/alandtse">alandtse</a></li>
+<li>Initial particle lights config system (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/49">#49</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Fix: fix ctd due to NiParticles offset (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/48">#48</a>) by <a href="https://github.com/alandtse">alandtse</a></li>
+<li>A workflow for building releases on tag push (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/47">#47</a>) by <a href="https://github.com/ceejbot">ceejbot</a></li>
+<li>Ci: apply format to dev PRs (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/46">#46</a>) by <a href="https://github.com/alandtse">alandtse</a></li>
+<li>Build: bump commonlib (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/45">#45</a>) by <a href="https://github.com/alandtse">alandtse</a></li>
+<li>Fix infinite compiling when PBR is enabled (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/44">#44</a>) by <a href="https://github.com/LaoBro">LaoBro</a></li>
+<li>Docs: set GPL license for project (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/42">#42</a>) by <a href="https://github.com/alandtse">alandtse</a></li>
+<li>Fix VR compilation (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/41">#41</a>) by <a href="https://github.com/alandtse">alandtse</a></li>
+<li>Fix: add dependency for commonlibng simplemath (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/40">#40</a>) by <a href="https://github.com/alandtse">alandtse</a></li>
+<li>Revert "Imagespace" (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/39">#39</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Imagespace (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/38">#38</a>) by <a href="https://github.com/jeanluciano">jeanluciano</a></li>
+<li>Texture3D buffer class (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/37">#37</a>) by <a href="https://github.com/Pentalimbed">Pentalimbed</a></li>
+<li>Various developer improvements for shader compilation (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/35">#35</a>) by <a href="https://github.com/alandtse">alandtse</a></li>
+<li>Fix: reenable controls when mouse closes menu (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/31">#31</a>) by <a href="https://github.com/alandtse">alandtse</a></li>
+<li>Ci: fix failing git checkout (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/28">#28</a>) by <a href="https://github.com/alandtse">alandtse</a></li>
+<li>Ci: add clang format action (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/27">#27</a>) by <a href="https://github.com/alandtse">alandtse</a></li>
+<li>Refactor hlsl (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/26">#26</a>) by <a href="https://github.com/alandtse">alandtse</a></li>
+<li>VR support and additional improvements (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/25">#25</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Fix VR and Flat grass lighting (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/23">#23</a>) by <a href="https://github.com/alandtse">alandtse</a></li>
+<li>Add VR preprocessor def for GrassShader (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/22">#22</a>) by <a href="https://github.com/alandtse">alandtse</a></li>
+<li>Fix VR compilation (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/21">#21</a>) by <a href="https://github.com/alandtse">alandtse</a></li>
+<li>[UI] font scale crash fix, hide unloaded feature (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/19">#19</a>) by <a href="https://github.com/Pentalimbed">Pentalimbed</a></li>
+<li>Font scale slider, keyboard input and new theme (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/18">#18</a>) by <a href="https://github.com/Pentalimbed">Pentalimbed</a></li>
+<li>UI overhaul (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/17">#17</a>) by <a href="https://github.com/Pentalimbed">Pentalimbed</a></li>
+<li>Materials (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/16">#16</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Abstract common feature class (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/14">#14</a>) by <a href="https://github.com/Pentalimbed">Pentalimbed</a></li>
+<li>Merge upstream (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/12">#12</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Simplify json io with nlohmann json macro (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/11">#11</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Simplify json io with nlohmann json macro (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/10">#10</a>) by <a href="https://github.com/Pentalimbed">Pentalimbed</a></li>
+<li>Fix use of NG (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/9">#9</a>) by <a href="https://github.com/alandtse">alandtse</a></li>
+<li>Screen-Space Shadows + POM (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/8">#8</a>) by <a href="https://github.com/doodlum">doodlum</a></li>
+<li>Sync with VR branch (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/6">#6</a>) by <a href="https://github.com/alandtse">alandtse</a></li>
+<li>Fix VR ctds (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/5">#5</a>) by <a href="https://github.com/alandtse">alandtse</a></li>
+<li>Feat: Add advanced options to imgui (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/4">#4</a>) by <a href="https://github.com/alandtse">alandtse</a></li>
+<li>Converted UI from reshade to native imgui (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/3">#3</a>) by <a href="https://github.com/ffarrell17">ffarrell17</a></li>
+<li>Added menu toggle key option. Fixed general settings loading correctly (<a href="https://github.com/doodlum/skyrim-community-shaders/pull/2">#2</a>) by <a href="https://github.com/ffarrell17">ffarrell17</a></li>
+</ul>
+<hr />
+<p><em>This changelog was generated using <a href="http://changelog.seapagan.net/">github-changelog-md</a> by <a href="https://github.com/seapagan">Seapagan</a></em></p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../VR-Developer-Notes/" class="md-footer__link md-footer__link--prev" aria-label="Previous: VR Developer Notes">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                VR Developer Notes
+              </div>
+            </div>
+          </a>
+        
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://www.nexusmods.com/skyrimspecialedition/mods/86492" target="_blank" rel="noopener" title="www.nexusmods.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17.376 0c-.993 0-2.18.686-2.907 1.182-1.676-.36-4.036-.545-6.787.635-1.365-.513-2.425-.562-3.32-.488a2.16 2.16 0 0 0-1.27.429c-.33.22-2.788 2.69-3.069 4.652C-.15 7.508.68 8.932 1.218 9.718c-.44 1.76-.2 4.572.517 6.188-.353 1.041-.713 2.089-.664 3.205.01.584.061 1.188.398 1.684C1.72 21.19 4.528 24 6.545 24c.957 0 1.93-.428 3.07-1.24 2.16.383 4.402.348 6.448-.532 2.573 1.001 4.224.625 4.84.162.587-.457 2.826-2.915 3.07-4.622.1-.672-.023-1.638-1.226-3.397a11 11 0 0 0-.501-6.455c.396-1.069.673-2.188.59-3.337-.015-.68-.221-1.167-.487-1.507-.209-.335-2.415-2.39-4.028-2.91A3.1 3.1 0 0 0 17.376 0m-.03 2.082c.65.015 2.155 1.093 3.01 1.906l.355.34c-.959-.163-2.125.428-3.26 1.55a10.3 10.3 0 0 0-1.358 1.595c-.28.384-.517.768-.753 1.285l1.18.635-3.895 1.477-1.122-4.18 1.033.547c1.358-3.102 2.524-3.973 3.232-4.416h.015a5.1 5.1 0 0 1 1.49-.724zM12 3.065a9 9 0 0 1 2.22.279 8 8 0 0 0-.42.488 8.4 8.4 0 0 0-1.8-.196 8.34 8.34 0 0 0-5.897 2.432 8 8 0 0 1-.37-.433A8.9 8.9 0 0 1 12 3.065m-7.076.305c.71-.002 1.309.127 2.2.466a9.5 9.5 0 0 0-1.713 1.337c-.327-.542-.624-1.156-.488-1.803m-.606.042c-.162.96.428 2.126 1.55 3.264.457.487 1.003.945 1.594 1.358.383.281.767.517 1.283.754l.62-1.182 1.49 3.914-4.176 1.122.546-1.033c-3.099-1.36-3.969-2.526-4.412-3.235v-.015a5.1 5.1 0 0 1-.723-1.491l-.015-.074c.015-.65 1.092-2.156 1.904-3.013Zm16.035 1.483a1.3 1.3 0 0 1 .26.015l.14.023a5 5 0 0 1-.13 1.137v.015q-.152.574-.377 1.148a9.5 9.5 0 0 0-1.346-1.776c.547-.357 1.051-.546 1.453-.562M18.43 5.8a8.9 8.9 0 0 1 2.506 6.2 9 9 0 0 1-.27 2.183 8 8 0 0 0-.488-.425A8.4 8.4 0 0 0 20.364 12 8.33 8.33 0 0 0 18 6.173a8 8 0 0 1 .429-.373M3.315 9.905q.235.222.488.425A8.4 8.4 0 0 0 3.636 12c0 2.248.887 4.286 2.327 5.788a8 8 0 0 1-.426.376A8.9 8.9 0 0 1 3.065 12a9 9 0 0 1 .25-2.095m13.988 1.541-.546 1.034c3.098 1.359 3.969 2.526 4.412 3.235v.014c.34.488.575.99.723 1.492l.014.074c-.014.65-1.092 2.156-1.903 3.013l-.34.354c.163-.96-.427-2.127-1.549-3.264a10.3 10.3 0 0 0-1.594-1.359 7 7 0 0 0-1.283-.753l-.605 1.152-1.505-3.87zm-6.006 1.684 1.121 4.18-1.033-.547c-1.357 3.102-2.523 3.973-3.231 4.416h-.015c-.487.34-.989.576-1.49.724l-.074.015c-.65-.015-2.154-1.093-3.01-1.906l-.354-.34c.959.163 2.124-.428 3.26-1.55.488-.458.945-1.004 1.358-1.595.28-.384.517-.768.753-1.285l-1.166-.635ZM3.72 16.663A9.5 9.5 0 0 0 5.086 18.5c-.697.47-1.33.665-1.777.59l-.138-.024c0-.367.038-.748.128-1.137v-.015c.11-.417.254-.835.42-1.252m14.131 1.314q.194.21.372.43A8.9 8.9 0 0 1 12 20.936a9 9 0 0 1-2.282-.296 8 8 0 0 0 .417-.487 8.34 8.34 0 0 0 7.716-2.175m.696.889c.43.666.607 1.267.534 1.698l-.023.138a5 5 0 0 1-1.136-.128h-.014a11 11 0 0 1-1.114-.366 9.5 9.5 0 0 0 1.753-1.342"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://discord.gg/nkrQybAsyy" target="_blank" rel="noopener" title="discord.gg" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M524.531 69.836a1.5 1.5 0 0 0-.764-.7A485 485 0 0 0 404.081 32.03a1.82 1.82 0 0 0-1.923.91 338 338 0 0 0-14.9 30.6 447.9 447.9 0 0 0-134.426 0 310 310 0 0 0-15.135-30.6 1.89 1.89 0 0 0-1.924-.91 483.7 483.7 0 0 0-119.688 37.107 1.7 1.7 0 0 0-.788.676C39.068 183.651 18.186 294.69 28.43 404.354a2.02 2.02 0 0 0 .765 1.375 487.7 487.7 0 0 0 146.825 74.189 1.9 1.9 0 0 0 2.063-.676A348 348 0 0 0 208.12 430.4a1.86 1.86 0 0 0-1.019-2.588 321 321 0 0 1-45.868-21.853 1.885 1.885 0 0 1-.185-3.126 251 251 0 0 0 9.109-7.137 1.82 1.82 0 0 1 1.9-.256c96.229 43.917 200.41 43.917 295.5 0a1.81 1.81 0 0 1 1.924.233 235 235 0 0 0 9.132 7.16 1.884 1.884 0 0 1-.162 3.126 301.4 301.4 0 0 1-45.89 21.83 1.875 1.875 0 0 0-1 2.611 391 391 0 0 0 30.014 48.815 1.86 1.86 0 0 0 2.063.7A486 486 0 0 0 610.7 405.729a1.88 1.88 0 0 0 .765-1.352c12.264-126.783-20.532-236.912-86.934-334.541M222.491 337.58c-28.972 0-52.844-26.587-52.844-59.239s23.409-59.241 52.844-59.241c29.665 0 53.306 26.82 52.843 59.239 0 32.654-23.41 59.241-52.843 59.241m195.38 0c-28.971 0-52.843-26.587-52.843-59.239s23.409-59.241 52.843-59.241c29.667 0 53.307 26.82 52.844 59.239 0 32.654-23.177 59.241-52.844 59.241"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.instant", "navigation.footer", "header.autohide", "content.tabs.link", "navigation.sections", "navigation.indexes"], "search": "../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.83f73b43.min.js"></script>
+      
+    
+  </body>
+</html>
