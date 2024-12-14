@@ -2,38 +2,42 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://fenrirkey.github.io/0.5/</loc>
-         <lastmod>2024-12-13</lastmod>
+         <lastmod>2024-12-14</lastmod>
     </url>
     <url>
          <loc>https://fenrirkey.github.io/0.5/Buffers/</loc>
-         <lastmod>2024-12-13</lastmod>
+         <lastmod>2024-12-14</lastmod>
     </url>
     <url>
          <loc>https://fenrirkey.github.io/0.5/Developers/</loc>
-         <lastmod>2024-12-13</lastmod>
+         <lastmod>2024-12-14</lastmod>
     </url>
     <url>
          <loc>https://fenrirkey.github.io/0.5/Dynamic-Cubemap-Creator/</loc>
-         <lastmod>2024-12-13</lastmod>
+         <lastmod>2024-12-14</lastmod>
     </url>
     <url>
          <loc>https://fenrirkey.github.io/0.5/FAQ/</loc>
-         <lastmod>2024-12-13</lastmod>
+         <lastmod>2024-12-14</lastmod>
+    </url>
+    <url>
+         <loc>https://fenrirkey.github.io/0.5/Light-Placer/</loc>
+         <lastmod>2024-12-14</lastmod>
     </url>
     <url>
          <loc>https://fenrirkey.github.io/0.5/Particle-Lights/</loc>
-         <lastmod>2024-12-13</lastmod>
+         <lastmod>2024-12-14</lastmod>
     </url>
     <url>
          <loc>https://fenrirkey.github.io/0.5/Shader-Constant-Buffers/</loc>
-         <lastmod>2024-12-13</lastmod>
+         <lastmod>2024-12-14</lastmod>
     </url>
     <url>
          <loc>https://fenrirkey.github.io/0.5/True-PBR/</loc>
-         <lastmod>2024-12-13</lastmod>
+         <lastmod>2024-12-14</lastmod>
     </url>
     <url>
          <loc>https://fenrirkey.github.io/0.5/VR-Developer-Notes/</loc>
-         <lastmod>2024-12-13</lastmod>
+         <lastmod>2024-12-14</lastmod>
     </url>
 </urlset>

@@ -8,11 +8,13 @@
       
       
       
-        <link rel="canonical" href="https://fenrirkey.github.io/0.5/VR-Developer-Notes/">
+        <link rel="canonical" href="https://fenrirkey.github.io/0.5/Light-Placer/">
       
       
-        <link rel="prev" href="../True-PBR/">
+        <link rel="prev" href="../FAQ/">
       
+      
+        <link rel="next" href="../Particle-Lights/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -20,7 +22,7 @@
     
     
       
-        <title>VR Developer Notes - Community Shaders Documentation</title>
+        <title>Light Placer - Community Shaders Documentation</title>
       
     
     
@@ -72,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#vr-hlsl-porting" class="md-skip">
+        <a href="#background" class="md-skip">
           Skip to content
         </a>
       
@@ -112,7 +114,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              VR Developer Notes
+              Light Placer
             
           </span>
         </div>
@@ -362,10 +364,28 @@
       
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../Light-Placer/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Light Placer
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -374,6 +394,42 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#background" class="md-nav__link">
+    <span class="md-ellipsis">
+      Background
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#adding-lights" class="md-nav__link">
+    <span class="md-ellipsis">
+      Adding Lights
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -442,28 +498,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    VR Developer Notes
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../VR-Developer-Notes/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -472,33 +510,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#vr-hlsl-porting" class="md-nav__link">
-    <span class="md-ellipsis">
-      VR HLSL porting
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -528,9 +539,18 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#vr-hlsl-porting" class="md-nav__link">
+  <a href="#background" class="md-nav__link">
     <span class="md-ellipsis">
-      VR HLSL porting
+      Background
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#adding-lights" class="md-nav__link">
+    <span class="md-ellipsis">
+      Adding Lights
     </span>
   </a>
   
@@ -551,29 +571,15 @@
                   
 
 
-  <h1>VR Developer Notes</h1>
+  <h1>Light Placer</h1>
 
-<h2 id="vr-hlsl-porting">VR HLSL porting<a class="headerlink" href="#vr-hlsl-porting" title="Permanent link">&para;</a></h2>
-<p>VR porting assumes that the flat shader has been reversed already and exists in CS for flat. We typically do not RE or port for VR first due to the added complexity.</p>
-<ol>
-<li>Use <code>Advanced -&gt; Dump Shaders</code> to dump all shaders for Flat/VR on startup. It will end up in <code>data\ShaderDump</code>.</li>
-<li>Use <a href="https://github.com/bo3b/3Dmigoto/tree/master/HLSLDecompiler">3dmigito's decompiler</a> on all the .bin shaders to get hlsl. We have a script <code>Skyrim_Disassemble_Shaders</code> that we haven't posted yet that will crawl all of the bin files. (ask on discord)</li>
-<li>
-<p>Check cbuffers vs flat. Same size should be fine. Search this regex (VSCode escaped) in VR will identify eyeIndex based buffers. <code>cb[0-9]+\[([^\]]+\+)+\w+\]</code>. Compare against flat files for same cb (non regex). For example, </p>
-<p><div class="highlight"><pre><span></span><code><span class="c1">//FLAT</span>
-<span class="w">  </span><span class="n">r1</span><span class="p">.</span><span class="n">xyzw</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">float4</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">cb12</span><span class="p">[</span><span class="mi">8</span><span class="p">].</span><span class="n">wwww</span><span class="p">;</span>
-<span class="c1">//VR</span>
-<span class="w">  </span><span class="n">r2</span><span class="p">.</span><span class="n">xyzw</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cb12</span><span class="p">[</span><span class="n">r0</span><span class="p">.</span><span class="n">z</span><span class="o">+</span><span class="mi">16</span><span class="p">].</span><span class="n">wwww</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">float4</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span>
-</code></pre></div>
-These are essentially the same buffer access of cb12. The addition order doesn't matter, and the additional index of <code>r0.z</code> is basically <code>eyeIndex</code>. The offset of <code>+ 16</code> shows that the variable at <code>packoffset(c8)</code> in flat is actually <code>packoffset(c16)</code> in VR. This is due to the fact we're in a set of arrays that use eyeIndex. Specifically, this matches what we've determined here: <a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/package/Shaders/Common/FrameBuffer.hlsl#L6">/package/Shaders/Common/FrameBuffer.hlsl#L6</a>.</p>
-<p>Update the CS flat hlsl to use the right VR cbuffers. Use the define <code>VR</code> for VR specific code.</p>
-</li>
-<li>
-<p>On identifying eyeIndex based cbuffers, edit the CS flat hlsl that you are porting to now use the eyeIndex.</p>
-</li>
-<li>Fix stereoUV coords. VR renders both left and right eye at the same time vs flat which is a single eye. So certain coords in flat UV space may need to be converted to stereoUV. <code>Depthtexture</code> is a prime example. See other <a href="https://github.com/search?q=repo%3Adoodlum%2Fskyrim-community-shaders%20ConvertToStereoUV&amp;type=code">examples</a>. Keep track of the coordinate system acccessing the texture. For example UV or texcoord (in compute shaders) will need to be stereo.</li>
-</ol>
-<p>Helpful VR functions can be found in <a href="https://github.com/doodlum/skyrim-community-shaders/blob/dev/package/Shaders/Common/VR.hlsli">/package/Shaders/Common/VR.hlsli</a></p>
+<h2 id="background">Background<a class="headerlink" href="#background" title="Permanent link">&para;</a></h2>
+<p>Light Placer is a framework for attaching lights to objects and actors, via configurable .JSON files.</p>
+<p>Unlike ENB or Community Shader <a href="../Particle-Lights/">particle lights</a>, Light Placer adds real light bulbs (omni lights, spotlights, and shadow casting lights) with unlimited range and brightness. </p>
+<p>They can flicker, affect detection, change color based on time of day (external emittance) and so on, just like regular Skyrim light sources.</p>
+<p>This does mean they are subject to Skyrim's light limit, so <a href="https://www.nexusmods.com/skyrimspecialedition/mods/99548">Light Limit Fix</a> is a requirement. You can attempt to run this with ENB and lots and lots of split meshes but I would not recommend it.</p>
+<h2 id="adding-lights">Adding Lights<a class="headerlink" href="#adding-lights" title="Permanent link">&para;</a></h2>
+<p>Check out the <a href="https://github.com/powerof3/LightPlacer/wiki">Light Placer wiki</a> for documentation and examples.﻿</p>
 
 
 
@@ -605,7 +611,7 @@ These are essentially the same buffer access of cb12. The addition order doesn't
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../True-PBR/" class="md-footer__link md-footer__link--prev" aria-label="Previous: True PBR">
+          <a href="../FAQ/" class="md-footer__link md-footer__link--prev" aria-label="Previous: FAQ">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -615,11 +621,27 @@ These are essentially the same buffer access of cb12. The addition order doesn't
                 Previous
               </span>
               <div class="md-ellipsis">
-                True PBR
+                FAQ
               </div>
             </div>
           </a>
         
+        
+          
+          <a href="../Particle-Lights/" class="md-footer__link md-footer__link--next" aria-label="Next: Particle Lights">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Particle Lights
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
         
       </nav>
     

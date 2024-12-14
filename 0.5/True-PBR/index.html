@@ -367,6 +367,26 @@
   
   
     <li class="md-nav__item">
+      <a href="../Light-Placer/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Light Placer
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../Particle-Lights/" class="md-nav__link">
         
   
@@ -872,14 +892,19 @@
   <h1>True PBR</h1>
 
 <h2 id="true-pbr-for-modders">True PBR for modders<a class="headerlink" href="#true-pbr-for-modders" title="Permanent link">&para;</a></h2>
-<p>PBR (physically based rendering) approximates how real materials react to light and is used in most modern games. True PBR is a (work in progress) part of Community Shaders that has several benefits:</p>
+<p>PBR (physically based rendering) approximates how real materials react to light and is used in most modern games. True PBR is a part of Community Shaders that has several benefits:</p>
 <ul>
-<li>More realistic lighting than in vanilla and complex material is possible, and more effects such as sss, glow or multilayer can be combined.</li>
+<li>More realistic lighting than in vanilla and complex material is possible, and more effects such as <abbr title="subsurface scattering">SSS</abbr>, glow, or multilayer can be combined.</li>
 <li>It allows the usage of PBR materials which are widely available online, many for free</li>
 <li>Those materials can be used easily in standard tools like Blender and exported in a simple way</li>
 <li>The materials will look the same way in Skyrim as in those tools so it is easy to create consistent visuals. There is no need to experiment and adjust brightness according to Skyrim's very unique levels</li>
 </ul>
-<p>To use PBR you will need to obtain Community Shaders with True PBR feature (current dev build) and True PBR texture packs. Those are currently available only on the Discord. But remember, those texture packs will not work without Community Shaders enabled. If you are not a texture creator you can safely ignore everything else described below.</p>
+<p>To use PBR you will need to obtain Community Shaders which includes the True PBR feature as of version 1.0.0 and True PBR texture packs. Those are available on <a href="https://www.nexusmods.com/skyrimspecialedition/search/?BH=0&amp;RH_ModList=nav:true,home:false,type:0,user_id:0,game_id:1704,advfilt:true,trackingCategory:,trackingAction:,include_adult:false,sort_by:OLD_downloads,show_game_filter:false,page_size:20,open:true,search%5Bfilename%5D:pbr">Nexus</a>. But remember, those texture packs will not work without Community Shaders enabled.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>If meshes are not provided by the author, then you must run <a href="https://www.nexusmods.com/skyrimspecialedition/mods/120946">ParallaxGen</a> on your load order to create patched meshes and a plugin to enable PBR shaders on those meshes.</p>
+</div>
+<p>If you are not a texture creator you can safely ignore everything else described below.</p>
 <h2 id="true-pbr-for-texture-artists">True PBR for texture artists<a class="headerlink" href="#true-pbr-for-texture-artists" title="Permanent link">&para;</a></h2>
 <p>All the followings sections are only relevant to you if are creating textures for Skyrim yourself. 
 To generate a set of True PBR textures you need to do two things:</p>
@@ -931,9 +956,8 @@ To generate a set of True PBR textures you need to do two things:</p>
 <li>nif.xml in <a href="https://drive.google.com/file/d/1EjHnaV3p440eVkUaJaHgPOYFkluT3DTq/view?usp=sharing">Nifskope addon for PBR</a> has proper naming for parameters  </li>
 </ul>
 <p>Glint is incompatible with coat or fuzz, but compatible with subsurface effects.</p>
-<details>
-  <summary>Sample json configuration for NifPatcher</summary>
-
+<details class="example">
+<summary>Sample JSON configuration for NifPatcher</summary>
 <div class="highlight"><pre><span></span><code>[
     {
         &quot;texture&quot;: &quot;landscape\\glacierslab&quot;, &quot;emissive&quot;: false, &quot;parallax&quot;: true, &quot;subsurface_foliage&quot;:false, &quot;subsurface&quot;: true,
@@ -949,9 +973,7 @@ To generate a set of True PBR textures you need to do two things:</p>
     }
 ]
 </code></pre></div>
-
 </details>
-
 <h4 id="fuzz">Fuzz<a class="headerlink" href="#fuzz" title="Permanent link">&para;</a></h4>
 <p>Fuzz as a rendering technique is used to simulate the appearance of soft, fibrous materials, such as velvet, fur, peach fuzz, or certain types of cloth. This effect is crucial for rendering surfaces that have a fine layer of fibers or tiny hairs that interact with light in a distinctive way, producing a soft, diffuse reflection.
 For CS PBR fuzz is still considered experimental and replaces specular term with another one, better suited to model cloth (especially velvet).</p>
@@ -965,9 +987,8 @@ For CS PBR fuzz is still considered experimental and replaces specular term with
 <li>nif.xml in <a href="https://drive.google.com/file/d/1EjHnaV3p440eVkUaJaHgPOYFkluT3DTq/view?usp=sharing">Nifskope addon for PBR</a> contains proper naming for parameters  </li>
 </ul>
 <p>Fuzz is incompatible with coat or glint, but compatible with subsurface. </p>
-<details>
-  <summary>Sample configuration</summary>
-
+<details class="example">
+<summary>Sample configuration</summary>
 <div class="highlight"><pre><span></span><code>{
     &quot;coatColor&quot;: [
         1.0,
@@ -1003,7 +1024,6 @@ For CS PBR fuzz is still considered experimental and replaces specular term with
 }
 </code></pre></div>
 </details>
-
 <h4 id="hair-model">Hair model<a class="headerlink" href="#hair-model" title="Permanent link">&para;</a></h4>
 <p>Hair model shaders are specialized rendering techniques used to simulate the appearance and behavior of hair, fur, and other similar fibrous structures in 3D graphics.
 CS PBR has hair model shading which is in experimental state.</p>
@@ -1026,9 +1046,8 @@ CS PBR has hair model shading which is in experimental state.</p>
 <li>SoftLighting - enables interlayer parallax. I.e. with it enabled displacement works as displacement between upper and lower layer to simulate vanilla multilayer parallax</li>
 <li>BackLighting - enables own normal map for coat layer. It's then taken from rgb of slot 7 texture</li>
 </ul>
-<details>
-  <summary>Sample json configuration for NifPatcher</summary>
-
+<details class="example">
+<summary>Sample JSON configuration for NifPatcher</summary>
 <div class="highlight"><pre><span></span><code>[
     {
         &quot;texture&quot;: &quot;icicle&quot;, &quot;emissive&quot;: false, &quot;parallax&quot;: true, &quot;subsurface_foliage&quot;:false, &quot;subsurface&quot;: false, 
@@ -1044,7 +1063,6 @@ CS PBR has hair model shading which is in experimental state.</p>
 ]
 </code></pre></div>
 </details>
-
 <h3 id="texture-changes">Texture changes<a class="headerlink" href="#texture-changes" title="Permanent link">&para;</a></h3>
 <h4 id="general-textures">General textures<a class="headerlink" href="#general-textures" title="Permanent link">&para;</a></h4>
 <ol>
@@ -1060,7 +1078,7 @@ CS PBR has hair model shading which is in experimental state.</p>
 <p>An overview for PBR and non-PBR textures can be found <a href="https://docs.google.com/spreadsheets/d/1WJaqIXpk44ISA2bFxi1a054JQD26tFqF-thDC7mHesc">here</a>.\
 If the actual colors are sRGB (gamma in Mixer), use sRGB flagged dds. If the actual colors are linear, use linear dds. </p>
 <h4 id="landscape-textures">Landscape textures<a class="headerlink" href="#landscape-textures" title="Permanent link">&para;</a></h4>
-<p>Landscape texture is assumed to be PBR if a json file with the same name as the texture set record's EDID is found in 'data\PBRTextureSets'. For 'LandscapeDirt02 [TXST:00000C0F]' it would be 'LandscapeDirt02.json'
+<p>Landscape texture is assumed to be PBR if a JSON file with the same name as the texture set record's EDID is found in 'data\PBRTextureSets'. For 'LandscapeDirt02 [TXST:00000C0F]' it would be 'LandscapeDirt02.json'
 The texture paths are defined in the texture set record:</p>
 <ul>
 <li>
@@ -1106,7 +1124,7 @@ The texture paths are defined in the texture set record:</p>
 <p>TX04: 'PBR\Landscape\Dirt02_p.dds'</p>
 </li>
 </ul>
-<p>The json file contains the values that are normally defined in the mesh:</p>
+<p>The JSON file contains the values that are normally defined in the mesh:</p>
 <pre><code>{
     "roughnessScale" : 1.0,
     "displacementScale" : 0.25,
@@ -1134,10 +1152,14 @@ The following workflow is based on <a href="https://quixel.com/mixer">Quixel Mix
 <li>
 <p>You can add texture names to autofil in Edit -&gt; Configure Autoload Map Names</p>
 </li>
-<li>Edit and mix textures however you want. Mixer has official tutorials on Youtube.</li>
+</ul>
+</li>
+<li>
+<p>Edit and mix textures however you want. Mixer has official tutorials on Youtube.</p>
+</li>
 <li>
 <p>Export the PBR textures. You can create a preset that exports according to your needs.</p>
-</li>
+<ul>
 <li>
 <p>Pick image format according to preference. I use PNG.</p>
 </li>
@@ -1153,68 +1175,63 @@ The following workflow is based on <a href="https://quixel.com/mixer">Quixel Mix
 <li>
 <p>If you indeed worked with opengl normal maps, set Normal Y (green channel) to be inverted. This transforms it into DirectX format which Skyrim uses.</p>
 </li>
-<li>Use Chainner and load the following <a href="https://drive.google.com/file/d/1S3XEIvxdIhfwHSiIg3ZdylpIZdhhVbWx">workflow</a> to automatically convert the textures towards the structure Skyrim needs them. In the workflow on the left side select the directory where you exported the textures via Mixer and enter the name used for the output.\
-Please note, if you exported your albedo as Gamma, you need to select compression with sRGB. This is the 'Save Image' node in the topright corner of the workflow.\
-Optionally change percentages of Resize nodes to downscale your textures before saving.</li>
 </ul>
+</li>
+<li>
+<p>Use Chainner and load the following <a href="https://drive.google.com/file/d/1S3XEIvxdIhfwHSiIg3ZdylpIZdhhVbWx">workflow</a> to automatically convert the textures toward the structure Skyrim needs them. In the workflow on the left side select the directory where you exported the textures via Mixer and enter the name used for the output.
+Please note, if you exported your albedo as Gamma, you need to select compression with sRGB. This is the 'Save Image' node in the topright corner of the workflow.
+Optionally change percentages of Resize nodes to downscale your textures before saving.</p>
 </li>
 </ol>
 <h2 id="faq">FAQ<a class="headerlink" href="#faq" title="Permanent link">&para;</a></h2>
-<details>
-<summary><b>What about Complex Materials?</b></summary>
-Complex materials are totally separate from True PBR and there would be no point in combining them. You can still use complex materials on non-pbr objects as usual.
+<details class="question">
+<summary><strong>What about Complex Materials?</strong></summary>
+<p>Complex materials are totally separate from True PBR and there would be no point in combining them. You can still use complex materials on non-pbr objects as usual.</p>
 </details>
-
-<details>
-<summary><b>Can I convert vanilla shaded textures to True PBR?</b></summary>
-If you originally had PBR textures that you somehow converted for Skyrim, you can use those easily. Otherwise it is impossible to do without assumptions, because Skyrim textures contain fundamentally different data. For example, many objects using enviornment mapping are metallic, but not all of them. You can do manual work or use some AI to make the necessary textures, but it is unlikely that it will be a meaningful visual improvement over vanilla.
+<details class="question">
+<summary><strong>Can I convert vanilla shaded textures to True PBR?</strong></summary>
+<p>If you originally had PBR textures that you somehow converted for Skyrim, you can use those easily. Otherwise it is impossible to do without assumptions, because Skyrim textures contain fundamentally different data. For example, many objects using enviornment mapping are metallic, but not all of them. You can do manual work or use some AI to make the necessary textures, but it is unlikely that it will be a meaningful visual improvement over vanilla.</p>
 </details>
-
-<details>
-<summary><b>My materials ingame look wrong?</b></summary>
-There is many possibilities for this, I will list the common ones. If the material is really shiny, the mesh probably isn't marked for PBR, so is vanilla shaded with specularity 1. If the material is too dark in the shadows, you might have too dark ambient occlusion. If the material gets black when you walk to it with a torch, your normal maps might be wrong - either flipped, or wrong format (opengl).
+<details class="question">
+<summary><strong>My materials ingame look wrong?</strong></summary>
+<p>There is many possibilities for this, I will list the common ones:</p>
+<ol>
+<li>If the material is really shiny, the mesh probably isn't marked for PBR, so it is vanilla shaded with specularity.</li>
+<li>If the material is too dark in the shadows, you might have too dark ambient occlusion. If the material gets black when you walk to it with a torch, your normal maps might be wrong - either flipped, or wrong format (opengl).</li>
+</ol>
 </details>
-
-<details>
-<summary><b>About Texture Compression</b></summary>
-There is a number of compression format for DDS textures with various properties such as number of channels, quality and file size. Not all of them are supported by Skyrim. The following list should be sufficient in most situations:
-
-* BC1: RGB + 1bit alpha (fully opaque or fully transparent). It has reasonable file size and quality. Use for opaque or cutout albedo textures, and RMAOS textures if you don't need specular. In case of visible banding or squarish artifacts, use BC7.
-* BC4: One channel (grayscale). Has the same file size as BC1, but only one channel with better quality. Use for parallax textures.
-* BC7: RGBA. Has good quality and twice the file size of BC1. Use for normal maps and albedo with full transparency.
-* BC3: RGBA. The RGB part uses BC1, alpha uses BC4. The file size is the same as BC7. This can be useful when you need to preserve a quality alpha channel, for example in complex materials or landscape textures with parallax in alpha channel.
-
-For more details I recommend [this article.](https://www.reedbeta.com/blog/understanding-bcn-texture-compression-formats)
+<details class="info">
+<summary><strong>About Texture Compression</strong></summary>
+<p>There is a number of compression format for DDS textures with various properties such as number of channels, quality and file size. Not all of them are supported by Skyrim. The following list should be sufficient in most situations:</p>
+<ul>
+<li>BC1: RGB + 1bit alpha (fully opaque or fully transparent). It has reasonable file size and quality. Use for opaque or cutout albedo textures, and RMAOS textures if you don't need specular. In case of visible banding or squarish artifacts, use BC7.</li>
+<li>BC4: One channel (grayscale). Has the same file size as BC1, but only one channel with better quality. Use for parallax textures.</li>
+<li>BC7: RGBA. Has good quality and twice the file size of BC1. Use for normal maps and albedo with full transparency.</li>
+<li>BC3: RGBA. The RGB part uses BC1, alpha uses BC4. The file size is the same as BC7. This can be useful when you need to preserve a quality alpha channel, for example in complex materials or landscape textures with parallax in alpha channel.</li>
+</ul>
+<p>For more details I recommend <a href="https://www.reedbeta.com/blog/understanding-bcn-texture-compression-formats">this article</a>.</p>
 </details>
-<details>
-<summary><b>Linear vs sRGB because it bears repeating</b></summary>
-
-* You can find discussions online about linear, sRGB, non-color data etc. The details are above my paygrade, here we just hope that stuff works.
-* Extremely simplified: Math is easier with linear data, but using sRGB files allows them to store more detail human eyes can actually see (this only makes sense for colors).
-* All non-color data such as normals or roughness should be flagged as linear when saving to dds.
-* Color data is more complicated - you need to know whether the data (the colors) itself is in sRGB or linear space. AFAIK, albedo/diffuse textures from sites like polyhaven are in sRGB and it is more common on general. If this is the case, you should use the sRGB flag when saving to dds. The flag will allow to the texture to be converted to linear automatically on the gpu. If your data (the colors) is already in linear space, use the linear flag when saving to dds. As you can imagine, if you use the wrong flag, the texture will either be superfluously transformed to linear or not transformed when it should be, which will cause the texture to look wrong.
-* BUT WAIT! That applies to True PBR. If you are making textures for vanilla Skyrim... make sure your data is sRGB and use the linear flag. WHAT? Skyrim uses linear-flagged dds that actually contain sRGB data. I'm not sure if they convert the colors to linear manually in shaders or just calculate lighting in sRGB space. So yes, it is weird but it works this way (blame Bethesda).
-
+<details class="info">
+<summary><strong>Linear vs sRGB because it bears repeating</strong></summary>
+<ul>
+<li>You can find discussions online about linear, sRGB, non-color data etc. The details are above my paygrade, here we just hope that stuff works.</li>
+<li>Extremely simplified: Math is easier with linear data, but using sRGB files allows them to store more detail human eyes can actually see (this only makes sense for colors).</li>
+<li>All non-color data such as normals or roughness should be flagged as linear when saving to dds.</li>
+<li>Color data is more complicated - you need to know whether the data (the colors) itself is in sRGB or linear space. AFAIK, albedo/diffuse textures from sites like polyhaven are in sRGB and it is more common on general. If this is the case, you should use the sRGB flag when saving to dds. The flag will allow to the texture to be converted to linear automatically on the gpu. If your data (the colors) is already in linear space, use the linear flag when saving to dds. As you can imagine, if you use the wrong flag, the texture will either be superfluously transformed to linear or not transformed when it should be, which will cause the texture to look wrong.</li>
+<li>BUT WAIT! That applies to True PBR. If you are making textures for vanilla Skyrim... make sure your data is sRGB and it uses the linear flag. WHAT? Skyrim uses linear-flagged dds that actually contain sRGB data. I'm not sure if they convert the colors to linear manually in shaders or just calculate lighting in sRGB space. So yes, it is weird but it works this way (blame Bethesda).</li>
+</ul>
 </details>
-
-<details>
-<summary><b>Do I use RMAOS or RMAO textures?</b></summary>
-
-You use the specular layer for surfaces like glass, gems, perhaps snow. If there is only one type of surface in your texture you can use RMAO and set the specular scale in the nif/json configuration. If you have different surfaces with specular properties, only then it makes sense to use rmaos with a specular map in the alpha channel.
-
+<details class="question">
+<summary><strong>Do I use RMAOS or RMAO textures?</strong></summary>
+<p>You use the specular layer for surfaces like glass, gems, perhaps snow. If there is only one type of surface in your texture you can use RMAO and set the specular scale in the nif/json configuration. If you have different surfaces with specular properties, only then it makes sense to use rmaos with a specular map in the alpha channel.</p>
 </details>
-
-<details>
-<summary><b>What is the best way to adjust parallax scale?</b></summary>
-
-If you want to change the parallax scale of your texture because it looks to flat instead of changing the displacement map better try to adjust parallax scale in the json for the nif patcher. This usually creates good results.
-
+<details class="question">
+<summary><strong>What is the best way to adjust parallax scale?</strong></summary>
+<p>If you want to change the parallax scale of your texture because it looks to flat instead of changing the displacement map better try to adjust parallax scale in the json for the nif patcher. This usually creates good results.</p>
 </details>
-
-<details>
-<summary><b>Is there any best practice how to define the specular maps and strength?</b></summary>
-
-Most materials should use the default value of 0.04 (in the mesh & json settings). That means your alpha would be white and you can save the texture as BC1. Snow has half the specular strength of most other stuff, so you could use a full 128 grey image for the alpha channel or reduce the specular strength in the json & patcher files to 0.02
+<details class="question">
+<summary><strong>Is there any best practice for defining the specular maps and strength?</strong></summary>
+<p>Most materials should use the default value of 0.04 (in the mesh &amp; json settings). That means your alpha would be white and you can save the texture as BC1. Snow has half the specular strength of most other stuff, so you could use a full 128 grey image for the alpha channel or reduce the specular strength in the json &amp; patcher files to 0.02</p>
 </details>
 
 
